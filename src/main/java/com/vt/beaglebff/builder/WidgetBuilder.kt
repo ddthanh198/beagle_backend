@@ -25,6 +25,7 @@ import com.vt.beaglebff.components.actions.ShowDialogAction
 import com.vt.beaglebff.components.actions.ToastAction
 import com.vt.beaglebff.components.widgets.BottomNavigationView
 import com.vt.beaglebff.model.populateLanguageOptions
+import javax.swing.text.StyledEditorKit
 
 object WidgetBuilder : BaseBuilder(){
 
@@ -62,28 +63,59 @@ object WidgetBuilder : BaseBuilder(){
 
     // banner
     fun createBannerView() = createContainer(
-            PageView(
-                    context = ContextData(
-                            id = "bannerUrl",
-                            value = listOf(
-                                    "${Constants.baseUrl}/resourcesController/img_tnxh",
-                                    "${Constants.baseUrl}/resourcesController/img_tnxh"
-                            )
-                    ),
-                    pageIndicator = PageIndicator(
-                            selectedColor = "#000000",
-                            unselectedColor = "#888888"
-                    ),
+            Container(
                     children = listOf(
-                            createBannerImage("@{bannerUrl[0]}"),
-                            createBannerImage("@{bannerUrl[1]}")
+                            Container(
+                                    children = listOf(
+                                            PageView(
+                                                    context = ContextData(
+                                                            id = "bannerUrl",
+                                                            value = listOf(
+                                                                    "${Constants.baseUrl}/resourcesController/img_tnxh",
+                                                                    "${Constants.baseUrl}/resourcesController/img_tnxh"
+                                                            )
+                                                    ),
+                                                    pageIndicator = PageIndicator(
+                                                            selectedColor = "#000000",
+                                                            unselectedColor = "#888888"
+                                                    ),
+                                                    children = listOf(
+                                                            createBannerImage("@{bannerUrl[0]}"),
+                                                            createBannerImage("@{bannerUrl[1]}")
+                                                    )
+                                            )
+                                    )
+                            ).applyStyle(
+                                    Style(
+                                            size = Size(height = 200.unitReal()),
+                                            margin = EdgeValue(horizontal = 0.unitReal(), top = 0.unitReal())
+                                    )
+                            ),
+                            Container(
+                                    children = listOf(
+                                            Image(
+                                                    ImagePath.Remote("${Constants.baseUrl}/resourcesController/img_tnxh"),
+                                                    ImageContentMode.FIT_XY
+                                            )
+                                    )
+                            ).applyStyle(
+                                    Style(
+                                            size = Size(width = 200.unitReal(), height = 200.unitReal()),
+                                            cornerRadius = CornerRadius(100.0),
+                                            flex = Flex(
+                                                    alignSelf = AlignSelf.CENTER
+                                            )
+                                    )
+                            )
+                    )
+            ).applyStyle(
+                    Style(
+                            flex = Flex(
+                                    grow = 1.0
+                            )
                     )
             )
-    ).applyStyle(
-            style = Style(
-                    size = Size(width = 100.unitPercent(), height = 25.unitPercent())
-            )
-    )
+        )
 
     private fun createBannerImage(remoteUrl: String) = createImageViewFromRemote(
             remoteUrl = remoteUrl
