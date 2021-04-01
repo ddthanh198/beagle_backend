@@ -48,10 +48,18 @@ class HomeScreenBuilder : ScreenBuilder, BaseBuilder() {
                             createBannerImage("@{bannerUrl[0]}"),
                             createBannerImage("@{bannerUrl[1]}")
                     )
+            ),
+            Image(
+                    ImagePath.Remote("${Constants.baseUrl}/resourcesController/img_tnxh")
+            ).applyStyle(
+                    Style(
+                            size = Size(width = 100.unitReal(), height = 100.unitReal()),
+                            cornerRadius = CornerRadius(50.0)
+                    )
             )
     ).applyStyle(
             Style(
-                    size = Size(width = 100.unitPercent(), height = 25.unitPercent())
+                    size = Size(width = 100.unitPercent(), height = 300.unitReal())
             )
     ).applyFlex(
             Flex(
