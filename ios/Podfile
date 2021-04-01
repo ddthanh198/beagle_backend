@@ -1,0 +1,18 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '12.0'
+
+target 'DemoBeagleApp' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for DemoBeagleApp
+  pod 'Beagle'
+  pod 'BeagleSchema'
+  pod 'Alamofire', '~>4.7.1'
+  pod 'BeagleScaffold'
+  pod 'YogaKit', :git => 'https://github.com/ZupIT/YogaKit'
+  pod 'SDWebImage'
+  pod 'SVProgressHUD'
+  pod 'RxSwift'
+  pod 'RxCocoa'
+end
