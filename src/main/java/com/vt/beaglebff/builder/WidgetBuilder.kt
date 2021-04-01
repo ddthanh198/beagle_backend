@@ -9,6 +9,7 @@ import br.com.zup.beagle.ext.unitReal
 import br.com.zup.beagle.widget.action.Navigate
 import br.com.zup.beagle.widget.action.Route
 import br.com.zup.beagle.widget.context.ContextData
+import br.com.zup.beagle.widget.context.expressionOf
 import br.com.zup.beagle.widget.core.*
 import br.com.zup.beagle.widget.layout.Container
 import br.com.zup.beagle.widget.layout.PageView
@@ -16,11 +17,14 @@ import br.com.zup.beagle.widget.navigation.Touchable
 import br.com.zup.beagle.widget.pager.PageIndicator
 import br.com.zup.beagle.widget.ui.Image
 import br.com.zup.beagle.widget.ui.ImagePath
+import br.com.zup.beagle.widget.ui.ListView
 import br.com.zup.beagle.widget.ui.Text
 import com.vt.beaglebff.common.Constants
 import com.vt.beaglebff.components.actions.BackAction
+import com.vt.beaglebff.components.actions.ShowDialogAction
 import com.vt.beaglebff.components.actions.ToastAction
 import com.vt.beaglebff.components.widgets.BottomNavigationView
+import com.vt.beaglebff.model.populateLanguageOptions
 
 object WidgetBuilder : BaseBuilder(){
 
@@ -122,6 +126,7 @@ object WidgetBuilder : BaseBuilder(){
                             width = 44,
                             height = 44,
                             listAction = listOf(
+                                    //ShowDialogAction("/widgetController/selectionDialog")
                                     Navigate.PushView(route = Route.Remote("/screenController/personal"))
                             )
                     )
@@ -194,7 +199,7 @@ object WidgetBuilder : BaseBuilder(){
                                     )
                             ),
                             onPress = listOf(
-                                    BackAction("back")
+                                    Navigate.PopView()
                             )
                     ),
                     Container(
@@ -285,6 +290,59 @@ object WidgetBuilder : BaseBuilder(){
                     size = Size(
                             height = 50.unitReal()
                     )
+            )
+    )
+
+    fun createLanguageSelectionDialog() = createContainer(
+            createTextView(
+                    text = "Choose your language",
+                    styleId = "NormalBoldText",
+                    textAlignment = TextAlignment.CENTER
+            ).applyStyle(
+                    Style(
+                            margin = EdgeValue(all = 20.unitReal())
+                    )
+            ),
+            ListView(
+                    context = ContextData(id = "languages", value = populateLanguageOptions()),
+                    dataSource = expressionOf("@{languages}"),
+                    template = createContainer(
+                            Touchable(
+                                    child = createContainer(
+                                            createImageViewFromRemote("@{item.languageIconUrl}").applyStyle(
+                                                    Style(
+                                                            size = Size(
+                                                                    width = 24.unitReal(),
+                                                                    height = 24.unitReal()
+                                                            )
+                                                    )
+                                            ),
+                                            createTextView(text = "@{item.language}").applyStyle(
+                                                    Style(margin = EdgeValue(horizontal = 8.unitReal()))
+                                            )
+                                    ).applyFlex(
+                                            Flex(
+                                                    flex = 1.0,
+                                                    flexDirection = FlexDirection.ROW
+                                            )
+                                    ),
+                                    onPress = listOf(ToastAction("You have changed app language"))
+                            ),
+                            createDivider(8, 8, 0, 0)
+                    ).applyStyle(
+                            Style(
+                                    margin = EdgeValue(
+                                            left = 20.unitReal(),
+                                            right = 20.unitReal(),
+                                            bottom = 16.unitReal()
+                                    )
+                            )
+                    )
+            )
+    ).applyStyle(
+            style = Style(
+                    backgroundColor = Constants.colorWhite,
+                    cornerRadius = CornerRadius(radius = Constants.dialogRadius)
             )
     )
 }

@@ -16,4 +16,7 @@ class WidgetController(
 
     @GetMapping("/banner")
     fun getHomeScreenBannerView() = widgetService.createBannerView()
+
+    @GetMapping("/selectionDialog")
+    fun getSelectionDialog() = widgetService.createSelectionDialog()
 }
