@@ -11,10 +11,7 @@ import br.com.zup.beagle.widget.core.*
 import br.com.zup.beagle.widget.layout.Container
 import br.com.zup.beagle.widget.layout.ScrollView
 import br.com.zup.beagle.widget.navigation.Touchable
-import br.com.zup.beagle.widget.ui.Image
-import br.com.zup.beagle.widget.ui.ImagePath
-import br.com.zup.beagle.widget.ui.Text
-import br.com.zup.beagle.widget.ui.TextInput
+import br.com.zup.beagle.widget.ui.*
 import com.vt.beaglebff.common.Constants
 
 abstract class BaseBuilder {
@@ -99,4 +96,28 @@ abstract class BaseBuilder {
                 value = value.asList()
         )
     }
+
+    protected fun createDivider(
+            marginTop: Int,
+            marginBottom: Int,
+            marginLeft: Int,
+            marginRight: Int
+    ) = Container(
+            children = listOf())
+            .applyStyle(
+                    Style(
+                            backgroundColor = Constants.colorDivider,
+                            size = Size(height = 0.75.unitReal()),
+                            flex = Flex(
+                                    flexDirection = FlexDirection.ROW,
+                                    grow = 1.0
+                            ),
+                            margin = EdgeValue(
+                                    top = marginTop.unitReal(),
+                                    bottom = marginBottom.unitReal(),
+                                    left = marginLeft.unitReal(),
+                                    right = marginRight.unitReal()
+                            )
+            )
+    )
 }

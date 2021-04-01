@@ -21,54 +21,44 @@ class PersonalScreenBuilder : ScreenBuilder, BaseBuilder() {
     override fun build() = Screen(
             child = createContainer(
                     WidgetBuilder.createMainToolbar(),
-                    createScrollView(
-                            createTouchableRow(
-                                    text = "Thông tin tài khoản",
-                                    iconUrl = "${Constants.baseUrl}/resourcesController/ic_account_info",
-                                    icon2Url = "${Constants.baseUrl}/resourcesController/ic_next",
-                                    destination = "account_information"
-                            ),
-                            ItemRowDivider(
-                                    expressionOf("#B9B9B9"),
-                                    expressionOf("1")
-                            ),
-                            createTouchableRow(
-                                    text = "Cài đặt",
-                                    iconUrl = "${Constants.baseUrl}/resourcesController/ic_settings",
-                                    icon2Url = "${Constants.baseUrl}/resourcesController/ic_next",
-                                    destination = "settings"
-                            ),
-                            ItemRowDivider(
-                                    expressionOf("#B9B9B9"),
-                                    expressionOf("1")
-                            ),
-                            createTouchableRow(
-                                    text = "Đổi mật khẩu",
-                                    iconUrl = "${Constants.baseUrl}/resourcesController/ic_change_password",
-                                    icon2Url = "${Constants.baseUrl}/resourcesController/ic_next",
-                                    destination = "change_password"
-                            ),
-                            ItemRowDivider(
-                                    expressionOf("#B9B9B9"),
-                                    expressionOf("1")
-                            ),
-                            createTouchableRow(
-                                    text = "Thông tin",
-                                    iconUrl = "${Constants.baseUrl}/resourcesController/ic_info",
-                                    icon2Url = "${Constants.baseUrl}/resourcesController/ic_next",
-                                    destination = "information"
-                            ),
-                            ItemRowDivider(
-                                    expressionOf("#B9B9B9"),
-                                    expressionOf("1")
-                            ),
-                            createTouchableRow(
-                                    text = "Đăng xuất",
-                                    iconUrl = "${Constants.baseUrl}/resourcesController/ic_logout",
-                                    icon2Url = "${Constants.baseUrl}/resourcesController/ic_next",
-                                    destination = "log_out"
+                    createContainer(
+                            createScrollView(
+                                    createTouchableRow(
+                                            text = "Thông tin tài khoản",
+                                            iconUrl = "${Constants.baseUrl}/resourcesController/ic_account_info",
+                                            icon2Url = "${Constants.baseUrl}/resourcesController/ic_next",
+                                            destination = "account_information"
+                                    ),
+                                    createDivider(4, 4, 16, 16),
+                                    createTouchableRow(
+                                            text = "Cài đặt",
+                                            iconUrl = "${Constants.baseUrl}/resourcesController/ic_settings",
+                                            icon2Url = "${Constants.baseUrl}/resourcesController/ic_next",
+                                            destination = "settings"
+                                    ),
+                                    createDivider(4, 4, 16, 16),
+                                    createTouchableRow(
+                                            text = "Đổi mật khẩu",
+                                            iconUrl = "${Constants.baseUrl}/resourcesController/ic_change_password",
+                                            icon2Url = "${Constants.baseUrl}/resourcesController/ic_next",
+                                            destination = "change_password"
+                                    ),
+                                    createDivider(4, 4, 16, 16),
+                                    createTouchableRow(
+                                            text = "Thông tin",
+                                            iconUrl = "${Constants.baseUrl}/resourcesController/ic_info",
+                                            icon2Url = "${Constants.baseUrl}/resourcesController/ic_next",
+                                            destination = "information"
+                                    ),
+                                    createDivider(4, 4, 16, 16),
+                                    createTouchableRow(
+                                            text = "Đăng xuất",
+                                            iconUrl = "${Constants.baseUrl}/resourcesController/ic_logout",
+                                            icon2Url = "${Constants.baseUrl}/resourcesController/ic_next",
+                                            destination = "log_out"
+                                    )
                             )
-                    )
+                    ).applyStyle(Style(margin = EdgeValue(top = 8.unitReal())))
             )
     )
 

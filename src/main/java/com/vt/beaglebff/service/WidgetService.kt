@@ -8,4 +8,6 @@ class WidgetService {
     fun createBottomNavigationView() = WidgetBuilder.createBottomNavigationView()
 
     fun createBannerView() = WidgetBuilder.createBannerView()
+
+    fun createSelectionDialog() = WidgetBuilder.createLanguageSelectionDialog()
 }

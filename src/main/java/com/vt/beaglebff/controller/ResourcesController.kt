@@ -122,4 +122,34 @@ class ResourcesController(private val resourcesService: ResourcesService) {
     fun getSetting2Icon(): ResponseEntity<InputStreamResource> {
         return resourcesService.getImage("images/ic_setting.png", "PNG")
     }
+
+    @RequestMapping("/flag_de", method = [RequestMethod.GET], produces = [MediaType.IMAGE_PNG_VALUE])
+    @Throws(IOException::class)
+    fun getGermanyFlagIcon(): ResponseEntity<InputStreamResource> {
+        return resourcesService.getImage("language_icons/flag_de.png", "PNG")
+    }
+
+    @RequestMapping("/flag_es", method = [RequestMethod.GET], produces = [MediaType.IMAGE_PNG_VALUE])
+    @Throws(IOException::class)
+    fun getSpainFlagIcon(): ResponseEntity<InputStreamResource> {
+        return resourcesService.getImage("language_icons/flag_es.png", "PNG")
+    }
+
+    @RequestMapping("/flag_pt", method = [RequestMethod.GET], produces = [MediaType.IMAGE_PNG_VALUE])
+    @Throws(IOException::class)
+    fun getPortugalFlagIcon(): ResponseEntity<InputStreamResource> {
+        return resourcesService.getImage("language_icons/flag_pt.png", "PNG")
+    }
+
+    @RequestMapping("/flag_uk", method = [RequestMethod.GET], produces = [MediaType.IMAGE_PNG_VALUE])
+    @Throws(IOException::class)
+    fun getUnitedKingdomFlagIcon(): ResponseEntity<InputStreamResource> {
+        return resourcesService.getImage("language_icons/flag_uk.png", "PNG")
+    }
+
+    @RequestMapping("/flag_vn", method = [RequestMethod.GET], produces = [MediaType.IMAGE_PNG_VALUE])
+    @Throws(IOException::class)
+    fun getVietnamFlagIcon(): ResponseEntity<InputStreamResource> {
+        return resourcesService.getImage("language_icons/flag_vn.png", "PNG")
+    }
 }
