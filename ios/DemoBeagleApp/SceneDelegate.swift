@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Beagle
+import BeagleScaffold
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -16,7 +18,31 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        configBeagle()
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        setupRootView(scene: windowScene)
+    }
+}
+
+extension SceneDelegate {
+    private func configBeagle() {
+        let dependencies = BeagleDependencies()
+        dependencies.urlBuilder = UrlBuilder(
+            baseUrl: URL(string: Urls.HOST)!
+        )
+        
+        BeagleConfig.start(dependencies: dependencies)
+    }
+    
+    @available(iOS 13.0, *)
+    private func setupRootView(scene: UIWindowScene) {
+        window = UIWindow(frame: scene.coordinateSpace.bounds)
+        window?.windowScene = scene
+        let tabBarController = MainTabBarController(nibName: "MainTabBarController", bundle: nil)
+        let navigationController = UINavigationController(rootViewController: tabBarController)
+        navigationController.navigationBar.isHidden = true
+        window?.rootViewController = navigationController
+        window?.makeKeyAndVisible()
     }
 }
 
