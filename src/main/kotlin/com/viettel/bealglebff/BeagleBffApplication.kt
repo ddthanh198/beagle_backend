@@ -1,6 +1,6 @@
-package com.viettel.bealglebff
+package com.viettel.bealglebff;
 
-import org.springframework.boot.autoconfigure.SpringBootApplication
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
