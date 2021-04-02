@@ -6,19 +6,26 @@ import br.com.zup.beagle.widget.context.ContextData
 import br.com.zup.beagle.widget.context.expressionOf
 import br.com.zup.beagle.widget.core.*
 import br.com.zup.beagle.widget.layout.Container
+import br.com.zup.beagle.widget.layout.Screen
 import br.com.zup.beagle.widget.ui.*
+import com.vt.beaglebff.common.Constants
 import com.vt.beaglebff.model.populateData
 
 object TabBuilder: BaseBuilder(){
 
     // tab home
-    fun createTabHome() = createContainer(
+    fun createTabHome() = Screen(
+        child = createContainer(
             WidgetBuilder.createToolbar(),
             WidgetBuilder.createBannerView()
-    ).applyFlex(
+        ).applyFlex(
             flex = Flex(
-                    grow = 1.0
+                grow = 1.0
             )
+        ),
+        style = Style(
+            backgroundColor = Constants.colorPrimary
+        )
     )
 
     // tab request
