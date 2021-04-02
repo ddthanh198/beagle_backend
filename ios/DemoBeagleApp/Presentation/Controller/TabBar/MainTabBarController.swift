@@ -46,12 +46,15 @@ class MainTabBarController: BaseTabBarController {
             let viewController = Beagle.screen(.remote(.init(url: item[2])))
             viewController.tabBarItem = UITabBarItem(title: item[1], image: nil, tag: tag)
             listOfVC.append(viewController)
-            let imageView = UIImageView(frame: .zero)
-            imageView.sd_setImage(with: URL(string: item[0])) { (image, error, _, _) in
-                listOfVC[tag].tabBarItem.image = image?.withRenderingMode(.automatic).sd_resizedImage(with: CGSize(width: 30, height: 30), scaleMode: .aspectFit)
-            }
         }
         
         self.viewControllers = listOfVC
+        for item in firstChild.menuItems {
+            let index = firstChild.menuItems.firstIndex(of: item) ?? 0
+            let imageView = UIImageView(frame: .zero)
+            imageView.sd_setImage(with: URL(string: item[0])) { (image, error, _, _) in
+                self.tabBar.items?[index].image = image?.withRenderingMode(.automatic).sd_resizedImage(with: CGSize(width: 30, height: 30), scaleMode: .aspectFit)
+            }
+        }
     }
 }
