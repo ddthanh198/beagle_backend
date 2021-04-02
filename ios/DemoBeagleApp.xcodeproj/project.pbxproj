@@ -25,6 +25,7 @@
 		3737BC682615C03C00759DC3 /* GetBottomViewUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3737BC672615C03C00759DC3 /* GetBottomViewUseCase.swift */; };
 		3737BC6C2615C08600759DC3 /* MainTabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3737BC6B2615C08600759DC3 /* MainTabBarViewModel.swift */; };
 		3737BC712615C0D500759DC3 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3737BC702615C0D500759DC3 /* UIColorExtensions.swift */; };
+		37BAC0572617069F00D78844 /* BeagleTitleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BAC0562617069F00D78844 /* BeagleTitleStyle.swift */; };
 		37F0769A2615B80E00A9E444 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F076992615B80E00A9E444 /* AppDelegate.swift */; };
 		37F0769C2615B80E00A9E444 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F0769B2615B80E00A9E444 /* SceneDelegate.swift */; };
 		37F0769E2615B80E00A9E444 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F0769D2615B80E00A9E444 /* ViewController.swift */; };
@@ -53,6 +54,7 @@
 		3737BC672615C03C00759DC3 /* GetBottomViewUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBottomViewUseCase.swift; sourceTree = "<group>"; };
 		3737BC6B2615C08600759DC3 /* MainTabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewModel.swift; sourceTree = "<group>"; };
 		3737BC702615C0D500759DC3 /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
+		37BAC0562617069F00D78844 /* BeagleTitleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeagleTitleStyle.swift; sourceTree = "<group>"; };
 		37F076962615B80E00A9E444 /* DemoBeagleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoBeagleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37F076992615B80E00A9E444 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37F0769B2615B80E00A9E444 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 		3737BC2B2615BBE000759DC3 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				37BAC0552617068900D78844 /* CustomBeagleStyle */,
 				3737BC6F2615C0C400759DC3 /* Extension */,
 				3737BC3A2615BC9200759DC3 /* AppConstants.swift */,
 				3737BC472615BCD300759DC3 /* Urls.swift */,
@@ -269,6 +272,14 @@
 				3737BC702615C0D500759DC3 /* UIColorExtensions.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		37BAC0552617068900D78844 /* CustomBeagleStyle */ = {
+			isa = PBXGroup;
+			children = (
+				37BAC0562617069F00D78844 /* BeagleTitleStyle.swift */,
+			);
+			path = CustomBeagleStyle;
 			sourceTree = "<group>";
 		};
 		37F0768D2615B80E00A9E444 = {
@@ -424,6 +435,7 @@
 				3737BC4B2615BE3600759DC3 /* GetBottomAPI.swift in Sources */,
 				3737BC622615BFA200759DC3 /* UseCase.swift in Sources */,
 				3737BC5F2615BF7D00759DC3 /* WidgetRepository.swift in Sources */,
+				37BAC0572617069F00D78844 /* BeagleTitleStyle.swift in Sources */,
 				3737BC482615BCD300759DC3 /* Urls.swift in Sources */,
 				3737BC652615C01000759DC3 /* WidgetRepositoryImplement.swift in Sources */,
 				37F0769E2615B80E00A9E444 /* ViewController.swift in Sources */,

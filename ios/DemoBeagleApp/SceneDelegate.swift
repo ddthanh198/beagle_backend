@@ -26,10 +26,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 extension SceneDelegate {
     private func configBeagle() {
+        let theme = AppTheme(styles: [
+            "Title.Text.Hello": Styles.titleHelloStyle()
+        ])
+        
         let dependencies = BeagleDependencies()
+        dependencies.theme = theme
         dependencies.urlBuilder = UrlBuilder(
             baseUrl: URL(string: Urls.HOST)!
         )
+        
+        Beagle.dependencies = dependencies
         
         BeagleConfig.start(dependencies: dependencies)
     }
