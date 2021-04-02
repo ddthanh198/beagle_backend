@@ -19,6 +19,7 @@ import br.com.zup.beagle.widget.ui.ImagePath
 import br.com.zup.beagle.widget.ui.ListView
 import br.com.zup.beagle.widget.ui.Text
 import com.viettel.bealglebff.common.Constants
+import com.viettel.bealglebff.components.actions.ShowDialogAction
 import com.viettel.bealglebff.components.actions.ToastAction
 import com.viettel.bealglebff.components.widgets.BottomNavigationView
 import com.viettel.bealglebff.model.populateLanguageOptions
@@ -141,7 +142,8 @@ object WidgetBuilder : BaseBuilder(){
                             width = 30,
                             height = 30,
                             listAction = listOf(
-                                    ToastAction("Không có thông báo mới nào")
+                                    ShowDialogAction("/widgetController/bottomSheetDialog")
+                                    //ToastAction("Không có thông báo mới nào")
                             )
                     ),
                     createCircularTextView(
@@ -149,8 +151,9 @@ object WidgetBuilder : BaseBuilder(){
                             width = 44,
                             height = 44,
                             listAction = listOf(
+                                    //ShowBottomSheetAction("/widgetController/bottomSheetDialog")
                                     //ShowDialogAction("/widgetController/selectionDialog")
-                                    Navigate.PushView(route = Route.Remote("/screenController/personal"))
+                                    Navigate.PushView(route = Route.Remote("/screenController/accountInformation"))
                             )
                     )
             ).applyFlex(
@@ -317,6 +320,59 @@ object WidgetBuilder : BaseBuilder(){
     )
 
     fun createLanguageSelectionDialog() = createContainer(
+            createTextView(
+                    text = "Choose your language",
+                    styleId = "NormalBoldText",
+                    textAlignment = TextAlignment.CENTER
+            ).applyStyle(
+                    Style(
+                            margin = EdgeValue(all = 20.unitReal())
+                    )
+            ),
+            ListView(
+                    context = ContextData(id = "languages", value = populateLanguageOptions()),
+                    dataSource = expressionOf("@{languages}"),
+                    template = createContainer(
+                            Touchable(
+                                    child = createContainer(
+                                            createImageViewFromRemote("@{item.languageIconUrl}").applyStyle(
+                                                    Style(
+                                                            size = Size(
+                                                                    width = 24.unitReal(),
+                                                                    height = 24.unitReal()
+                                                            )
+                                                    )
+                                            ),
+                                            createTextView(text = "@{item.language}").applyStyle(
+                                                    Style(margin = EdgeValue(horizontal = 8.unitReal()))
+                                            )
+                                    ).applyFlex(
+                                            Flex(
+                                                    flex = 1.0,
+                                                    flexDirection = FlexDirection.ROW
+                                            )
+                                    ),
+                                    onPress = listOf(ToastAction("You have changed app language"))
+                            ),
+                            createDivider(8, 8, 0, 0)
+                    ).applyStyle(
+                            Style(
+                                    margin = EdgeValue(
+                                            left = 20.unitReal(),
+                                            right = 20.unitReal(),
+                                            bottom = 16.unitReal()
+                                    )
+                            )
+                    )
+            )
+    ).applyStyle(
+            style = Style(
+                    backgroundColor = Constants.colorWhite,
+                    cornerRadius = CornerRadius(radius = Constants.dialogRadius)
+            )
+    )
+
+    fun createDemoBottomSheetDialog() = createContainer(
             createTextView(
                     text = "Choose your language",
                     styleId = "NormalBoldText",

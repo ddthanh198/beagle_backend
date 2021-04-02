@@ -19,4 +19,7 @@ class WidgetController(
 
     @GetMapping("/selectionDialog")
     fun getSelectionDialog() = widgetService.createSelectionDialog()
+
+    @GetMapping("/bottomSheetDialog")
+    fun getBottomSheetDialog() = widgetService.createBottomSheetDialog()
 }
