@@ -48,7 +48,7 @@ class MainTabBarController: BaseTabBarController {
             listOfVC.append(viewController)
             let imageView = UIImageView(frame: .zero)
             imageView.sd_setImage(with: URL(string: item[0])) { (image, error, _, _) in
-                listOfVC[tag].tabBarItem.image = image?.withRenderingMode(.automatic).sd_resizedImage(with: CGSize(width: 30, height: 30), scaleMode: .aspectFill)
+                listOfVC[tag].tabBarItem.image = image?.withRenderingMode(.automatic).sd_resizedImage(with: CGSize(width: 30, height: 30), scaleMode: .aspectFit)
             }
         }
         

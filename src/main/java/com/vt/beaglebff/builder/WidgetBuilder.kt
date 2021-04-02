@@ -121,12 +121,7 @@ object WidgetBuilder : BaseBuilder(){
             remoteUrl = remoteUrl
     ).applyStyle(
             Style(
-                    margin = EdgeValue(
-                            top = 16.unitReal(),
-                            left = 16.unitReal(),
-                            right = 16.unitReal(),
-                            bottom = 8.unitReal()
-                    ),
+                    size = Size(height = 500.unitReal()),
                     cornerRadius = CornerRadius(48.0)
             )
     )
