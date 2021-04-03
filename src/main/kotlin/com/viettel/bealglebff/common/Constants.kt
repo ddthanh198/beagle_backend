@@ -28,6 +28,6 @@ object Constants {
 
     const val BOTTOM_NAV_ENDPOINT = "/bottomNavigationView"
     const val BANNER = "/banner"
-    const val SELECTION_DIALOG = "/selectionDialog"
+    const val SELECT_LANGUAGE_DIALOG = "/selectLanguageDialog"
     const val BOTTOM_SHEET_DIALOG = "/bottomSheetDialog"
 }

@@ -40,7 +40,7 @@ data class CustomButton(
                     Text(title, textColor = textColor, styleId = styleId)
                 )
             ).applyStyle(style),
-            onPress = onPress,
+            onPress = onPress
         )
     }
 }
