@@ -13,6 +13,8 @@ import br.com.zup.beagle.widget.layout.Container
 import br.com.zup.beagle.widget.layout.Screen
 import br.com.zup.beagle.widget.layout.ScreenBuilder
 import br.com.zup.beagle.widget.ui.*
+import com.viettel.bealglebff.components.widgets.CustomButton
+import com.viettel.bealglebff.components.widgets.CustomFloatButton
 import com.viettel.bealglebff.model.GithubUser
 import com.viettel.bealglebff.model.SearchContext
 import com.viettel.bealglebff.model.UserCell
@@ -36,7 +38,7 @@ class MyScreen : ScreenBuilder {
             children = listOf(
                 Container(
                     children = listOf(
-                        Text("Hihi, chào cậu !", styleId = "Title.Text.Hello"),
+                        Text("Hihi, chào cậu !", styleId = "Title.Text.Orange"),
                         Image(
                             ImagePath.Remote("https://freepikpsd.com/wp-content/uploads/2019/10/push-notification-icon-png-9-Transparent-Images-Free.png")
                         ).applyStyle(
@@ -54,6 +56,15 @@ class MyScreen : ScreenBuilder {
                             justifyContent = JustifyContent.SPACE_BETWEEN,
                             alignItems = AlignItems.CENTER
                         )
+                    )
+                ),
+                CustomButton(
+                    title = "Hehe",
+                    textColor = "#ffffff",
+                    backgroundColor = "#0000ff",
+                    radius = 22.0,
+                    onPress = listOf(
+                        Alert("Hihi", "Hehe")
                     )
                 ),
                 Container(
@@ -132,6 +143,15 @@ class MyScreen : ScreenBuilder {
                         flex = Flex(flex = 1.0),
                         cornerRadius = CornerRadius(16.0),
                         margin = EdgeValue(bottom = (-100).unitReal(), top = 10.unitReal())
+                    )
+                ),
+                CustomFloatButton(
+                    title = "+",
+                    textColor = "#ffffff",
+                    backgroundColor = "#0000ff",
+                    alignItems = AlignItems.FLEX_START,
+                    onPress = listOf(
+                        Alert("HOho", "Hihi")
                     )
                 )
             )

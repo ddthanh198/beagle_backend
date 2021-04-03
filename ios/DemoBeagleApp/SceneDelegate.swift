@@ -27,7 +27,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 extension SceneDelegate {
     private func configBeagle() {
         let theme = AppTheme(styles: [
-            "Title.Text.Hello": Styles.titleHelloStyle()
+            "Title.Text.Orange": Styles.titleTextStyle,
+            "Description.Text.Orange": Styles.descriptionTextStyle
         ])
         
         let dependencies = BeagleDependencies()
