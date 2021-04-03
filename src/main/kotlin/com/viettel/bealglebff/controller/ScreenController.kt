@@ -1,5 +1,6 @@
 package com.viettel.bealglebff.controller
 
+import com.viettel.bealglebff.service.MyService
 import com.viettel.bealglebff.service.TabService
 import com.viettel.bealglebff.service.ScreenService
 import org.springframework.web.bind.annotation.GetMapping
@@ -10,7 +11,8 @@ import org.springframework.web.bind.annotation.RestController
 @RequestMapping("/screenController")
 class ScreenController(
         private val tabService: TabService,
-        private val screenService: ScreenService
+        private val screenService: ScreenService,
+        private val myService: MyService
 ) {
     @GetMapping("/home")
     fun getHomeScreen() = screenService.createHomeScreen()
@@ -22,7 +24,7 @@ class ScreenController(
     fun getAccountInformationScreen() = screenService.createAccountInformationScreen()
 
     @GetMapping("/tabHome")
-    fun getTabHome() = tabService.createTabHome()
+    fun getTabHome() = myService.getMyScreen()
 
     @GetMapping("/tabRequest")
     fun getTabRequest() = tabService.createTabRequest()
