@@ -36,6 +36,7 @@ extension SceneDelegate {
         dependencies.urlBuilder = UrlBuilder(
             baseUrl: URL(string: Urls.HOST)!
         )
+        dependencies.decoder.register(action: OpenSideMenuViewController.self)
         
         Beagle.dependencies = dependencies
         

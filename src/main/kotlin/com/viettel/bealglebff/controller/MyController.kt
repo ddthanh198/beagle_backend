@@ -16,6 +16,9 @@ class MyController(private val myService: MyService) {
     @GetMapping("/screen")
     fun getScreen() : ScreenBuilder = myService.getMyScreen()
 
+    @GetMapping("/home_side_menu")
+    fun getHomeSideMenuScreen() : ScreenBuilder = myService.getHomeSideMenuScreen()
+
     @PostMapping("/screen_test")
     fun getScreenTest(@RequestBody body: MessageBody) : ScreenBuilder {
         println("MINHMON ${body.msg}")

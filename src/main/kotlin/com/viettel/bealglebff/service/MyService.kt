@@ -13,6 +13,7 @@ import br.com.zup.beagle.widget.layout.Container
 import br.com.zup.beagle.widget.layout.Screen
 import br.com.zup.beagle.widget.layout.ScreenBuilder
 import br.com.zup.beagle.widget.ui.*
+import com.viettel.bealglebff.components.actions.OpenSideMenuViewController
 import com.viettel.bealglebff.components.widgets.CustomButton
 import com.viettel.bealglebff.components.widgets.CustomFloatButton
 import com.viettel.bealglebff.model.GithubUser
@@ -23,6 +24,31 @@ import org.springframework.stereotype.Service
 @Service
 class MyService {
     fun getMyScreen(): ScreenBuilder = MyScreen()
+    fun getHomeSideMenuScreen(): ScreenBuilder = HomeSideMenuScreen()
+}
+
+class HomeSideMenuScreen: ScreenBuilder {
+    override fun build(): Screen {
+        return Screen(
+            style = Style(
+                backgroundColor = "#000000"
+            ),
+            child = Container(
+                children = listOf(
+                    Text("This is the side menu", textColor = "#ffffff")
+                )
+            ).applyStyle(
+                Style(
+                    flex = Flex(
+                        alignItems = AlignItems.CENTER,
+                        grow = 1.0,
+                        justifyContent = JustifyContent.CENTER
+                    )
+                )
+            )
+        )
+    }
+
 }
 
 class MyScreen : ScreenBuilder {
@@ -64,7 +90,7 @@ class MyScreen : ScreenBuilder {
                     backgroundColor = "#0000ff",
                     radius = 22.0,
                     onPress = listOf(
-                        Alert("Hihi", "Hehe")
+                        OpenSideMenuViewController("/home_side_menu")
                     )
                 ),
                 Container(

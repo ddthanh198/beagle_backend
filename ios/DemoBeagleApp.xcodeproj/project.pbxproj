@@ -25,6 +25,7 @@
 		3737BC682615C03C00759DC3 /* GetBottomViewUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3737BC672615C03C00759DC3 /* GetBottomViewUseCase.swift */; };
 		3737BC6C2615C08600759DC3 /* MainTabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3737BC6B2615C08600759DC3 /* MainTabBarViewModel.swift */; };
 		3737BC712615C0D500759DC3 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3737BC702615C0D500759DC3 /* UIColorExtensions.swift */; };
+		37ADF5C326184CD5006ACBF8 /* OpenSideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ADF5C226184CD5006ACBF8 /* OpenSideMenuViewController.swift */; };
 		37BAC0572617069F00D78844 /* BeagleTitleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BAC0562617069F00D78844 /* BeagleTitleStyle.swift */; };
 		37F0769A2615B80E00A9E444 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F076992615B80E00A9E444 /* AppDelegate.swift */; };
 		37F0769C2615B80E00A9E444 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F0769B2615B80E00A9E444 /* SceneDelegate.swift */; };
@@ -54,6 +55,7 @@
 		3737BC672615C03C00759DC3 /* GetBottomViewUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBottomViewUseCase.swift; sourceTree = "<group>"; };
 		3737BC6B2615C08600759DC3 /* MainTabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewModel.swift; sourceTree = "<group>"; };
 		3737BC702615C0D500759DC3 /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
+		37ADF5C226184CD5006ACBF8 /* OpenSideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSideMenuViewController.swift; sourceTree = "<group>"; };
 		37BAC0562617069F00D78844 /* BeagleTitleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeagleTitleStyle.swift; sourceTree = "<group>"; };
 		37F076962615B80E00A9E444 /* DemoBeagleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoBeagleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37F076992615B80E00A9E444 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 		3737BC2B2615BBE000759DC3 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				37ADF5C126184CA2006ACBF8 /* CustomBeagleAction */,
 				37BAC0552617068900D78844 /* CustomBeagleStyle */,
 				3737BC6F2615C0C400759DC3 /* Extension */,
 				3737BC3A2615BC9200759DC3 /* AppConstants.swift */,
@@ -272,6 +275,14 @@
 				3737BC702615C0D500759DC3 /* UIColorExtensions.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		37ADF5C126184CA2006ACBF8 /* CustomBeagleAction */ = {
+			isa = PBXGroup;
+			children = (
+				37ADF5C226184CD5006ACBF8 /* OpenSideMenuViewController.swift */,
+			);
+			path = CustomBeagleAction;
 			sourceTree = "<group>";
 		};
 		37BAC0552617068900D78844 /* CustomBeagleStyle */ = {
@@ -447,6 +458,7 @@
 				3737BC382615BC8700759DC3 /* SessionAppManager.swift in Sources */,
 				3737BC4E2615BE5B00759DC3 /* BottomViewEntity.swift in Sources */,
 				37F0769C2615B80E00A9E444 /* SceneDelegate.swift in Sources */,
+				37ADF5C326184CD5006ACBF8 /* OpenSideMenuViewController.swift in Sources */,
 				3737BC452615BCC800759DC3 /* BaseAPI.swift in Sources */,
 				3737BC5A2615BF4200759DC3 /* MainTabBarController.swift in Sources */,
 				3737BC562615BEE600759DC3 /* BaseTabBarController.swift in Sources */,
