@@ -9,11 +9,17 @@ import Foundation
 import Beagle
 
 struct Styles {
-    static func titleHelloStyle() -> (UITextView?) -> Void {
-        return {
-            $0?.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
-            $0?.textContainer.maximumNumberOfLines = 2
-            $0?.tintColor = .white
+    static func titleTextStyle() -> (UITextView?) -> Void {
+            return BeagleStyle.text(
+                font: UIFont.systemFont(ofSize: 20),
+                color: .white
+            )
         }
+        
+    static func descriptionTextStyle() -> (UITextView?) -> Void {
+        return BeagleStyle.text(
+            font: UIFont.systemFont(ofSize: 15),
+            color: .white
+        )
     }
 }
