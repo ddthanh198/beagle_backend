@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RestController
 @RequestMapping("/screenController")
 class ScreenController(
         private val tabService: TabService,
-        private val screenService: ScreenService,
-        private val myService: MyService
+        private val myService: MyService,
+        private val screenService: ScreenService
 ) {
     @GetMapping("/home")
     fun getHomeScreen() = screenService.createHomeScreen()

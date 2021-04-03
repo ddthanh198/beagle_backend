@@ -36,8 +36,8 @@ class HomeScreenBuilder : ScreenBuilder, BaseBuilder() {
                     context = ContextData(
                             id = "bannerUrl",
                             value = listOf(
-                                    "${Constants.baseUrl}/resourcesController/img_tnxh",
-                                    "${Constants.baseUrl}/resourcesController/img_tnxh"
+                                    "${Constants.BASE_URL}/resourcesController/img_tnxh",
+                                    "${Constants.BASE_URL}/resourcesController/img_tnxh"
                             )
                     ),
                     pageIndicator = PageIndicator(
@@ -50,7 +50,7 @@ class HomeScreenBuilder : ScreenBuilder, BaseBuilder() {
                     )
             ),
             Image(
-                    ImagePath.Remote("${Constants.baseUrl}/resourcesController/img_tnxh")
+                    ImagePath.Remote("${Constants.BASE_URL}/resourcesController/img_tnxh")
             ).applyStyle(
                     Style(
                             size = Size(width = 100.unitReal(), height = 100.unitReal()),
@@ -80,7 +80,7 @@ class HomeScreenBuilder : ScreenBuilder, BaseBuilder() {
                     )
             )
     ).applyStyle(
-            Style(backgroundColor = Constants.colorPrimary,
+            Style(backgroundColor = Constants.COLOR_PRIMARY,
                     size = Size(width = 100.unitPercent(), height = 56.unitReal()),
                     position = EdgeValue(0.unitReal()),
                     positionType = PositionType.RELATIVE
@@ -106,19 +106,19 @@ class HomeScreenBuilder : ScreenBuilder, BaseBuilder() {
         val menuItems = ArrayList<Array<String>>()
 
         menuItems.add(arrayOf(
-                "${Constants.baseUrl}/resourcesController/ic_account_info",
+                "${Constants.BASE_URL}/resourcesController/ic_account_info",
                 "Home",
                 "/screenController/home")
         )
 
         menuItems.add(arrayOf(
-                "${Constants.baseUrl}/resourcesController/ic_account_info",
+                "${Constants.BASE_URL}/resourcesController/ic_account_info",
                 "Requests",
                 "/screenController/home")
         )
 
         menuItems.add(arrayOf(
-                "${Constants.baseUrl}/resourcesController/ic_account_info",
+                "${Constants.BASE_URL}/resourcesController/ic_account_info",
                 "Tasks",
                 "/screenController/home")
         )
@@ -145,23 +145,23 @@ class HomeScreenBuilder : ScreenBuilder, BaseBuilder() {
             createContainer(
                     createBottomButton(
                             text = "Home",
-                            remoteIconUrl = "${Constants.baseUrl}/resourcesController/ic_account_info"
+                            remoteIconUrl = "${Constants.BASE_URL}/resourcesController/ic_account_info"
                     ),
                     createBottomButton(
                             text = "Tasks",
-                            remoteIconUrl = "${Constants.baseUrl}/resourcesController/ic_account_info"
+                            remoteIconUrl = "${Constants.BASE_URL}/resourcesController/ic_account_info"
                     ),
                     createBottomButton(
                             text = "Requests",
-                            remoteIconUrl = "${Constants.baseUrl}/resourcesController/ic_account_info"
+                            remoteIconUrl = "${Constants.BASE_URL}/resourcesController/ic_account_info"
                     ),
                     createBottomButton(
                             text = "Chat",
-                            remoteIconUrl = "${Constants.baseUrl}/resourcesController/ic_account_info"
+                            remoteIconUrl = "${Constants.BASE_URL}/resourcesController/ic_account_info"
                     ),
                     createBottomButton(
                             text = "Notifications",
-                            remoteIconUrl = "${Constants.baseUrl}/resourcesController/ic_account_info"
+                            remoteIconUrl = "${Constants.BASE_URL}/resourcesController/ic_account_info"
                     )
             ).applyFlex(
                     Flex(

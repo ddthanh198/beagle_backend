@@ -9,23 +9,23 @@ data class LanguageOption(
 
 fun populateLanguageOptions() = listOf(
     LanguageOption(
-            languageIconUrl = "${Constants.baseUrl}/resourcesController/flag_uk",
+            languageIconUrl = "${Constants.BASE_URL}/resourcesController/flag_uk",
             language = "English"
     ),
     LanguageOption(
-            languageIconUrl = "${Constants.baseUrl}/resourcesController/flag_vn",
+            languageIconUrl = "${Constants.BASE_URL}/resourcesController/flag_vn",
             language = "Vietnamese"
     ),
     LanguageOption(
-            languageIconUrl = "${Constants.baseUrl}/resourcesController/flag_de",
+            languageIconUrl = "${Constants.BASE_URL}/resourcesController/flag_de",
             language = "German"
     ),
     LanguageOption(
-            languageIconUrl = "${Constants.baseUrl}/resourcesController/flag_es",
+            languageIconUrl = "${Constants.BASE_URL}/resourcesController/flag_es",
             language = "Spanish"
     ),
     LanguageOption(
-            languageIconUrl = "${Constants.baseUrl}/resourcesController/flag_pt",
+            languageIconUrl = "${Constants.BASE_URL}/resourcesController/flag_pt",
             language = "Portuguese"
     )
 )

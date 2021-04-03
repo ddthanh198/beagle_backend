@@ -22,9 +22,6 @@ object TabBuilder: BaseBuilder(){
             flex = Flex(
                 grow = 1.0
             )
-        ),
-        style = Style(
-            backgroundColor = Constants.colorPrimary
         )
     )
 
