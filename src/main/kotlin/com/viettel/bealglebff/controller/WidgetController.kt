@@ -17,8 +17,8 @@ class WidgetController(
     @GetMapping("/banner")
     fun getHomeScreenBannerView() = widgetService.createBannerView()
 
-    @GetMapping("/selectionDialog")
-    fun getSelectionDialog() = widgetService.createSelectionDialog()
+    @GetMapping("/selectLanguageDialog")
+    fun getSelectionDialog() = widgetService.createSelectLanguageDialog()
 
     @GetMapping("/bottomSheetDialog")
     fun getBottomSheetDialog() = widgetService.createBottomSheetDialog()

@@ -126,22 +126,24 @@ object WidgetBuilder : BaseBuilder(){
     fun createHeader() = Container(
             children = listOf(
                     Touchable(
-                            child = createTextView("@{condition(isEmpty(global.welcomeContext), 'Xin chào', global.welcomeContext)}", "WhiteNormalText")
-                                    .applyStyle(
-                                            Style(size = Size(width = 50.unitPercent()))
-                                    ),
+                            child = Text(
+                                        text = "@{condition(isEmpty(global.welcomeContext), 'Xin chào', global.welcomeContext)}",
+                                        styleId = "NormalBoldText",
+                                        textColor = Constants.COLOR_WHITE
+                            ).applyStyle(
+                                    Style(size = Size(width = 50.unitPercent()))
+                            ),
                             onPress = listOf(
                                     ShowBottomSheetAction("/widgetController/bottomSheetDialog")
                             )
                     ),
                     createContainer(
                             createTouchableIcon(
-                                    remoteUrl = "${Constants.BASE_URL}/resourcesController/ic_notification_white",
+                                    remoteUrl = "@{condition(isEmpty(global.language), '${Constants.BASE_URL}/resourcesController/flag_vn', global.language)}",
                                     width = 30,
                                     height = 30,
                                     listAction = listOf(
-                                            ShowDialogAction("/widgetController/selectionDialog")
-                                            //ToastAction("Không có thông báo mới nào")
+                                            ShowDialogAction("/widgetController/selectLanguageDialog")
                                     )
                             ),
                             createCircularTextView(
@@ -238,7 +240,7 @@ object WidgetBuilder : BaseBuilder(){
                             )
                     ),
                     Text(
-                            text = "Title",
+                            text = "Thông tin tài khoản",
                             textColor = Constants.COLOR_WHITE,
                             styleId = "TextTitleProfile"
                     ).applyStyle(
@@ -309,7 +311,8 @@ object WidgetBuilder : BaseBuilder(){
             style = Style(
                     flex = Flex(
                             flexDirection = FlexDirection.ROW,
-                            justifyContent = JustifyContent.SPACE_BETWEEN
+                            justifyContent = JustifyContent.SPACE_BETWEEN,
+                            alignContent = AlignContent.CENTER
                     ),
                     backgroundColor = Constants.COLOR_PRIMARY,
                     size = Size(
@@ -351,7 +354,14 @@ object WidgetBuilder : BaseBuilder(){
                                                     flexDirection = FlexDirection.ROW
                                             )
                                     ),
-                                    onPress = listOf(DismissDialogAction("/widgetController/selectionDialog"))
+                                    onPress = listOf(
+                                            SetContext(
+                                                    contextId = "global",
+                                                    path = "language",
+                                                    value = "@{item.languageIconUrl}"
+                                            ),
+                                            DismissDialogAction("/widgetController/selectLanguageDialog")
+                                    )
                             ),
                             createDivider(8, 8, 0, 0)
                     ).applyStyle(
