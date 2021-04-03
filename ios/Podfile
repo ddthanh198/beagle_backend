@@ -15,4 +15,5 @@ target 'DemoBeagleApp' do
   pod 'SVProgressHUD'
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'SideMenu'
 end
