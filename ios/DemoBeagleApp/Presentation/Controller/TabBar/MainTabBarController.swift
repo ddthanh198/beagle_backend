@@ -53,7 +53,7 @@ class MainTabBarController: BaseTabBarController {
             let index = firstChild.menuItems.firstIndex(of: item) ?? 0
             let imageView = UIImageView(frame: .zero)
             imageView.sd_setImage(with: URL(string: item[0])) { (image, error, _, _) in
-                self.tabBar.items?[index].image = image?.withRenderingMode(.automatic).sd_resizedImage(with: CGSize(width: 30, height: 30), scaleMode: .aspectFit)
+                self.tabBar.items?[index].image = image?.withRenderingMode(.automatic).sd_resizedImage(with: CGSize(width: 25, height: 25), scaleMode: .aspectFit)
             }
         }
     }
