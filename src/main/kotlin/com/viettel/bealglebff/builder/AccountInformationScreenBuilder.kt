@@ -16,7 +16,7 @@ class AccountInformationScreenBuilder: ScreenBuilder, BaseBuilder() {
                     WidgetBuilder.createMainToolbar(),
                     createContainer().applyStyle(
                             Style(
-                                    backgroundColor = Constants.colorWhite,
+                                    backgroundColor = Constants.COLOR_WHITE,
                                     flex = Flex(flex = 1.0),
                                     margin = EdgeValue(top = 24.unitReal(), horizontal = 0.unitReal(), bottom = (-100).unitReal()),
                                     cornerRadius = CornerRadius(24.0)
@@ -28,7 +28,7 @@ class AccountInformationScreenBuilder: ScreenBuilder, BaseBuilder() {
                     )
             ),
             style = Style(
-                    backgroundColor = Constants.colorPrimary
+                    backgroundColor = Constants.COLOR_PRIMARY
             )
     )
 }
