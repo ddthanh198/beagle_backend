@@ -24,13 +24,13 @@ class ScreenController(
     fun getAccountInformationScreen() = screenService.createAccountInformationScreen()
 
     @GetMapping("/tabHome")
-    fun getTabHome() = myService.getMyScreen()
+    fun getTabHome() = tabService.createTabHome()
 
     @GetMapping("/tabRequest")
     fun getTabRequest() = tabService.createTabRequest()
 
     @GetMapping("/tabTask")
-    fun getTabTask() = tabService.createTabTask()
+    fun getTabTask() = myService.getMyScreen()
 
     @GetMapping("/tabNotification")
     fun getTabNotification() = tabService.createTabNotification()
