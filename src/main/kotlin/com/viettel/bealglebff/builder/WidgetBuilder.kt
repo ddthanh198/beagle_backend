@@ -237,7 +237,7 @@ object WidgetBuilder : BaseBuilder(){
                             )
                     ),
                     Text(
-                            text = "Thông tin tài khoản",
+                            text = "Cập nhật tài khoản",
                             textColor = Constants.COLOR_WHITE,
                             styleId = "TextTitleProfile"
                     ).applyStyle(
@@ -422,11 +422,13 @@ object WidgetBuilder : BaseBuilder(){
                                     )
                             )
                     )
-            )
+            ),
+            createContainer().applyStyle(Style(size = Size(height = Constants.DIALOG_RADIUS.unitReal())))
     ).applyStyle(
             style = Style(
                     backgroundColor = Constants.COLOR_WHITE,
-                    cornerRadius = CornerRadius(radius = Constants.DIALOG_RADIUS)
+                    cornerRadius = CornerRadius(radius = Constants.DIALOG_RADIUS),
+                    margin = EdgeValue(bottom = (-Constants.DIALOG_RADIUS).unitReal())
             )
     )
 }
