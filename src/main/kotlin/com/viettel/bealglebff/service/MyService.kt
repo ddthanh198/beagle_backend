@@ -14,8 +14,8 @@ import br.com.zup.beagle.widget.layout.Screen
 import br.com.zup.beagle.widget.layout.ScreenBuilder
 import br.com.zup.beagle.widget.ui.*
 import com.viettel.bealglebff.components.actions.OpenSideMenuViewController
-import com.viettel.bealglebff.components.widgets.CustomButton
-import com.viettel.bealglebff.components.widgets.CustomFloatButton
+import com.viettel.bealglebff.components.compose_components.CustomButton
+import com.viettel.bealglebff.components.compose_components.CustomFloatButton
 import com.viettel.bealglebff.model.GithubUser
 import com.viettel.bealglebff.model.SearchContext
 import com.viettel.bealglebff.model.UserCell
