@@ -12,6 +12,7 @@ object Constants {
     const val COLOR_PRIMARY = "#3596EC"
     const val COLOR_GRAY_DARK = "#788793"
     const val COLOR_DIVIDER = "#B9B9B9"
+    const val COLOR_RED = "#DD3030"
 
     // endpoints
     const val SCREEN_CONTROLLER_ENDPOINT = "/screenController"
