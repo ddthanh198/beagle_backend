@@ -149,11 +149,6 @@ object WidgetBuilder : BaseBuilder(){
                                     width = 44,
                                     height = 44,
                                     listAction = listOf(
-                                        Alert(
-                                            title = "My Title",
-                                            message = "Alert message",
-                                            labelOk = "Close"
-                                        )
                                             //ShowBottomSheetAction("/widgetController/bottomSheetDialog")
                                             //ShowDialogAction("/widgetController/selectionDialog")
                                             Navigate.PushView(route = Route.Remote("/screenController/accountInformation"))
