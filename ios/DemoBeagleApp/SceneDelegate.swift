@@ -41,6 +41,7 @@ extension SceneDelegate {
         dependencies.decoder.register(action: ShowDialogAction.self)
         dependencies.decoder.register(action: DismissDialogAction.self)
         dependencies.decoder.register(action: ShowBottomSheetAction.self)
+        dependencies.decoder.register(action: OpenDateRangePicker.self)
         
         Beagle.dependencies = dependencies
         

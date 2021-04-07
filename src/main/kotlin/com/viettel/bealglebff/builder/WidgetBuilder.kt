@@ -22,10 +22,7 @@ import br.com.zup.beagle.widget.ui.ImagePath
 import br.com.zup.beagle.widget.ui.ListView
 import br.com.zup.beagle.widget.ui.Text
 import com.viettel.bealglebff.common.Constants
-import com.viettel.bealglebff.components.actions.DismissDialogAction
-import com.viettel.bealglebff.components.actions.ShowBottomSheetAction
-import com.viettel.bealglebff.components.actions.ShowDialogAction
-import com.viettel.bealglebff.components.actions.ToastAction
+import com.viettel.bealglebff.components.actions.*
 import com.viettel.bealglebff.components.widgets.BottomNavigationView
 import com.viettel.bealglebff.model.generateUserInfoList
 import com.viettel.bealglebff.model.populateLanguageOptions
@@ -140,7 +137,7 @@ object WidgetBuilder : BaseBuilder(){
                     ),
                     createContainer(
                             createTouchableIcon(
-                                    remoteUrl = "${Constants.BASE_URL}resourcesController/flag_vn",
+                                    remoteUrl = "@{condition(isEmpty(global.language), '${Constants.BASE_URL}/resourcesController/flag_vn', global.language)}",
                                     width = 30,
                                     height = 30,
                                     listAction = listOf(
@@ -159,7 +156,7 @@ object WidgetBuilder : BaseBuilder(){
                                         )
                                             //ShowBottomSheetAction("/widgetController/bottomSheetDialog")
                                             //ShowDialogAction("/widgetController/selectionDialog")
-                                        //    Navigate.PushView(route = Route.Remote("/screenController/accountInformation"))
+                                            Navigate.PushView(route = Route.Remote("/screenController/accountInformation"))
                                     )
                             )
                     ).applyFlex(
@@ -246,7 +243,7 @@ object WidgetBuilder : BaseBuilder(){
                             )
                     ),
                     Text(
-                            text = "Thông tin tài khoản",
+                            text = "Cập nhật tài khoản",
                             textColor = Constants.COLOR_WHITE,
                             styleId = "TextTitleProfile"
                     ).applyStyle(
@@ -453,11 +450,13 @@ object WidgetBuilder : BaseBuilder(){
                                     )
                             )
                     )
-            )
+            ),
+            createContainer().applyStyle(Style(size = Size(height = Constants.DIALOG_RADIUS.unitReal())))
     ).applyStyle(
             style = Style(
                     backgroundColor = Constants.COLOR_WHITE,
-                    cornerRadius = CornerRadius(radius = Constants.DIALOG_RADIUS)
+                    cornerRadius = CornerRadius(radius = Constants.DIALOG_RADIUS),
+                    margin = EdgeValue(bottom = (-Constants.DIALOG_RADIUS).unitReal())
             )
     )
 }

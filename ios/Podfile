@@ -17,4 +17,5 @@ target 'DemoBeagleApp' do
   pod 'RxCocoa'
   pod 'SideMenu'
   pod 'FittedSheets'
+  pod 'HorizonCalendar'
 end

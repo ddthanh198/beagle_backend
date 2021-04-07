@@ -1,4 +1,4 @@
-package com.viettel.bealglebff.components.widgets
+package com.viettel.bealglebff.components.compose_components
 
 import br.com.zup.beagle.annotation.RegisterWidget
 import br.com.zup.beagle.core.CornerRadius
@@ -13,8 +13,7 @@ import br.com.zup.beagle.widget.layout.Container
 import br.com.zup.beagle.widget.navigation.Touchable
 import br.com.zup.beagle.widget.ui.Text
 
-@RegisterWidget
-data class CustomButton(
+class CustomButton(
     val title: String,
     var textColor: String,
     var backgroundColor: String,
