@@ -17,6 +17,9 @@ class ScreenController(
     @GetMapping("/home")
     fun getHomeScreen() = screenService.createHomeScreen()
 
+    @GetMapping("/search")
+    fun getSearchScreen() = myService.getMyScreen()
+
     @GetMapping("/personal")
     fun getPersonalScreen() = screenService.createPersonalScreen()
 
