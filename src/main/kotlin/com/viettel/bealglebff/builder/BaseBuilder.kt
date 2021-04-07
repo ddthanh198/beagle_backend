@@ -84,7 +84,11 @@ abstract class BaseBuilder {
                             ),
                             margin = EdgeValue(vertical = 8.unitReal(), horizontal = 8.unitReal()),
                             cornerRadius = CornerRadius(radius = (width/2).toDouble()),
-                            backgroundColor = backgroundColor
+                            backgroundColor = backgroundColor,
+                            flex = Flex(
+                                alignItems = AlignItems.CENTER,
+                                justifyContent = JustifyContent.CENTER
+                            )
                     )
             ),
             onPress = listAction

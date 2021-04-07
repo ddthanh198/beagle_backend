@@ -18,7 +18,8 @@ data class SearchContext(
     var key: String? = null,
     var users: List<GithubUser>? = null,
     var isShowLoading: Display = Display.NONE,
-    var isEmptyResult: Display = Display.NONE
+    var isEmptyResult: Display = Display.NONE,
+    var dateRange: String? = null
 )
 
 data class GithubUser(
