@@ -17,10 +17,7 @@ import br.com.zup.beagle.widget.layout.Container
 import br.com.zup.beagle.widget.layout.PageView
 import br.com.zup.beagle.widget.navigation.Touchable
 import br.com.zup.beagle.widget.pager.PageIndicator
-import br.com.zup.beagle.widget.ui.Image
-import br.com.zup.beagle.widget.ui.ImagePath
-import br.com.zup.beagle.widget.ui.ListView
-import br.com.zup.beagle.widget.ui.Text
+import br.com.zup.beagle.widget.ui.*
 import com.viettel.bealglebff.common.Constants
 import com.viettel.bealglebff.components.actions.*
 import com.viettel.bealglebff.components.widgets.BottomNavigationView
@@ -62,44 +59,36 @@ object WidgetBuilder : BaseBuilder(){
     }
 
     // banner
-    fun createBannerView() = createContainer(
-            Container(
-                    children = listOf(
-                            Container(
-                                    children = listOf(
-                                            PageView(
-                                                    context = ContextData(
-                                                            id = "bannerUrl",
-                                                            value = listOf(
-                                                                    "${Constants.BASE_URL}/resourcesController/img_tnxh",
-                                                                    "${Constants.BASE_URL}/resourcesController/img_tnxh"
-                                                            )
-                                                    ),
-                                                    pageIndicator = PageIndicator(
-                                                            selectedColor = "#000000",
-                                                            unselectedColor = "#888888"
-                                                    ),
-                                                    children = listOf(
-                                                            createBannerImage("@{bannerUrl[0]}"),
-                                                            createBannerImage("@{bannerUrl[1]}")
+    fun createBannerView() = Container(
+            children = listOf(
+                    Container(
+                            children = listOf(
+                                    PageView(
+                                            context = ContextData(
+                                                    id = "bannerUrl",
+                                                    value = listOf(
+                                                            "${Constants.BASE_URL}/resourcesController/img_tnxh",
+                                                            "${Constants.BASE_URL}/resourcesController/img_tnxh"
                                                     )
+                                            ),
+                                            pageIndicator = PageIndicator(
+                                                    selectedColor = "#000000",
+                                                    unselectedColor = "#888888"
+                                            ),
+                                            children = listOf(
+                                                    createBannerImage("@{bannerUrl[0]}"),
+                                                    createBannerImage("@{bannerUrl[1]}")
                                             )
                                     )
-                            ).applyStyle(
-                                    Style(
-                                            size = Size(height = 200.unitReal()),
-                                            margin = EdgeValue(horizontal = 12.unitReal(), top = 12.unitReal())
-                                    )
                             )
-                    )
-            ).applyStyle(
-                    Style(
-                            flex = Flex(
-                                    grow = 1.0
+                    ).applyStyle(
+                            Style(
+                                    size = Size(height = 200.unitReal()),
+                                    margin = EdgeValue(horizontal = 12.unitReal(), top = 12.unitReal())
                             )
                     )
             )
-        )
+    )
 
     private fun createBannerImage(remoteUrl: String) = createImageViewFromRemote(
             remoteUrl = remoteUrl
@@ -187,7 +176,12 @@ object WidgetBuilder : BaseBuilder(){
                                     margin = EdgeValue(right = 11.unitReal())
                             )
                     ),
-            createTextInput("Công việc, yêu cầu, ứng dụng")
+            Touchable(
+                    child = TextInput(placeholder = "Công việc, yêu cầu, ứng dụng", styleId = "HintText", readOnly = true),
+                    onPress = listOf(
+                            Navigate.PushView(route = Route.Remote("/screenController/search"))
+                    )
+            )
     ).applyStyle(
             Style(
                     margin = EdgeValue(horizontal = 20.unitReal(), vertical = 20.unitReal()),
@@ -332,7 +326,7 @@ object WidgetBuilder : BaseBuilder(){
                 )
             ),
             createTouchableIcon(remoteUrl = "${Constants.BASE_URL}/resourcesController/ic_close",width = 18,height = 18, listOf(
-                    DismissDialogAction("")
+                    DismissDialogAction("/widgetController/selectLanguageDialog")
                  ))
              ).applyStyle(
                     Style(
@@ -403,7 +397,7 @@ object WidgetBuilder : BaseBuilder(){
                     )
                 ),
                 createTouchableIcon(remoteUrl = "${Constants.BASE_URL}/resourcesController/ic_close",width = 18,height = 18, listOf(
-                    DismissDialogAction("")
+                        DismissDialogAction("/widgetController/bottomSheetDialog")
                 ))
             ).applyStyle(
                 Style(

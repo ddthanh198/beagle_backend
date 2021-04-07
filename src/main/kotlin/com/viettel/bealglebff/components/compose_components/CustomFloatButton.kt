@@ -1,6 +1,5 @@
 package com.viettel.bealglebff.components.compose_components
 
-import br.com.zup.beagle.annotation.RegisterWidget
 import br.com.zup.beagle.core.CornerRadius
 import br.com.zup.beagle.core.PositionType
 import br.com.zup.beagle.core.ServerDrivenComponent
