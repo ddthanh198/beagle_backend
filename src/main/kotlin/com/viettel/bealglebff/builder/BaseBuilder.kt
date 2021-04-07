@@ -108,10 +108,7 @@ abstract class BaseBuilder {
                     Style(
                             backgroundColor = Constants.COLOR_DIVIDER,
                             size = Size(height = 0.75.unitReal()),
-                            flex = Flex(
-                                    flexDirection = FlexDirection.ROW,
-                                    grow = 1.0
-                            ),
+
                             margin = EdgeValue(
                                     top = marginTop.unitReal(),
                                     bottom = marginBottom.unitReal(),

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		183DC2C0261C15FC003601D7 /* ShowDialogAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183DC2BF261C15FC003601D7 /* ShowDialogAction.swift */; };
+		183DC2C4261C1701003601D7 /* DialogLanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183DC2C3261C1701003601D7 /* DialogLanguageViewController.swift */; };
+		18FE2DF2261C3D1700953723 /* DismissDialogAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FE2DF1261C3D1700953723 /* DismissDialogAction.swift */; };
+		18FE2DF5261C4F9E00953723 /* ShowBottomSheetAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FE2DF4261C4F9E00953723 /* ShowBottomSheetAction.swift */; };
+		18FE2DF8261C4FF900953723 /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FE2DF7261C4FF900953723 /* BottomSheetViewController.swift */; };
 		3737BC382615BC8700759DC3 /* SessionAppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3737BC372615BC8700759DC3 /* SessionAppManager.swift */; };
 		3737BC3B2615BC9200759DC3 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3737BC3A2615BC9200759DC3 /* AppConstants.swift */; };
 		3737BC3E2615BC9F00759DC3 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3737BC3D2615BC9F00759DC3 /* BaseViewController.swift */; };
@@ -37,6 +42,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		183DC2BF261C15FC003601D7 /* ShowDialogAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDialogAction.swift; sourceTree = "<group>"; };
+		183DC2C3261C1701003601D7 /* DialogLanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogLanguageViewController.swift; sourceTree = "<group>"; };
+		18FE2DF1261C3D1700953723 /* DismissDialogAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissDialogAction.swift; sourceTree = "<group>"; };
+		18FE2DF4261C4F9E00953723 /* ShowBottomSheetAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowBottomSheetAction.swift; sourceTree = "<group>"; };
+		18FE2DF7261C4FF900953723 /* BottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
 		3737BC372615BC8700759DC3 /* SessionAppManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionAppManager.swift; sourceTree = "<group>"; };
 		3737BC3A2615BC9200759DC3 /* AppConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		3737BC3D2615BC9F00759DC3 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +99,15 @@
 				D309290F011C029EDF941070 /* Pods-DemoBeagleApp.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		183DC2C2261C16EB003601D7 /* Dialog */ = {
+			isa = PBXGroup;
+			children = (
+				183DC2C3261C1701003601D7 /* DialogLanguageViewController.swift */,
+				18FE2DF7261C4FF900953723 /* BottomSheetViewController.swift */,
+			);
+			path = Dialog;
 			sourceTree = "<group>";
 		};
 		23A7282D120DA435498DBD10 /* Frameworks */ = {
@@ -169,6 +188,7 @@
 		3737BC2E2615BBFD00759DC3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				183DC2C2261C16EB003601D7 /* Dialog */,
 				3737BC3D2615BC9F00759DC3 /* BaseViewController.swift */,
 				3737BC552615BEE600759DC3 /* BaseTabBarController.swift */,
 				3737BC302615BC0A00759DC3 /* TabBar */,
@@ -281,6 +301,9 @@
 			isa = PBXGroup;
 			children = (
 				37ADF5C226184CD5006ACBF8 /* OpenSideMenuViewController.swift */,
+				183DC2BF261C15FC003601D7 /* ShowDialogAction.swift */,
+				18FE2DF1261C3D1700953723 /* DismissDialogAction.swift */,
+				18FE2DF4261C4F9E00953723 /* ShowBottomSheetAction.swift */,
 			);
 			path = CustomBeagleAction;
 			sourceTree = "<group>";
@@ -445,6 +468,7 @@
 				3737BC682615C03C00759DC3 /* GetBottomViewUseCase.swift in Sources */,
 				3737BC4B2615BE3600759DC3 /* GetBottomAPI.swift in Sources */,
 				3737BC622615BFA200759DC3 /* UseCase.swift in Sources */,
+				18FE2DF5261C4F9E00953723 /* ShowBottomSheetAction.swift in Sources */,
 				3737BC5F2615BF7D00759DC3 /* WidgetRepository.swift in Sources */,
 				37BAC0572617069F00D78844 /* BeagleTitleStyle.swift in Sources */,
 				3737BC482615BCD300759DC3 /* Urls.swift in Sources */,
@@ -455,9 +479,13 @@
 				3737BC6C2615C08600759DC3 /* MainTabBarViewModel.swift in Sources */,
 				3737BC412615BCAB00759DC3 /* CommonEntity.swift in Sources */,
 				3737BC532615BECC00759DC3 /* BaseViewModel.swift in Sources */,
+				18FE2DF2261C3D1700953723 /* DismissDialogAction.swift in Sources */,
 				3737BC382615BC8700759DC3 /* SessionAppManager.swift in Sources */,
 				3737BC4E2615BE5B00759DC3 /* BottomViewEntity.swift in Sources */,
 				37F0769C2615B80E00A9E444 /* SceneDelegate.swift in Sources */,
+				183DC2C4261C1701003601D7 /* DialogLanguageViewController.swift in Sources */,
+				18FE2DF8261C4FF900953723 /* BottomSheetViewController.swift in Sources */,
+				183DC2C0261C15FC003601D7 /* ShowDialogAction.swift in Sources */,
 				37ADF5C326184CD5006ACBF8 /* OpenSideMenuViewController.swift in Sources */,
 				3737BC452615BCC800759DC3 /* BaseAPI.swift in Sources */,
 				3737BC5A2615BF4200759DC3 /* MainTabBarController.swift in Sources */,
