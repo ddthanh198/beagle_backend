@@ -6,6 +6,7 @@ import br.com.zup.beagle.ext.applyFlex
 import br.com.zup.beagle.ext.applyStyle
 import br.com.zup.beagle.ext.unitPercent
 import br.com.zup.beagle.ext.unitReal
+import br.com.zup.beagle.widget.action.Alert
 import br.com.zup.beagle.widget.action.Navigate
 import br.com.zup.beagle.widget.action.Route
 import br.com.zup.beagle.widget.action.SetContext
@@ -131,7 +132,7 @@ object WidgetBuilder : BaseBuilder(){
                                     Style(size = Size(width = 50.unitPercent()))
                             ),
                             onPress = listOf(
-                                    ShowBottomSheetAction("/widgetController/bottomSheetDialog")
+                                ShowBottomSheetAction("/widgetController/bottomSheetDialog", generateUserInfoList().size)
                             )
                     ),
                     createContainer(
@@ -140,7 +141,7 @@ object WidgetBuilder : BaseBuilder(){
                                     width = 30,
                                     height = 30,
                                     listAction = listOf(
-                                            ShowDialogAction("/widgetController/selectLanguageDialog")
+                                            ShowDialogAction("/widgetController/selectLanguageDialog", numberOfItems = populateLanguageOptions().size)
                                     )
                             ),
                             createCircularTextView(
@@ -319,15 +320,26 @@ object WidgetBuilder : BaseBuilder(){
     )
 
     fun createLanguageSelectionDialog() = createContainer(
+        createContainer(
             createTextView(
-                    text = "Choose your language",
-                    styleId = "NormalBoldText",
-                    textAlignment = TextAlignment.CENTER
+                text = "Choose your language",
+                styleId = "NormalBoldText",
+                textAlignment = TextAlignment.CENTER
             ).applyStyle(
-                    Style(
-                            margin = EdgeValue(all = 20.unitReal())
-                    )
+                Style(
+                    margin = EdgeValue(left = 18.unitReal(), top = 4.unitReal()),
+                    flex = Flex(alignSelf = AlignSelf.CENTER, grow = 1.0)
+                )
             ),
+            createTouchableIcon(remoteUrl = "${Constants.BASE_URL}/resourcesController/ic_close",width = 18,height = 18, listOf(
+                    DismissDialogAction("")
+                 ))
+             ).applyStyle(
+                    Style(
+                        flex = Flex(flexDirection = FlexDirection.ROW, justifyContent = JustifyContent.FLEX_END),
+                        margin = EdgeValue(right = 12.unitReal(), top = 16.unitReal(), bottom = 20.unitReal(), left = 12.unitReal())
+                    )
+             ),
             ListView(
                     context = ContextData(id = "languages", value = populateLanguageOptions()),
                     dataSource = expressionOf("@{languages}"),
@@ -379,14 +391,25 @@ object WidgetBuilder : BaseBuilder(){
     )
 
     fun createDemoBottomSheetDialog() = createContainer(
-            createTextView(
-                    text = "Lựa chọn tên của bạn",
-                    styleId = "NormalBoldText",
-                    textAlignment = TextAlignment.CENTER
-            ).applyStyle(
+            createContainer(
+                createTextView(
+                   text = "Lựa chọn tên của bạn",
+                   styleId = "NormalBoldText",
+                   textAlignment = TextAlignment.CENTER
+               ).applyStyle(
                     Style(
-                            margin = EdgeValue(all = 20.unitReal())
+                        margin = EdgeValue(left = 18.unitReal(), top = 12.unitReal()),
+                        flex = Flex(alignSelf = AlignSelf.CENTER, grow = 1.0)
                     )
+                ),
+                createTouchableIcon(remoteUrl = "${Constants.BASE_URL}/resourcesController/ic_close",width = 18,height = 18, listOf(
+                    DismissDialogAction("")
+                ))
+            ).applyStyle(
+                Style(
+                    flex = Flex(flexDirection = FlexDirection.ROW, justifyContent = JustifyContent.FLEX_END),
+                    margin = EdgeValue(right = 12.unitReal(), top = 8.unitReal(), bottom = 20.unitReal(), left = 12.unitReal())
+                )
             ),
             ListView(
                     context = ContextData(id = "users", value = generateUserInfoList()),

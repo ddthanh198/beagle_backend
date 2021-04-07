@@ -10,16 +10,20 @@ import Beagle
 
 struct Styles {
     static func titleTextStyle() -> (UITextView?) -> Void {
-            return BeagleStyle.text(
-                font: UIFont.systemFont(ofSize: 20),
-                color: .white
-            )
-        }
-        
+        return BeagleStyle.text(
+            font: UIFont.systemFont(ofSize: 20),
+            color: .white
+        )
+    }
+    
     static func descriptionTextStyle() -> (UITextView?) -> Void {
         return BeagleStyle.text(
             font: UIFont.systemFont(ofSize: 15),
             color: .white
         )
+    }
+    
+    static func normalBoldTextStyle() -> (UITextView?) -> Void {
+        return BeagleStyle.text(font: UIFont.systemFont(ofSize: 20, weight: .semibold), color: .black)
     }
 }

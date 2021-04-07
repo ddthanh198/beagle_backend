@@ -24,7 +24,8 @@ extension AppDelegate {
     private func configBeagle() {
         let theme = AppTheme(styles: [
             "Title.Text.Orange": Styles.titleTextStyle,
-            "Description.Text.Orange": Styles.descriptionTextStyle
+            "Description.Text.Orange": Styles.descriptionTextStyle,
+            "NormalBoldText": Styles.normalBoldTextStyle
         ])
         
         let dependencies = BeagleDependencies()
@@ -33,6 +34,9 @@ extension AppDelegate {
             baseUrl: URL(string: Urls.HOST)!
         )
         dependencies.decoder.register(action: OpenSideMenuViewController.self)
+        dependencies.decoder.register(action: ShowDialogAction.self)
+        dependencies.decoder.register(action: DismissDialogAction.self)
+        dependencies.decoder.register(action: ShowBottomSheetAction.self)
         
         Beagle.dependencies = dependencies
         
