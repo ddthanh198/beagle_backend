@@ -37,4 +37,7 @@ class ScreenController(
 
     @GetMapping("/tabNotification")
     fun getTabNotification() = tabService.createTabNotification()
+
+    @GetMapping("/tabChart")
+    fun getTabChart() = tabService.createTabChart()
 }

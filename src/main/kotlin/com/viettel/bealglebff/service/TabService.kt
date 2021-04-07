@@ -12,4 +12,6 @@ class TabService {
     fun createTabTask() = TabBuilder.createTabTask()
 
     fun createTabNotification() = TabBuilder.createTabNotification()
+
+    fun createTabChart() = TabBuilder.createTabChart()
 }
