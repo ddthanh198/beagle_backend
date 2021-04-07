@@ -2,6 +2,8 @@ package com.viettel.bealglebff.builder
 
 import br.com.zup.beagle.core.Style
 import br.com.zup.beagle.ext.*
+import br.com.zup.beagle.widget.action.Navigate
+import br.com.zup.beagle.widget.action.Route
 import br.com.zup.beagle.widget.context.ContextData
 import br.com.zup.beagle.widget.context.expressionOf
 import br.com.zup.beagle.widget.core.*
@@ -9,6 +11,8 @@ import br.com.zup.beagle.widget.layout.Container
 import br.com.zup.beagle.widget.layout.Screen
 import br.com.zup.beagle.widget.ui.*
 import com.viettel.bealglebff.common.Constants
+import com.viettel.bealglebff.components.compose_components.CustomFloatButton
+import com.viettel.bealglebff.components.compose_components.FloatingButton
 import com.viettel.bealglebff.components.widgets.BarChart
 import com.viettel.bealglebff.model.populateData
 
@@ -18,7 +22,14 @@ object TabBuilder: BaseBuilder(){
     fun createTabHome() = Screen(
         child = createContainer(
             WidgetBuilder.createToolbar(),
-            WidgetBuilder.createBannerView()
+            WidgetBuilder.createBannerView(),
+            FloatingButton(
+                remoteIconUrl = "${Constants.BASE_URL}/resourcesController/ic_stats",
+                backgroundColor = Constants.COLOR_PRIMARY,
+                onPress = listOf(
+                    Navigate.PushView(route = Route.Remote("/screenController/statistics"))
+                )
+            )
         ).applyFlex(
             flex = Flex(
                 grow = 1.0
@@ -60,13 +71,15 @@ object TabBuilder: BaseBuilder(){
     )
 
     // tab notification
-    fun createTabNotification() = createContainer(
+    fun createTabNotification(): Container {
+        return createContainer(
             createScrollView(
-                    createTextView("Vertical ScrollView"),
-                    createTextView("Vertical ScrollView"),
-                    createTextView("Vertical ScrollView")
+                createTextView("Vertical ScrollView"),
+                createTextView("Vertical ScrollView"),
+                createTextView("Vertical ScrollView"),
             )
-    )
+        )
+    }
 
      // tab Chart
      fun createTabChart() = createContainer(

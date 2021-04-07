@@ -203,7 +203,7 @@ object WidgetBuilder : BaseBuilder(){
     )
 
     // toolbar
-    fun createMainToolbar() = Container(
+    fun createMainToolbar(title: String) = Container(
             children = listOf(
                     Touchable(
                             child = Image(
@@ -238,7 +238,7 @@ object WidgetBuilder : BaseBuilder(){
                             )
                     ),
                     Text(
-                            text = "Cập nhật tài khoản",
+                            text = title,
                             textColor = Constants.COLOR_WHITE,
                             styleId = "TextTitleProfile",
                             alignment = TextAlignment.CENTER

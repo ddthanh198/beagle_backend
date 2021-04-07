@@ -3,7 +3,6 @@ package com.viettel.bealglebff.builder
 import br.com.zup.beagle.core.*
 import br.com.zup.beagle.ext.*
 import br.com.zup.beagle.widget.context.ContextData
-import br.com.zup.beagle.widget.context.expressionOf
 import br.com.zup.beagle.widget.core.*
 import br.com.zup.beagle.widget.layout.*
 import br.com.zup.beagle.widget.navigation.Touchable
@@ -12,8 +11,8 @@ import br.com.zup.beagle.widget.ui.*
 import br.com.zup.beagle.widget.core.JustifyContent
 import com.viettel.bealglebff.common.Constants
 import com.viettel.bealglebff.components.actions.ToastAction
+import com.viettel.bealglebff.components.compose_components.HorizontalDivider
 import com.viettel.bealglebff.components.widgets.BottomNavigationView
-import com.viettel.bealglebff.components.widgets.ItemRowDivider
 
 class HomeScreenBuilder : ScreenBuilder, BaseBuilder() {
 
@@ -134,14 +133,7 @@ class HomeScreenBuilder : ScreenBuilder, BaseBuilder() {
     }
 
     private fun createBottomNavigationBar() = createContainer(
-            ItemRowDivider(
-                    expressionOf("#B9B9B9"),
-                    expressionOf("1"),
-                    leftMargin = 0,
-                    rightMargin = 0,
-                    topMargin = 0,
-                    bottomMargin = 0
-            ),
+            HorizontalDivider(),
             createContainer(
                     createBottomButton(
                             text = "Home",
