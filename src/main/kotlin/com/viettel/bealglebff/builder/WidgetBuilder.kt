@@ -54,7 +54,12 @@ object WidgetBuilder : BaseBuilder(){
                                 "${Constants.BASE_URL}/resourcesController/ic_notification",
                                 "Notifications",
                                 "/screenController/tabNotification"
-                        )
+                        ),
+                         arrayOf(
+                             "${Constants.BASE_URL}/resourcesController/ic_management",
+                             "Management",
+                             "/screenController/tabChart"
+                         )
                 )
         )
 

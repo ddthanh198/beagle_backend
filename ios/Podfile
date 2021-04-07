@@ -18,4 +18,5 @@ target 'DemoBeagleApp' do
   pod 'SideMenu'
   pod 'FittedSheets'
   pod 'HorizonCalendar'
+  pod 'Charts'
 end
