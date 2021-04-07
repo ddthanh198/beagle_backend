@@ -1,4 +1,4 @@
-package com.viettel.bealglebff.components.widgets
+package com.viettel.bealglebff.components.compose_components
 
 import br.com.zup.beagle.annotation.RegisterWidget
 import br.com.zup.beagle.core.CornerRadius
@@ -14,8 +14,7 @@ import br.com.zup.beagle.widget.layout.Container
 import br.com.zup.beagle.widget.navigation.Touchable
 import br.com.zup.beagle.widget.ui.Text
 
-@RegisterWidget
-data class CustomFloatButton(
+class CustomFloatButton(
     val title: String,
     val textColor: String? = null,
     val backgroundColor: String? = null,
