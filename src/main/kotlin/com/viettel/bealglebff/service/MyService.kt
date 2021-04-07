@@ -14,6 +14,7 @@ import br.com.zup.beagle.widget.layout.Screen
 import br.com.zup.beagle.widget.layout.ScreenBuilder
 import br.com.zup.beagle.widget.navigation.Touchable
 import br.com.zup.beagle.widget.ui.*
+import com.viettel.bealglebff.common.Gravity
 import com.viettel.bealglebff.components.actions.OpenDateRangePicker
 import com.viettel.bealglebff.components.actions.OpenSideMenuViewController
 import com.viettel.bealglebff.components.compose_components.CustomButton
@@ -95,7 +96,7 @@ class MyScreen : ScreenBuilder {
                     backgroundColor = "#0000ff",
                     radius = 22.0,
                     onPress = listOf(
-                        OpenSideMenuViewController("/home_side_menu")
+                        OpenSideMenuViewController("/home_side_menu", gravity = listOf(Gravity.START, Gravity.END).random())
                     )
                 ),
                 Container(
