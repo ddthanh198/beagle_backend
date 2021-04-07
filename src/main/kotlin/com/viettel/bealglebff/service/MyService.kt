@@ -16,8 +16,8 @@ import br.com.zup.beagle.widget.navigation.Touchable
 import br.com.zup.beagle.widget.ui.*
 import com.viettel.bealglebff.components.actions.OpenDateRangePicker
 import com.viettel.bealglebff.components.actions.OpenSideMenuViewController
-import com.viettel.bealglebff.components.widgets.CustomButton
-import com.viettel.bealglebff.components.widgets.CustomFloatButton
+import com.viettel.bealglebff.components.compose_components.CustomButton
+import com.viettel.bealglebff.components.compose_components.CustomFloatButton
 import com.viettel.bealglebff.model.DatePickerContext
 import com.viettel.bealglebff.model.GithubUser
 import com.viettel.bealglebff.model.SearchContext

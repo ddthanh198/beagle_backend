@@ -65,12 +65,12 @@ abstract class BaseBuilder {
 
     // circular text view
     protected fun createCircularTextView(
-        text: String,
-        styleId: String? = "NormalText",
-        backgroundColor: String? = Constants.colorWhite,
-        width: Int = 44,
-        height: Int = 44,
-        listAction: List<Action>
+            text: String,
+            styleId: String? = "NormalText",
+            backgroundColor: String? = Constants.COLOR_WHITE,
+            width: Int = 44,
+            height: Int = 44,
+            listAction: List<Action>
     ) = Touchable(
             child = Text(
                     text = text,
@@ -110,7 +110,7 @@ abstract class BaseBuilder {
             children = listOf())
             .applyStyle(
                     Style(
-                            backgroundColor = Constants.colorDivider,
+                            backgroundColor = Constants.COLOR_DIVIDER,
                             size = Size(height = 0.75.unitReal()),
                             flex = Flex(
                                     flexDirection = FlexDirection.ROW,

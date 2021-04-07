@@ -4,9 +4,11 @@ import br.com.zup.beagle.core.CornerRadius
 import br.com.zup.beagle.core.Style
 import br.com.zup.beagle.ext.applyFlex
 import br.com.zup.beagle.ext.applyStyle
+import br.com.zup.beagle.ext.unitPercent
 import br.com.zup.beagle.ext.unitReal
 import br.com.zup.beagle.widget.action.Navigate
 import br.com.zup.beagle.widget.action.Route
+import br.com.zup.beagle.widget.action.SetContext
 import br.com.zup.beagle.widget.context.ContextData
 import br.com.zup.beagle.widget.context.expressionOf
 import br.com.zup.beagle.widget.core.*
@@ -19,9 +21,9 @@ import br.com.zup.beagle.widget.ui.ImagePath
 import br.com.zup.beagle.widget.ui.ListView
 import br.com.zup.beagle.widget.ui.Text
 import com.viettel.bealglebff.common.Constants
-import com.viettel.bealglebff.components.actions.ShowDialogAction
-import com.viettel.bealglebff.components.actions.ToastAction
+import com.viettel.bealglebff.components.actions.*
 import com.viettel.bealglebff.components.widgets.BottomNavigationView
+import com.viettel.bealglebff.model.generateUserInfoList
 import com.viettel.bealglebff.model.populateLanguageOptions
 
 object WidgetBuilder : BaseBuilder(){
@@ -33,22 +35,22 @@ object WidgetBuilder : BaseBuilder(){
         menuItems.addAll(
                 listOf(
                         arrayOf(
-                                "${Constants.baseUrl}/resourcesController/ic_home",
+                                "${Constants.BASE_URL}/resourcesController/ic_home",
                                 "Home",
                                 "/screenController/tabHome"
                         ),
                         arrayOf(
-                                "${Constants.baseUrl}/resourcesController/ic_task",
+                                "${Constants.BASE_URL}/resourcesController/ic_task",
                                 "Tasks",
                                 "/screenController/tabTask"
                         ),
                         arrayOf(
-                                "${Constants.baseUrl}/resourcesController/ic_request",
+                                "${Constants.BASE_URL}/resourcesController/ic_request",
                                 "Requests",
                                 "/screenController/tabRequest"
                         ),
                         arrayOf(
-                                "${Constants.baseUrl}/resourcesController/ic_notification",
+                                "${Constants.BASE_URL}/resourcesController/ic_notification",
                                 "Notifications",
                                 "/screenController/tabNotification"
                         )
@@ -68,8 +70,8 @@ object WidgetBuilder : BaseBuilder(){
                                                     context = ContextData(
                                                             id = "bannerUrl",
                                                             value = listOf(
-                                                                    "${Constants.baseUrl}/resourcesController/img_tnxh",
-                                                                    "${Constants.baseUrl}/resourcesController/img_tnxh"
+                                                                    "${Constants.BASE_URL}/resourcesController/img_tnxh",
+                                                                    "${Constants.BASE_URL}/resourcesController/img_tnxh"
                                                             )
                                                     ),
                                                     pageIndicator = PageIndicator(
@@ -85,23 +87,7 @@ object WidgetBuilder : BaseBuilder(){
                             ).applyStyle(
                                     Style(
                                             size = Size(height = 200.unitReal()),
-                                            margin = EdgeValue(horizontal = 0.unitReal(), top = 0.unitReal())
-                                    )
-                            ),
-                            Container(
-                                    children = listOf(
-                                            Image(
-                                                    ImagePath.Remote("${Constants.baseUrl}/resourcesController/img_tnxh"),
-                                                    ImageContentMode.FIT_XY
-                                            )
-                                    )
-                            ).applyStyle(
-                                    Style(
-                                            size = Size(width = 200.unitReal(), height = 200.unitReal()),
-                                            cornerRadius = CornerRadius(100.0),
-                                            flex = Flex(
-                                                    alignSelf = AlignSelf.CENTER
-                                            )
+                                            margin = EdgeValue(horizontal = 12.unitReal(), top = 12.unitReal())
                                     )
                             )
                     )
@@ -124,7 +110,7 @@ object WidgetBuilder : BaseBuilder(){
     )
 
     // toolbar
-    fun createToolbar(backgroundColor: String? = Constants.colorPrimary) = createContainer(
+    fun createToolbar(backgroundColor: String? = Constants.COLOR_PRIMARY) = createContainer(
             createHeader(),
             createSearchBar()
     ).applyStyle(
@@ -134,32 +120,44 @@ object WidgetBuilder : BaseBuilder(){
     )
 
     // header
-    fun createHeader() = createContainer(
-            createTextView("Xin chào", "WhiteNormalText"),
-            createContainer(
-                    createTouchableIcon(
-                            remoteUrl = "${Constants.baseUrl}/resourcesController/ic_notification_white",
-                            width = 30,
-                            height = 30,
-                            listAction = listOf(
-                                    ShowDialogAction("/widgetController/bottomSheetDialog")
-                                    //ToastAction("Không có thông báo mới nào")
+    fun createHeader() = Container(
+            children = listOf(
+                    Touchable(
+                            child = Text(
+                                        text = "@{condition(isEmpty(global.welcomeContext), 'Xin chào', global.welcomeContext)}",
+                                        styleId = "NormalBoldText",
+                                        textColor = Constants.COLOR_WHITE
+                            ).applyStyle(
+                                    Style(size = Size(width = 50.unitPercent()))
+                            ),
+                            onPress = listOf(
+                                    ShowBottomSheetAction("/widgetController/bottomSheetDialog")
                             )
                     ),
-                    createCircularTextView(
-                            text = "HN",
-                            width = 44,
-                            height = 44,
-                            listAction = listOf(
-                                    //ShowBottomSheetAction("/widgetController/bottomSheetDialog")
-                                    //ShowDialogAction("/widgetController/selectionDialog")
-                                    Navigate.PushView(route = Route.Remote("/screenController/accountInformation"))
+                    createContainer(
+                            createTouchableIcon(
+                                    remoteUrl = "@{condition(isEmpty(global.language), '${Constants.BASE_URL}/resourcesController/flag_vn', global.language)}",
+                                    width = 30,
+                                    height = 30,
+                                    listAction = listOf(
+                                            ShowDialogAction("/widgetController/selectLanguageDialog")
+                                    )
+                            ),
+                            createCircularTextView(
+                                    text = "HN",
+                                    width = 44,
+                                    height = 44,
+                                    listAction = listOf(
+                                            //ShowBottomSheetAction("/widgetController/bottomSheetDialog")
+                                            //ShowDialogAction("/widgetController/selectionDialog")
+                                            Navigate.PushView(route = Route.Remote("/screenController/accountInformation"))
+                                    )
                             )
-                    )
-            ).applyFlex(
-                    flex = Flex(
-                            flexDirection = FlexDirection.ROW,
-                            alignItems = AlignItems.CENTER
+                    ).applyFlex(
+                            flex = Flex(
+                                    flexDirection = FlexDirection.ROW,
+                                    alignItems = AlignItems.CENTER
+                            )
                     )
             )
     ).applyStyle(
@@ -192,7 +190,7 @@ object WidgetBuilder : BaseBuilder(){
     ).applyStyle(
             Style(
                     margin = EdgeValue(horizontal = 20.unitReal(), vertical = 20.unitReal()),
-                    backgroundColor = Constants.colorWhite,
+                    backgroundColor = Constants.COLOR_WHITE,
                     padding = EdgeValue(horizontal = 11.unitReal()),
                     size = Size(height = 44.unitReal()),
                     cornerRadius = CornerRadius(22.0),
@@ -208,12 +206,12 @@ object WidgetBuilder : BaseBuilder(){
             children = listOf(
                     Touchable(
                             child = Image(
-                                    path = ImagePath.Remote("${Constants.baseUrl}/resourcesController/ic_back")
+                                    path = ImagePath.Remote("${Constants.BASE_URL}/resourcesController/ic_back")
                             ).applyStyle(
                                     style = Style(
                                             size = Size(
-                                                    width = Constants.sizeIcon.unitReal(),
-                                                    height = Constants.sizeIcon.unitReal()
+                                                    width = Constants.SMALL_ICON_SIZE.unitReal(),
+                                                    height = Constants.SMALL_ICON_SIZE.unitReal()
                                             ),
                                             margin = EdgeValue(
                                                     all = 8.unitReal(),
@@ -239,8 +237,8 @@ object WidgetBuilder : BaseBuilder(){
                             )
                     ),
                     Text(
-                            text = "Title",
-                            textColor = Constants.colorWhite,
+                            text = "Cập nhật tài khoản",
+                            textColor = Constants.COLOR_WHITE,
                             styleId = "TextTitleProfile"
                     ).applyStyle(
                             style = Style(
@@ -253,12 +251,12 @@ object WidgetBuilder : BaseBuilder(){
                             children = listOf(
                                     Touchable(
                                             child = Image(
-                                                    path = ImagePath.Remote("${Constants.baseUrl}/resourcesController/ic_tick")
+                                                    path = ImagePath.Remote("${Constants.BASE_URL}/resourcesController/ic_tick")
                                             ).applyStyle(
                                                     style = Style(
                                                             size = Size(
-                                                                    width = Constants.sizeIcon.unitReal(),
-                                                                    height = Constants.sizeIcon.unitReal()
+                                                                    width = Constants.SMALL_ICON_SIZE.unitReal(),
+                                                                    height = Constants.SMALL_ICON_SIZE.unitReal()
                                                             ),
                                                             margin = EdgeValue(
                                                                     all = 8.unitReal()
@@ -277,12 +275,12 @@ object WidgetBuilder : BaseBuilder(){
                                     ),
                                     Touchable(
                                             child = Image(
-                                                    path = ImagePath.Remote("${Constants.baseUrl}/resourcesController/ic_setting")
+                                                    path = ImagePath.Remote("${Constants.BASE_URL}/resourcesController/ic_setting")
                                             ).applyStyle(
                                                     style = Style(
                                                             size = Size(
-                                                                    width = Constants.sizeIcon.unitReal(),
-                                                                    height = Constants.sizeIcon.unitReal()
+                                                                    width = Constants.SMALL_ICON_SIZE.unitReal(),
+                                                                    height = Constants.SMALL_ICON_SIZE.unitReal()
                                                             ),
                                                             margin = EdgeValue(
                                                                     all = 8.unitReal(),
@@ -310,9 +308,10 @@ object WidgetBuilder : BaseBuilder(){
             style = Style(
                     flex = Flex(
                             flexDirection = FlexDirection.ROW,
-                            justifyContent = JustifyContent.SPACE_BETWEEN
+                            justifyContent = JustifyContent.SPACE_BETWEEN,
+                            alignContent = AlignContent.CENTER
                     ),
-                    backgroundColor = Constants.colorPrimary,
+                    backgroundColor = Constants.COLOR_PRIMARY,
                     size = Size(
                             height = 50.unitReal()
                     )
@@ -352,7 +351,14 @@ object WidgetBuilder : BaseBuilder(){
                                                     flexDirection = FlexDirection.ROW
                                             )
                                     ),
-                                    onPress = listOf(ToastAction("You have changed app language"))
+                                    onPress = listOf(
+                                            SetContext(
+                                                    contextId = "global",
+                                                    path = "language",
+                                                    value = "@{item.languageIconUrl}"
+                                            ),
+                                            DismissDialogAction("/widgetController/selectLanguageDialog")
+                                    )
                             ),
                             createDivider(8, 8, 0, 0)
                     ).applyStyle(
@@ -367,14 +373,14 @@ object WidgetBuilder : BaseBuilder(){
             )
     ).applyStyle(
             style = Style(
-                    backgroundColor = Constants.colorWhite,
-                    cornerRadius = CornerRadius(radius = Constants.dialogRadius)
+                    backgroundColor = Constants.COLOR_WHITE,
+                    cornerRadius = CornerRadius(radius = Constants.DIALOG_RADIUS)
             )
     )
 
     fun createDemoBottomSheetDialog() = createContainer(
             createTextView(
-                    text = "Choose your language",
+                    text = "Lựa chọn tên của bạn",
                     styleId = "NormalBoldText",
                     textAlignment = TextAlignment.CENTER
             ).applyStyle(
@@ -383,20 +389,12 @@ object WidgetBuilder : BaseBuilder(){
                     )
             ),
             ListView(
-                    context = ContextData(id = "languages", value = populateLanguageOptions()),
-                    dataSource = expressionOf("@{languages}"),
+                    context = ContextData(id = "users", value = generateUserInfoList()),
+                    dataSource = expressionOf("@{users}"),
                     template = createContainer(
                             Touchable(
                                     child = createContainer(
-                                            createImageViewFromRemote("@{item.languageIconUrl}").applyStyle(
-                                                    Style(
-                                                            size = Size(
-                                                                    width = 24.unitReal(),
-                                                                    height = 24.unitReal()
-                                                            )
-                                                    )
-                                            ),
-                                            createTextView(text = "@{item.language}").applyStyle(
+                                            createTextView(text = "@{item.username}").applyStyle(
                                                     Style(margin = EdgeValue(horizontal = 8.unitReal()))
                                             )
                                     ).applyFlex(
@@ -405,7 +403,14 @@ object WidgetBuilder : BaseBuilder(){
                                                     flexDirection = FlexDirection.ROW
                                             )
                                     ),
-                                    onPress = listOf(ToastAction("You have changed app language"))
+                                    onPress = listOf(
+                                            SetContext(
+                                                    contextId = "global",
+                                                    path = "welcomeContext",
+                                                    value = "Xin chào @{item.username}"
+                                            ),
+                                            DismissDialogAction("/widgetController/bottomSheetDialog")
+                                    )
                             ),
                             createDivider(8, 8, 0, 0)
                     ).applyStyle(
@@ -417,11 +422,13 @@ object WidgetBuilder : BaseBuilder(){
                                     )
                             )
                     )
-            )
+            ),
+            createContainer().applyStyle(Style(size = Size(height = Constants.DIALOG_RADIUS.unitReal())))
     ).applyStyle(
             style = Style(
-                    backgroundColor = Constants.colorWhite,
-                    cornerRadius = CornerRadius(radius = Constants.dialogRadius)
+                    backgroundColor = Constants.COLOR_WHITE,
+                    cornerRadius = CornerRadius(radius = Constants.DIALOG_RADIUS),
+                    margin = EdgeValue(bottom = (-Constants.DIALOG_RADIUS).unitReal())
             )
     )
 }

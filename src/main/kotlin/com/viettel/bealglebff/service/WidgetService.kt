@@ -9,7 +9,7 @@ class WidgetService {
 
     fun createBannerView() = WidgetBuilder.createBannerView()
 
-    fun createSelectionDialog() = WidgetBuilder.createLanguageSelectionDialog()
+    fun createSelectLanguageDialog() = WidgetBuilder.createLanguageSelectionDialog()
 
     fun createBottomSheetDialog() = WidgetBuilder.createDemoBottomSheetDialog()
 }
