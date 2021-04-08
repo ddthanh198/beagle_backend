@@ -13,10 +13,10 @@ import br.com.zup.beagle.widget.layout.Container
 import com.viettel.bealglebff.common.Constants
 
 class HorizontalDivider(
-    val marginTop: Int,
-    val marginBottom: Int,
-    val marginLeft: Int,
-    val marginRight: Int
+    val marginTop: Int = 0,
+    val marginBottom: Int = 0,
+    val marginLeft: Int = 0,
+    val marginRight: Int = 0
 ) : ComposeComponent {
     override fun build(): ServerDrivenComponent {
         return Container(children = listOf())

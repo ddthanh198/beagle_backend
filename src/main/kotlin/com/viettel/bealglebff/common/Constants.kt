@@ -1,11 +1,13 @@
 package com.viettel.bealglebff.common
 
 object Constants {
-    const val BASE_URL = "http://localhost:8080"
-//    const val BASE_URL = "http://10.0.2.2:8080"
-//    const val BASE_URL = "http://38e983b18b0e.ngrok.io"
-    const val SMALL_ICON_SIZE = 16
+    //const val BASE_URL = "http://localhost:8080"
+    const val BASE_URL = "http://10.0.2.2:8080"
+    //const val BASE_URL = "http://38e983b18b0e.ngrok.io"
 
+    // item size
+    const val SMALL_ICON_SIZE = 16
+    const val FLOATING_BUTTON_SIZE = 44
     const val DIALOG_RADIUS: Double = 20.0
 
     // color
@@ -14,6 +16,10 @@ object Constants {
     const val COLOR_GRAY_DARK = "#788793"
     const val COLOR_DIVIDER = "#B9B9B9"
     const val COLOR_RED = "#DD3030"
+    const val COLOR_CHART_GRAY = "#617882"
+    const val COLOR_CHART_BLUE = "#1790C9"
+    const val COLOR_CHART_GREEN = "#0F8E70"
+    const val COLOR_CHART_ORANGE = "#E17126"
 
     // endpoints
     const val SCREEN_CONTROLLER_ENDPOINT = "/screenController"

@@ -15,7 +15,7 @@ import com.viettel.bealglebff.common.Constants
 class AccountInformationScreenBuilder: ScreenBuilder, BaseBuilder() {
         override fun build() = Screen(
                 child = createContainer(
-                        WidgetBuilder.createMainToolbar(),
+                        WidgetBuilder.createMainToolbar("Cập nhật tài khoản"),
                         createContainer(
                                 ScrollView(
                                         children = listOf(

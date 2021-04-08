@@ -13,12 +13,13 @@ import com.viettel.bealglebff.common.Constants
 import com.viettel.bealglebff.common.CustomStyle
 import com.viettel.bealglebff.components.actions.NavigateAction
 import com.viettel.bealglebff.components.actions.ToastAction
+import com.viettel.bealglebff.components.compose_components.HorizontalDivider
 
 class PersonalScreenBuilder : ScreenBuilder, BaseBuilder() {
 
     override fun build() = Screen(
             child = createContainer(
-                    WidgetBuilder.createMainToolbar(),
+                    WidgetBuilder.createMainToolbar("Thông tin cá nhân"),
                     createContainer(
                             createScrollView(
                                     createTouchableRow(
@@ -27,28 +28,28 @@ class PersonalScreenBuilder : ScreenBuilder, BaseBuilder() {
                                             icon2Url = "${Constants.BASE_URL}/resourcesController/ic_next",
                                             destination = "account_information"
                                     ),
-                                    createDivider(4, 4, 16, 16),
+                                    HorizontalDivider(marginTop = 4, marginBottom = 4, marginLeft = 16, marginRight = 16),
                                     createTouchableRow(
                                             text = "Cài đặt",
                                             iconUrl = "${Constants.BASE_URL}/resourcesController/ic_settings",
                                             icon2Url = "${Constants.BASE_URL}/resourcesController/ic_next",
                                             destination = "settings"
                                     ),
-                                    createDivider(4, 4, 16, 16),
+                                    HorizontalDivider(marginTop = 4, marginBottom = 4, marginLeft = 16, marginRight = 16),
                                     createTouchableRow(
                                             text = "Đổi mật khẩu",
                                             iconUrl = "${Constants.BASE_URL}/resourcesController/ic_change_password",
                                             icon2Url = "${Constants.BASE_URL}/resourcesController/ic_next",
                                             destination = "change_password"
                                     ),
-                                    createDivider(4, 4, 16, 16),
+                                    HorizontalDivider(marginTop = 4, marginBottom = 4, marginLeft = 16, marginRight = 16),
                                     createTouchableRow(
                                             text = "Thông tin",
                                             iconUrl = "${Constants.BASE_URL}/resourcesController/ic_info",
                                             icon2Url = "${Constants.BASE_URL}/resourcesController/ic_next",
                                             destination = "information"
                                     ),
-                                    createDivider(4, 4, 16, 16),
+                                    HorizontalDivider(marginTop = 4, marginBottom = 4, marginLeft = 16, marginRight = 16),
                                     createTouchableRow(
                                             text = "Đăng xuất",
                                             iconUrl = "${Constants.BASE_URL}/resourcesController/ic_logout",

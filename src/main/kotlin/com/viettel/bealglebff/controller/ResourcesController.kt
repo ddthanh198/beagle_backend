@@ -163,4 +163,10 @@ class ResourcesController(private val resourcesService: ResourcesService) {
     fun getManagementIcon(): ResponseEntity<InputStreamResource> {
         return resourcesService.getImage("images/ic_management.png",type = "PNG")
     }
+
+    @RequestMapping("/ic_stats", method = [RequestMethod.GET], produces = [MediaType.IMAGE_PNG_VALUE])
+    @Throws(IOException::class)
+    fun getStatisticsIcon(): ResponseEntity<InputStreamResource> {
+        return resourcesService.getImage("statistics_icons/ic_stats.png",type = "PNG")
+    }
 }
