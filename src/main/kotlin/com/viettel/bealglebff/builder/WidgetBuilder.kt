@@ -1,6 +1,7 @@
 package com.viettel.bealglebff.builder
 
 import br.com.zup.beagle.core.CornerRadius
+import br.com.zup.beagle.core.PositionType
 import br.com.zup.beagle.core.Style
 import br.com.zup.beagle.ext.applyFlex
 import br.com.zup.beagle.ext.applyStyle
@@ -239,12 +240,13 @@ object WidgetBuilder : BaseBuilder(){
                     Text(
                             text = "Cập nhật tài khoản",
                             textColor = Constants.COLOR_WHITE,
-                            styleId = "TextTitleProfile"
+                            styleId = "TextTitleProfile",
+                            alignment = TextAlignment.CENTER
                     ).applyStyle(
                             style = Style(
-                                    flex = Flex(
-                                            alignSelf = AlignSelf.CENTER
-                                    )
+                                    positionType = PositionType.ABSOLUTE,
+                                    position = EdgeValue(top = 0.unitReal(), horizontal = 50.unitReal()),
+                                    margin = EdgeValue(top = 16.unitReal())
                             )
                     ),
                     Container(
