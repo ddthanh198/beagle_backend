@@ -11,6 +11,10 @@ import RxCocoa
 
 class WidgetRepositoryImplement: WidgetRepository {
     func getBottomView() -> Observable<BottomViewEntity> {
-        return GetBottomAPI().request()
+        return GetBottomAPI().request(isShowLoading: false)
+    }
+    
+    func getTabbarIcon(url: String) -> Observable<UIImage> {
+        return GetTabbarIconAPI(endPoint: url).request()
     }
 }

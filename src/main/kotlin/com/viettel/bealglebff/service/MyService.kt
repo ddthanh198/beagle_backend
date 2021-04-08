@@ -12,14 +12,12 @@ import br.com.zup.beagle.widget.core.*
 import br.com.zup.beagle.widget.layout.Container
 import br.com.zup.beagle.widget.layout.Screen
 import br.com.zup.beagle.widget.layout.ScreenBuilder
-import br.com.zup.beagle.widget.navigation.Touchable
 import br.com.zup.beagle.widget.ui.*
 import com.viettel.bealglebff.common.Gravity
 import com.viettel.bealglebff.components.actions.OpenDateRangePicker
 import com.viettel.bealglebff.components.actions.OpenSideMenuViewController
 import com.viettel.bealglebff.components.compose_components.CustomButton
 import com.viettel.bealglebff.components.compose_components.CustomFloatButton
-import com.viettel.bealglebff.model.DatePickerContext
 import com.viettel.bealglebff.model.GithubUser
 import com.viettel.bealglebff.model.SearchContext
 import com.viettel.bealglebff.model.UserCell
@@ -178,14 +176,12 @@ class MyScreen : ScreenBuilder {
                     )
                 ),
                 CustomFloatButton(
-                    title = "@{global}",
+                    title = "+",
                     textColor = "#ffffff",
                     backgroundColor = "#0000ff",
                     alignItems = AlignItems.FLEX_START,
                     onPress = listOf(
-                        OpenDateRangePicker(
-                            context = searchContext
-                        )
+                        OpenDateRangePicker(searchContext)
                     )
                 )
             )

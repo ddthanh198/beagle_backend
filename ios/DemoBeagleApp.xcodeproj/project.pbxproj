@@ -40,6 +40,8 @@
 		37ADF5C326184CD5006ACBF8 /* OpenSideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ADF5C226184CD5006ACBF8 /* OpenSideMenuViewController.swift */; };
 		37ADF5D7261855FD006ACBF8 /* OpenTimeRangeSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ADF5D6261855FD006ACBF8 /* OpenTimeRangeSelector.swift */; };
 		37BAC0572617069F00D78844 /* BeagleTitleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BAC0562617069F00D78844 /* BeagleTitleStyle.swift */; };
+		37D8A241261EB82100BF9BF8 /* GetTabbarIconAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D8A240261EB82100BF9BF8 /* GetTabbarIconAPI.swift */; };
+		37D8A244261EB82E00BF9BF8 /* GetTabbarIconUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D8A243261EB82E00BF9BF8 /* GetTabbarIconUseCase.swift */; };
 		37F0769A2615B80E00A9E444 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F076992615B80E00A9E444 /* AppDelegate.swift */; };
 		37F0769C2615B80E00A9E444 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F0769B2615B80E00A9E444 /* SceneDelegate.swift */; };
 		37F0769E2615B80E00A9E444 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F0769D2615B80E00A9E444 /* ViewController.swift */; };
@@ -83,6 +85,8 @@
 		37ADF5C226184CD5006ACBF8 /* OpenSideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSideMenuViewController.swift; sourceTree = "<group>"; };
 		37ADF5D6261855FD006ACBF8 /* OpenTimeRangeSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenTimeRangeSelector.swift; sourceTree = "<group>"; };
 		37BAC0562617069F00D78844 /* BeagleTitleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeagleTitleStyle.swift; sourceTree = "<group>"; };
+		37D8A240261EB82100BF9BF8 /* GetTabbarIconAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetTabbarIconAPI.swift; sourceTree = "<group>"; };
+		37D8A243261EB82E00BF9BF8 /* GetTabbarIconUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetTabbarIconUseCase.swift; sourceTree = "<group>"; };
 		37F076962615B80E00A9E444 /* DemoBeagleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoBeagleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37F076992615B80E00A9E444 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37F0769B2615B80E00A9E444 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -251,6 +255,7 @@
 		3737BC322615BC4100759DC3 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				37D8A240261EB82100BF9BF8 /* GetTabbarIconAPI.swift */,
 				3737BC442615BCC800759DC3 /* BaseAPI.swift */,
 				3737BC4A2615BE3600759DC3 /* GetBottomAPI.swift */,
 			);
@@ -285,6 +290,7 @@
 		3737BC362615BC5C00759DC3 /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
+				37D8A243261EB82E00BF9BF8 /* GetTabbarIconUseCase.swift */,
 				3737BC612615BFA200759DC3 /* UseCase.swift */,
 				3737BC672615C03C00759DC3 /* GetBottomViewUseCase.swift */,
 			);
@@ -526,6 +532,7 @@
 				3737BC4E2615BE5B00759DC3 /* BottomViewEntity.swift in Sources */,
 				3756E33D261BF3C200280EF9 /* TimeRangeViewController.swift in Sources */,
 				3756E33E261BF3C200280EF9 /* DayLabel.swift in Sources */,
+				37D8A241261EB82100BF9BF8 /* GetTabbarIconAPI.swift in Sources */,
 				37F0769C2615B80E00A9E444 /* SceneDelegate.swift in Sources */,
 				183DC2C4261C1701003601D7 /* DialogLanguageViewController.swift in Sources */,
 				18FE2DF8261C4FF900953723 /* BottomSheetViewController.swift in Sources */,
@@ -540,6 +547,7 @@
 				3737BC3E2615BC9F00759DC3 /* BaseViewController.swift in Sources */,
 				3756E33F261BF3C200280EF9 /* DayRangeIndicatorView.swift in Sources */,
 				3756E336261BEE0800280EF9 /* OpenDateRangePicker.swift in Sources */,
+				37D8A244261EB82E00BF9BF8 /* GetTabbarIconUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

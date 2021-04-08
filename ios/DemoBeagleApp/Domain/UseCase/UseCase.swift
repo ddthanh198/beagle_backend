@@ -11,8 +11,9 @@ import RxCocoa
 
 protocol UseCase {
     associatedtype EM
+    associatedtype DM
     
-    func execute(param: Param) -> EM
+    func execute(param: DM) -> EM
 }
 
 protocol UseCaseWithoutParam {
@@ -20,5 +21,3 @@ protocol UseCaseWithoutParam {
     
     func execute() -> EM
 }
-
-protocol Param { }
