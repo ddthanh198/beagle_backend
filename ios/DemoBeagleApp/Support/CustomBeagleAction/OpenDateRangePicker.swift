@@ -9,9 +9,14 @@ import Foundation
 import Beagle
 import HorizonCalendar
 
+typealias CallBackExpression = (() -> [Action])
+
 class OpenDateRangePicker: Action {
     var context: Context?
     
+    init(context: Context) {
+        self.context = context
+    }
     
     func execute(controller: BeagleController, origin: UIView) {
         let timeRangePicker = TimeRangeViewController()

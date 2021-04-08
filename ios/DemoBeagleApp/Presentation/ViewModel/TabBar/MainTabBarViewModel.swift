@@ -12,15 +12,18 @@ import RxCocoa
 class MainTabBarViewModel: BaseViewModel {
     struct Input {
         let getBottomViewUseCase = GetBottomViewUseCase()
+        let getTabbarIconUseCase = GetTabbarIconUseCase()
     }
     
     struct Output {
         let isGetBottomViewSuccess = PublishSubject<Bool>()
+        let isGetAllTabbarIconsSuccess = PublishSubject<Bool>()
     }
     
     private let input = Input()
     let output = Output()
     var bottomView: BottomViewEntity?
+    var tabbarIcons = [UIImage]()
     
     func getBottomView() {
         self.input.getBottomViewUseCase
@@ -34,6 +37,27 @@ class MainTabBarViewModel: BaseViewModel {
             }, onError: { [weak self] error in
                 guard let `self` = self else { return }
                 self.output.isGetBottomViewSuccess.onError(error)
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    func getAllTabbarIcons() {
+        guard let `bottomView` = bottomView, let firstChild = bottomView.children.first else { return }
+        let tabbarIconUrls = firstChild.menuItems.map { (items) -> String in
+            return items[0]
+        }
+        Observable.zip(tabbarIconUrls.map {
+            return self.input.getTabbarIconUseCase.execute(param: $0)
+        })
+            .observe(on: MainScheduler.instance)
+            .subscribe(on: SerialDispatchQueueScheduler.init(qos: .background))
+            .subscribe(onNext: { [weak self] tabbarIcons in
+                guard let `self` = self else { return }
+                self.tabbarIcons = tabbarIcons
+                self.output.isGetAllTabbarIconsSuccess.onNext(true)
+            }, onError: { [weak self] error in
+                guard let `self` = self else { return }
+                self.output.isGetAllTabbarIconsSuccess.onError(error)
             })
             .disposed(by: disposeBag)
     }

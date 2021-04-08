@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3715AEEF261EA2DC00C59CED /* GetTabbarIconAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3715AEEE261EA2DC00C59CED /* GetTabbarIconAPI.swift */; };
+		3715AEF2261EA53A00C59CED /* GetTabbarIconUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3715AEF1261EA53A00C59CED /* GetTabbarIconUseCase.swift */; };
 		3737BC382615BC8700759DC3 /* SessionAppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3737BC372615BC8700759DC3 /* SessionAppManager.swift */; };
 		3737BC3B2615BC9200759DC3 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3737BC3A2615BC9200759DC3 /* AppConstants.swift */; };
 		3737BC3E2615BC9F00759DC3 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3737BC3D2615BC9F00759DC3 /* BaseViewController.swift */; };
@@ -43,6 +45,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3715AEEE261EA2DC00C59CED /* GetTabbarIconAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTabbarIconAPI.swift; sourceTree = "<group>"; };
+		3715AEF1261EA53A00C59CED /* GetTabbarIconUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTabbarIconUseCase.swift; sourceTree = "<group>"; };
 		3737BC372615BC8700759DC3 /* SessionAppManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionAppManager.swift; sourceTree = "<group>"; };
 		3737BC3A2615BC9200759DC3 /* AppConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		3737BC3D2615BC9F00759DC3 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -219,6 +223,7 @@
 			children = (
 				3737BC442615BCC800759DC3 /* BaseAPI.swift */,
 				3737BC4A2615BE3600759DC3 /* GetBottomAPI.swift */,
+				3715AEEE261EA2DC00C59CED /* GetTabbarIconAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -253,6 +258,7 @@
 			children = (
 				3737BC612615BFA200759DC3 /* UseCase.swift */,
 				3737BC672615C03C00759DC3 /* GetBottomViewUseCase.swift */,
+				3715AEF1261EA53A00C59CED /* GetTabbarIconUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -479,6 +485,7 @@
 				37F0769E2615B80E00A9E444 /* ViewController.swift in Sources */,
 				3737BC712615C0D500759DC3 /* UIColorExtensions.swift in Sources */,
 				37F0769A2615B80E00A9E444 /* AppDelegate.swift in Sources */,
+				3715AEF2261EA53A00C59CED /* GetTabbarIconUseCase.swift in Sources */,
 				3737BC6C2615C08600759DC3 /* MainTabBarViewModel.swift in Sources */,
 				3737BC412615BCAB00759DC3 /* CommonEntity.swift in Sources */,
 				3737BC532615BECC00759DC3 /* BaseViewModel.swift in Sources */,
@@ -488,6 +495,7 @@
 				3756E33E261BF3C200280EF9 /* DayLabel.swift in Sources */,
 				37F0769C2615B80E00A9E444 /* SceneDelegate.swift in Sources */,
 				37ADF5C326184CD5006ACBF8 /* OpenSideMenuViewController.swift in Sources */,
+				3715AEEF261EA2DC00C59CED /* GetTabbarIconAPI.swift in Sources */,
 				3737BC452615BCC800759DC3 /* BaseAPI.swift in Sources */,
 				3756E340261BF3C200280EF9 /* DayView.swift in Sources */,
 				3737BC5A2615BF4200759DC3 /* MainTabBarController.swift in Sources */,

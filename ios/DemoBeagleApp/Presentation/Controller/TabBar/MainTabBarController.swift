@@ -10,17 +10,24 @@ import Beagle
 import RxSwift
 import RxCocoa
 import SDWebImage
+import SVProgressHUD
 
 class MainTabBarController: BaseTabBarController {
     private let viewModel = MainTabBarViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        initFirstState()
         configRx()
     }
     
+    private func initFirstState() {
+        let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewController") as! ViewController
+        self.setViewControllers([viewController], animated: true)
+    }
+    
     private func configRx() {
-        viewModel.output.isGetBottomViewSuccess
+        viewModel.output.isGetAllTabbarIconsSuccess
             .observe(on: MainScheduler.instance)
             .subscribe(on: SerialDispatchQueueScheduler.init(qos: .background))
             .subscribe(onNext: { [weak self] _ in
@@ -32,6 +39,20 @@ class MainTabBarController: BaseTabBarController {
             })
             .disposed(by: disposeBag)
         
+        viewModel.output.isGetBottomViewSuccess
+            .observe(on: MainScheduler.instance)
+            .subscribe(on: SerialDispatchQueueScheduler.init(qos: .background))
+            .subscribe(onNext: { [weak self] _ in
+                guard let `self` = self else { return }
+                self.viewModel.getAllTabbarIcons()
+            }, onError: { [weak self] error in
+                guard let `self` = self else { return }
+                self.showErrorAlert(error: error)
+            })
+            .disposed(by: disposeBag)
+        
+        SVProgressHUD.setDefaultMaskType(.clear)
+        SVProgressHUD.show()
         viewModel.getBottomView()
     }
     
@@ -44,17 +65,10 @@ class MainTabBarController: BaseTabBarController {
         for item in firstChild.menuItems {
             let tag = firstChild.menuItems.firstIndex(of: item) ?? 0
             let viewController = Beagle.screen(.remote(.init(url: item[2])))
-            viewController.tabBarItem = UITabBarItem(title: item[1], image: nil, tag: tag)
+            viewController.tabBarItem = UITabBarItem(title: item[1], image: self.viewModel.tabbarIcons[tag], tag: tag)
             listOfVC.append(viewController)
         }
         
-        self.viewControllers = listOfVC
-        for item in firstChild.menuItems {
-            let index = firstChild.menuItems.firstIndex(of: item) ?? 0
-            let imageView = UIImageView(frame: .zero)
-            imageView.sd_setImage(with: URL(string: item[0])) { (image, error, _, _) in
-                self.tabBar.items?[index].image = image?.withRenderingMode(.automatic).sd_resizedImage(with: CGSize(width: 25, height: 25), scaleMode: .aspectFit)
-            }
-        }
+        self.setViewControllers(listOfVC, animated: true)
     }
 }

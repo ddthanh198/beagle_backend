@@ -11,4 +11,6 @@ import RxCocoa
 
 protocol WidgetRepository {
     func getBottomView() -> Observable<BottomViewEntity>
+    
+    func getTabbarIcon(url: String) -> Observable<UIImage>
 }

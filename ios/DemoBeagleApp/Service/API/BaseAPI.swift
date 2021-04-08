@@ -174,6 +174,7 @@ class BaseAPI<T: Decodable>: BaseAPIProtocol {
             } else {
                 self.sessionManager.request(url, method: self.method(), parameters: self.params(), encoding: JSONEncoding.default, headers: headers)
                     .responseJSON { response in
+                        print(response)
                         guard let httpResponse = response.response, let data = response.data else { return }
                         print("STATUS: \(httpResponse.statusCode)")
                         self.timer?.invalidate()
