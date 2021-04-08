@@ -9,6 +9,7 @@ import br.com.zup.beagle.widget.layout.Container
 import br.com.zup.beagle.widget.layout.Screen
 import br.com.zup.beagle.widget.ui.*
 import com.viettel.bealglebff.common.Constants
+import com.viettel.bealglebff.components.widgets.BarChart
 import com.viettel.bealglebff.model.populateData
 
 object TabBuilder: BaseBuilder(){
@@ -66,4 +67,9 @@ object TabBuilder: BaseBuilder(){
                     createTextView("Vertical ScrollView")
             )
     )
+
+     // tab Chart
+     fun createTabChart() = createContainer(
+         BarChart()
+     )
 }
