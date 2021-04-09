@@ -25,7 +25,9 @@ extension AppDelegate {
         let theme = AppTheme(styles: [
             "Title.Text.Orange": Styles.titleTextStyle,
             "Description.Text.Orange": Styles.descriptionTextStyle,
-            "NormalBoldText": Styles.normalBoldTextStyle
+            "NormalBoldText": Styles.normalBoldTextStyle,
+            "Title.Text.BasicDialog": Styles.basicDialogTextStyle,
+            "Content.Text.BasicDialog": Styles.basicDialogContentStyle
         ])
         
         let dependencies = BeagleDependencies()
@@ -37,6 +39,9 @@ extension AppDelegate {
         dependencies.decoder.register(action: ShowDialogAction.self)
         dependencies.decoder.register(action: DismissDialogAction.self)
         dependencies.decoder.register(action: ShowBottomSheetAction.self)
+        dependencies.decoder.register(action: LoadingAction.self)
+        dependencies.decoder.register(component: BarChartWidget.self)
+        dependencies.decoder.register(component: PieChart.self)
         
         Beagle.dependencies = dependencies
         

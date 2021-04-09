@@ -62,20 +62,12 @@ class MainTabBarController: BaseTabBarController {
         tabBar.unselectedItemTintColor = UIColor(firstChild.unselectedColor)
         
         var listOfVC = [UIViewController]()
-        var chartViewController = ChartViewController()
+        
         for item in firstChild.menuItems {
             let tag = firstChild.menuItems.firstIndex(of: item) ?? 0
             let viewController = Beagle.screen(.remote(.init(url: item[2])))
             viewController.tabBarItem = UITabBarItem(title: item[1], image: self.viewModel.tabbarIcons[tag], tag: tag)
             listOfVC.append(viewController)
-//            if item[1] == "Management" {
-//                chartViewController.tabBarItem = UITabBarItem(title: item[1], image: nil, tag: tag)
-//                listOfVC.append(chartViewController)
-//            } else {
-                // viewController.tabBarItem = UITabBarItem(title: item[1], image: nil, tag: tag)
-                // listOfVC.append(viewController)
-            //}
-           
         }
         
         self.setViewControllers(listOfVC, animated: true)

@@ -7,14 +7,13 @@ import br.com.zup.beagle.ext.applyFlex
 import br.com.zup.beagle.ext.applyStyle
 import br.com.zup.beagle.ext.unitPercent
 import br.com.zup.beagle.ext.unitReal
-import br.com.zup.beagle.widget.action.Navigate
-import br.com.zup.beagle.widget.action.Route
-import br.com.zup.beagle.widget.action.SetContext
+import br.com.zup.beagle.widget.action.*
 import br.com.zup.beagle.widget.context.ContextData
 import br.com.zup.beagle.widget.context.expressionOf
 import br.com.zup.beagle.widget.core.*
 import br.com.zup.beagle.widget.layout.Container
 import br.com.zup.beagle.widget.layout.PageView
+import br.com.zup.beagle.widget.layout.ScreenBuilder
 import br.com.zup.beagle.widget.navigation.Touchable
 import br.com.zup.beagle.widget.pager.PageIndicator
 import br.com.zup.beagle.widget.ui.*
@@ -468,4 +467,99 @@ object WidgetBuilder : BaseBuilder(){
                     margin = EdgeValue(bottom = (-Constants.DIALOG_RADIUS).unitReal())
             )
     )
+
+     fun createBasicDialog( title: String = "Tittle",  content: String = "Content",  titleStyleID: String = "Title.Dialog.Style"
+                           ,  contentStyleID: String = "Content.Dialog.Style",  acceptButton: String = "Accept"
+                           ,  cancelButton: String = "Cancel",  acceptButtonStyle: String = ""
+                           ,  cancelButtonStyle: String = "",  acceptAction: ArrayList<Action>,  cancelAction: ArrayList<Action>) = createContainer(
+         createContainer(
+             createTextView(text = title,styleId = titleStyleID, textAlignment = TextAlignment.CENTER).applyStyle(
+                 Style(
+                     flex = Flex(alignSelf = AlignSelf.CENTER,grow = 1.0),
+                     margin = EdgeValue(left = 30.unitReal())
+                 )
+             )
+             ,createTouchableIcon("http://localhost:8080/resourcesController/ic_delete",18,18, listOf(
+                    DismissDialogAction("")
+               )
+          )
+         ).applyFlex(
+             flex = Flex(
+                 flexDirection = FlexDirection.ROW,
+                 justifyContent = JustifyContent.FLEX_END,
+             )
+         ).applyStyle(
+             Style(
+                margin = EdgeValue(top = 12.unitReal(), right = 12.unitReal()),
+                )
+         )
+         ,
+         createTextView(text = content,styleId = contentStyleID, textAlignment = TextAlignment.CENTER).applyStyle(
+             Style(
+                 margin = EdgeValue(top = 12.unitReal(), left = 18.unitReal(), right = 18.unitReal())
+             )
+         ),
+         createRadioImage("Nam",Style(margin = EdgeValue(left = 18.unitReal(), right = 18.unitReal(), top = 12.unitReal()),flex = Flex(flexDirection = FlexDirection.ROW)), indexID = "male"),
+          createRadioImage("Nữ",Style(margin = EdgeValue(left = 18.unitReal(), right = 18.unitReal(), top = 12.unitReal()),flex = Flex(flexDirection = FlexDirection.ROW)),indexID = "female"),
+          createRadioImage("Chưa xác định",Style(margin = EdgeValue(left = 18.unitReal(), right = 18.unitReal(), top = 12.unitReal()),flex = Flex(flexDirection = FlexDirection.ROW)),indexID = "undefine"),
+         createContainer(
+             createButton(buttonText = cancelButton, styleID = acceptButtonStyle, backgroundColor = "#e0e0e0", actions = cancelAction)
+             ,
+             createButton(buttonText = acceptButton, styleID = cancelButtonStyle, backgroundColor = "#039be5", actions = acceptAction)
+         ).applyFlex(
+             Flex(
+                 grow = 1.0,
+                 flexDirection =  FlexDirection.ROW,
+                 alignContent = AlignContent.FLEX_END,
+             )
+         ).applyStyle(
+             Style(
+                 margin = EdgeValue(top = 12.unitReal()),
+             )
+         )
+     ).applyFlex(
+         Flex(
+             justifyContent = JustifyContent.CENTER
+         )
+     ).applyStyle(
+         Style(
+             backgroundColor = "#FFFFFF",
+             flex = Flex(grow = 1.0),
+         )
+     )
+
+     private fun createButton(buttonText: String, styleID: String, backgroundColor: String, actions: List<Action> ) = Button (
+         text = buttonText,
+         styleId = styleID,
+         onPress = actions.toList()
+     ).applyStyle(
+         Style(
+             backgroundColor = backgroundColor,
+             size = Size(height = 40.unitReal()),
+             cornerRadius = CornerRadius(4.0),
+             margin = EdgeValue(left = 12.unitReal(), right = 12.unitReal(), bottom = 24.unitReal() )
+         )
+     ).applyFlex(Flex(flex =  1.0, alignSelf = AlignSelf.FLEX_END))
+
+     private fun createRadioImage(text: String,style: Style, indexID: String) = Touchable(
+         onPress = listOf(
+             SetContext(
+                 contextId = "global",
+                 value = "@{global.$indexID}",
+                 path = "gender"
+             )
+         ),
+         child = createContainer(
+             Image(
+                 ImagePath.Remote("@{condition(eq(global.gender,global.$indexID) , 'http://localhost:8080/resourcesController/radio_button_clicked', 'http://localhost:8080/resourcesController/radio_button')}")
+                 //  ImagePath.Remote("http://localhost:8080/resourcesController/radio_button_clicked")
+             ).applyStyle(
+                 Style(
+                     size = Size(width = 24.unitReal(), height = 24.unitReal()),margin = EdgeValue(right = 12.unitReal())
+                 )
+             ), createTextView(text = text, styleId = "",textAlignment = TextAlignment.LEFT)
+         ).applyStyle(style)
+     )
 }
+
+

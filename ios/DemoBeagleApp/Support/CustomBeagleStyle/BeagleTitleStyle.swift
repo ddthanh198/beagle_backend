@@ -26,4 +26,17 @@ struct Styles {
     static func normalBoldTextStyle() -> (UITextView?) -> Void {
         return BeagleStyle.text(font: UIFont.systemFont(ofSize: 20, weight: .semibold), color: .black)
     }
+    
+    static func basicDialogTextStyle() -> (UITextView?) -> Void {
+        return BeagleStyle.text(
+            font: UIFont.systemFont(ofSize: 20, weight: .semibold), color: .black
+        )
+    }
+    
+    static func basicDialogContentStyle() -> (UITextView?) -> Void {
+        return BeagleStyle.text(
+            font: UIFont.systemFont(ofSize: 18),
+            color: .gray
+        )
+    }
 }
