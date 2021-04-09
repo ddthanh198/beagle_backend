@@ -72,10 +72,14 @@ abstract class BaseBuilder {
             height: Int = 44,
             listAction: List<Action>
     ) = Touchable(
-            child = Text(
-                    text = text,
-                    styleId = styleId,
-                    alignment = TextAlignment.CENTER
+            child = Container(
+                children = listOf(
+                    Text(
+                        text = text,
+                        styleId = styleId,
+                        alignment = TextAlignment.CENTER
+                    )
+                )
             ).applyStyle(
                     style = Style(
                             size = Size(
