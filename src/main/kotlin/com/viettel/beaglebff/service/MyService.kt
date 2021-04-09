@@ -13,6 +13,7 @@ import br.com.zup.beagle.widget.layout.Container
 import br.com.zup.beagle.widget.layout.Screen
 import br.com.zup.beagle.widget.layout.ScreenBuilder
 import br.com.zup.beagle.widget.ui.*
+import com.viettel.beaglebff.builder.BaseBuilder
 import com.viettel.beaglebff.common.Gravity
 import com.viettel.beaglebff.components.actions.OpenDateRangePicker
 import com.viettel.beaglebff.components.actions.OpenSideMenuViewController
@@ -53,7 +54,7 @@ class HomeSideMenuScreen: ScreenBuilder {
 
 }
 
-class MyScreen : ScreenBuilder {
+class MyScreen : BaseBuilder(), ScreenBuilder {
     val searchContext = ContextData(
         id = "searchContext",
         value = SearchContext()
@@ -68,14 +69,10 @@ class MyScreen : ScreenBuilder {
             children = listOf(
                 Container(
                     children = listOf(
-                        Text("Hihi, chào cậu !", styleId = "Title.Text.Orange"),
-                        Image(
-                            ImagePath.Remote("https://freepikpsd.com/wp-content/uploads/2019/10/push-notification-icon-png-9-Transparent-Images-Free.png")
-                        ).applyStyle(
-                            Style(
-                                size = Size(width = 40.unitReal(), height = 40.unitReal())
-                            )
-                        )
+                        Text("Chao ban", styleId = "Title.Text.Orange"),
+                        createTouchableIcon(remoteUrl = "https://freepikpsd.com/wp-content/uploads/2019/10/push-notification-icon-png-9-Transparent-Images-Free.png",24,24, listOf(
+                            Navigate.PushView(route = Route.Remote("http://localhost:8080/screenController/taskFeedback"))
+                        )),
                     )
                 ).applyStyle(
                     Style(
@@ -89,7 +86,7 @@ class MyScreen : ScreenBuilder {
                     )
                 ),
                 CustomButton(
-                    title = "Hehe" + "@{global.dateRange}",
+                    title = "Show Side Menu" + "@{global.dateRange}",
                     textColor = "#ffffff",
                     backgroundColor = "#0000ff",
                     radius = 22.0,
@@ -99,17 +96,10 @@ class MyScreen : ScreenBuilder {
                 ),
                 Container(
                     children = listOf(
-                        Image(
-                            ImagePath.Local.both(
-                                "https://img.icons8.com/pastel-glyph/2x/search--v2.png",
-                                "ic_search"
-                            )
-                        ).applyStyle(
-                            Style(
-                                size = Size(width = 24.unitReal(), height = 24.unitReal()),
-                                margin = EdgeValue(right = 11.unitReal())
-                            )
-                        ),
+                        createTouchableIcon(remoteUrl = "https://img.icons8.com/pastel-glyph/2x/search--v2.png",24,24, listOf(
+                            Navigate.PushView(route = Route.Remote("http://localhost:8080/screenController/taskFeedback"))
+                        )),
+
                         TextInput(
                             placeholder = "Nhập số năm cần tìm kiếm",
                             onChange = listOf(

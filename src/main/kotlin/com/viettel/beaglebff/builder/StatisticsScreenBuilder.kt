@@ -43,7 +43,9 @@ class StatisticsScreenBuilder: ScreenBuilder, BaseBuilder() {
                         sliceSpace = 3F,
                         isHoleNeeded = true,
                         holeRadius = 40f,
-                        holeText = "15.243\nphản ánh"
+                        holeText = "15.243\nphản ánh",
+                        width = CHART_WIDTH,
+                        height = CHART_HEIGHT
                     ).applyStyle(
                         Style(
                             size = Size(height = CHART_HEIGHT.unitReal(), width = CHART_WIDTH.unitReal()),

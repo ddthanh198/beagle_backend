@@ -3,6 +3,7 @@ package com.viettel.beaglebff.controller
 import com.viettel.beaglebff.service.MyService
 import com.viettel.beaglebff.service.TabService
 import com.viettel.beaglebff.service.ScreenService
+import com.viettel.beaglebff.service.TaskService
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
@@ -12,7 +13,8 @@ import org.springframework.web.bind.annotation.RestController
 class ScreenController(
         private val tabService: TabService,
         private val myService: MyService,
-        private val screenService: ScreenService
+        private val screenService: ScreenService,
+        private val taskService: TaskService
 ) {
     @GetMapping("/home")
     fun getHomeScreen() = screenService.createHomeScreen()
@@ -43,4 +45,8 @@ class ScreenController(
 
     @GetMapping("/tabChart")
     fun getTabChart() = tabService.createTabChart()
+
+    @GetMapping("/taskFeedback")
+    fun getTaskFeedback() = taskService.getTaskScreen()
+
 }

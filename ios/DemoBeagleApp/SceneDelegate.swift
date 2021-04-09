@@ -29,7 +29,9 @@ extension SceneDelegate {
         let theme = AppTheme(styles: [
             "Title.Text.Orange": Styles.titleTextStyle,
             "Description.Text.Orange": Styles.descriptionTextStyle,
-            "NormalBoldText": Styles.normalBoldTextStyle
+            "NormalBoldText": Styles.normalBoldTextStyle,
+            "Title.Text.BasicDialog": Styles.basicDialogTextStyle,
+            "Content.Text.BasicDialog": Styles.basicDialogContentStyle
         ])
         
         let dependencies = BeagleDependencies()
@@ -42,7 +44,8 @@ extension SceneDelegate {
         dependencies.decoder.register(action: DismissDialogAction.self)
         dependencies.decoder.register(action: ShowBottomSheetAction.self)
         dependencies.decoder.register(action: OpenDateRangePicker.self)
-        
+        dependencies.decoder.register(component: BarChartWidget.self)
+        dependencies.decoder.register(component: PieChart.self)
         Beagle.dependencies = dependencies
         
         BeagleConfig.start(dependencies: dependencies)

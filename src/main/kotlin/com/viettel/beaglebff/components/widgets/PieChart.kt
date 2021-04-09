@@ -15,7 +15,9 @@ class PieChart(
     val holeColor: String = "#ffffff",
     val holeText: String = "",
     val holeTextColor: String = "#000000",
-    val holeTextSize: Float = 12F
+    val holeTextSize: Float = 12F,
+    val width: Int = 100,
+    val height: Int = 100
 ): Widget()
 
 /*

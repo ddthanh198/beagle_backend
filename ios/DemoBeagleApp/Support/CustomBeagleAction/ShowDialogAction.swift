@@ -21,13 +21,23 @@ class ShowDialogAction: Action {
     }
     
     func execute(controller: BeagleController, origin: UIView) {
-        let dialogController = DialogLanguageViewController()
-        dialogController.numberOfItems = numberOfItems
-        dialogController.providesPresentationContextTransitionStyle = true
-        dialogController.definesPresentationContext = true
-        dialogController.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
-        dialogController.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
-        controller.present(dialogController, animated: true, completion: nil)
         
+        if endpoint == "/widgetController/selectLanguageDialog" {
+            let dialogController = DialogLanguageViewController()
+            dialogController.numberOfItems = numberOfItems
+            dialogController.providesPresentationContextTransitionStyle = true
+            dialogController.definesPresentationContext = true
+            dialogController.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+            dialogController.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+            controller.present(dialogController, animated: true, completion: nil)
+        }
+        else {
+            let dialogCtrl = BasicDialogViewController()
+            dialogCtrl.providesPresentationContextTransitionStyle = true
+            dialogCtrl.definesPresentationContext = true
+            dialogCtrl.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+            dialogCtrl.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+            controller.present(dialogCtrl, animated: false, completion: nil)
+        }
     }
 }

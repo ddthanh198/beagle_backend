@@ -22,4 +22,7 @@ class WidgetController(
 
     @GetMapping("/bottomSheetDialog")
     fun getBottomSheetDialog() = widgetService.createBottomSheetDialog()
+
+    @GetMapping("/basicDialog")
+    fun createBasicDialog() = widgetService.createBasicDialog()
 }
