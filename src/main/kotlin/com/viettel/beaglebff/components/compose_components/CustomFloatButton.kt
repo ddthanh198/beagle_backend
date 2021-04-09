@@ -26,9 +26,29 @@ class CustomFloatButton(
         position = EdgeValue(bottom = 0.unitReal(), right = 0.unitReal())
     )
 
+    private val shaddowStyle = Style(
+        backgroundColor = null,
+        positionType = PositionType.ABSOLUTE,
+        position = EdgeValue(bottom = 0.unitReal(), right = 0.unitReal())
+    )
+
     override fun build(): ServerDrivenComponent {
         return Container(
             children = listOf(
+                Container(
+                    children = listOf(
+                        Container(
+                            children = listOf()
+                        ).applyStyle(
+                            Style(
+                                backgroundColor = "#d3d3d3",
+                                margin = EdgeValue(right = 17.unitReal(), bottom = 17.unitReal()),
+                                cornerRadius = CornerRadius(24.0),
+                                size = Size(width = 48.unitReal(), height = 48.unitReal()),
+                            )
+                        )
+                    )
+                ).applyStyle(shaddowStyle),
                 Touchable(
                     child = Container(
                         children = listOf(
