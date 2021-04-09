@@ -82,21 +82,6 @@ class StatisticsScreenBuilder: ScreenBuilder, BaseBuilder() {
         )
     )
 
-//    private fun getChartData(): ArrayList<Array<String>> {
-//        val dataset = ArrayList<Array<String>>()
-//
-//        dataset.addAll(
-//            listOf(
-//                arrayOf("48", COLOR_CHART_GRAY),
-//                arrayOf("17", COLOR_CHART_BLUE),
-//                arrayOf("25", COLOR_CHART_GREEN),
-//                arrayOf("10", COLOR_CHART_ORANGE)
-//            )
-//        )
-//
-//        return dataset
-//    }
-
     private fun getChartData(): List<PieChartSlice> {
         val dataset = ArrayList<PieChartSlice>()
 
