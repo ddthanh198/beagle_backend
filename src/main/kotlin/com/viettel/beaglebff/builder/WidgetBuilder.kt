@@ -126,7 +126,10 @@ object WidgetBuilder : BaseBuilder(){
                                     Style(size = Size(width = 50.unitPercent()))
                             ),
                             onPress = listOf(
-                                ShowBottomSheetAction("/widgetController/bottomSheetDialog", generateUserInfoList().size)
+                                    com.viettel.beaglebff.components.actions.ShowBottomSheetAction(
+                                            "/widgetController/bottomSheetDialog",
+                                            generateUserInfoList().size
+                                    )
                             )
                     ),
                     createContainer(
@@ -135,7 +138,10 @@ object WidgetBuilder : BaseBuilder(){
                                     width = 30,
                                     height = 30,
                                     listAction = listOf(
-                                            ShowDialogAction("/widgetController/selectLanguageDialog", numberOfItems = populateLanguageOptions().size)
+                                            com.viettel.beaglebff.components.actions.ShowDialogAction(
+                                                    "/widgetController/selectLanguageDialog",
+                                                    numberOfItems = populateLanguageOptions().size
+                                            )
                                     )
                             ),
                             createCircularTextView(
@@ -271,7 +277,9 @@ object WidgetBuilder : BaseBuilder(){
                                                     )
                                             ),
                                             onPress = listOf(
-                                                    ToastAction("Click read all!")
+                                                    com.viettel.beaglebff.components.actions.ToastAction(
+                                                            "Click read all!"
+                                                    )
                                             )
                                     ),
                                     Touchable(
@@ -293,7 +301,9 @@ object WidgetBuilder : BaseBuilder(){
                                                     )
                                             ),
                                             onPress = listOf(
-                                                    ToastAction("Click setting!")
+                                                    com.viettel.beaglebff.components.actions.ToastAction(
+                                                            "Click setting!"
+                                                    )
                                             )
                                     )
                             )
@@ -332,7 +342,7 @@ object WidgetBuilder : BaseBuilder(){
                 )
             ),
             createTouchableIcon(remoteUrl = "${Constants.BASE_URL}/resourcesController/ic_close",width = 18,height = 18, listOf(
-                    DismissDialogAction("/widgetController/selectLanguageDialog")
+                    com.viettel.beaglebff.components.actions.DismissDialogAction("/widgetController/selectLanguageDialog")
                  ))
              ).applyStyle(
                     Style(
@@ -369,7 +379,9 @@ object WidgetBuilder : BaseBuilder(){
                                                     path = "language",
                                                     value = "@{item.languageIconUrl}"
                                             ),
-                                            DismissDialogAction("/widgetController/selectLanguageDialog")
+                                            com.viettel.beaglebff.components.actions.DismissDialogAction(
+                                                    "/widgetController/selectLanguageDialog"
+                                            )
                                     )
                             ),
                             createDivider(8, 8, 0, 0)
@@ -403,7 +415,7 @@ object WidgetBuilder : BaseBuilder(){
                     )
                 ),
                 createTouchableIcon(remoteUrl = "${Constants.BASE_URL}/resourcesController/ic_close",width = 18,height = 18, listOf(
-                        DismissDialogAction("/widgetController/bottomSheetDialog")
+                        com.viettel.beaglebff.components.actions.DismissDialogAction("/widgetController/bottomSheetDialog")
                 ))
             ).applyStyle(
                 Style(
@@ -432,7 +444,9 @@ object WidgetBuilder : BaseBuilder(){
                                                     path = "welcomeContext",
                                                     value = "Xin chào @{item.username}"
                                             ),
-                                            DismissDialogAction("/widgetController/bottomSheetDialog")
+                                            com.viettel.beaglebff.components.actions.DismissDialogAction(
+                                                    "/widgetController/bottomSheetDialog"
+                                            )
                                     )
                             ),
                             createDivider(8, 8, 0, 0)
