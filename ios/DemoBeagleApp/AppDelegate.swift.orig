@@ -27,9 +27,13 @@ extension AppDelegate {
             "Description.Text.Orange": Styles.descriptionTextStyle,
             "NormalBoldText": Styles.normalBoldTextStyle,
             "Title.Text.BasicDialog": Styles.basicDialogTextStyle,
+<<<<<<< HEAD
             "Content.Text.BasicDialog": Styles.basicDialogContentStyle,
             "Accept.Button.BasicDialog": Styles.acceptButtonDialogStyle,
             "Cancel.Button.BasicDialog": Styles.cancelButtonDialogStyle
+=======
+            "Content.Text.BasicDialog": Styles.basicDialogContentStyle
+>>>>>>> master
         ])
         
         let dependencies = BeagleDependencies()

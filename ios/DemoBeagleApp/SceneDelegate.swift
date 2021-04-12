@@ -31,7 +31,9 @@ extension SceneDelegate {
             "Description.Text.Orange": Styles.descriptionTextStyle,
             "NormalBoldText": Styles.normalBoldTextStyle,
             "Title.Text.BasicDialog": Styles.basicDialogTextStyle,
-            "Content.Text.BasicDialog": Styles.basicDialogContentStyle
+            "Content.Text.BasicDialog": Styles.basicDialogContentStyle,
+            "Accept.Button.BasicDialog": Styles.acceptButtonDialogStyle,
+            "Cancel.Button.BasicDialog": Styles.cancelButtonDialogStyle
         ])
         
         let dependencies = BeagleDependencies()

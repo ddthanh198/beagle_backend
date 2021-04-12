@@ -21,6 +21,7 @@ import br.com.zup.beagle.widget.ui.Image
 import br.com.zup.beagle.widget.ui.ImagePath
 import br.com.zup.beagle.widget.ui.ListView
 import br.com.zup.beagle.widget.ui.Text
+import com.viettel.beaglebff.common.Constants
 
 
 class TaskBuilder: ScreenBuilder, BaseBuilder() {
@@ -79,7 +80,7 @@ class TaskBuilder: ScreenBuilder, BaseBuilder() {
                                      path = "gender",
                                      value =  0
                                  ),
-                                 ShowDialogAction("", 0)
+                                 ShowDialogAction("/widgetController/basicDialog", 0,width = 300, height = 480)
                              )
                          ),
                      )
@@ -111,7 +112,7 @@ class TaskBuilder: ScreenBuilder, BaseBuilder() {
                                      method = RequestActionMethod.GET,
                                      headers = mapOf(
                                          "Content-Type" to "applicaition/json",
-                                         "Authorization" to "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjY4YjRlZDczZTRjOWU2YzU3NzgzYzA2NzczMWJhNGE3NWQwMzY5NmEzZDZlOGYxOGI4NTlmMWFmYTE1NDM1MDljZjZhY2ExYjg4NDczYWUwIn0.eyJhdWQiOiIxIiwianRpIjoiNjhiNGVkNzNlNGM5ZTZjNTc3ODNjMDY3NzMxYmE0YTc1ZDAzNjk2YTNkNmU4ZjE4Yjg1OWYxYWZhMTU0MzUwOWNmNmFjYTFiODg0NzNhZTAiLCJpYXQiOjE2MTc5NjM1MjksIm5iZiI6MTYxNzk2MzUyOSwiZXhwIjoxNjE3OTc3OTI4LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.xpTfat8n5BoLou9Eh9RHukaI2Iq-2ia0nEl0biSD1oZNNs9kzTGqSP47LAoeL0nOHDRxEbWiL9dcaWp_cOf2MH0-PpdZjFBU0Acoi7ZBqySsn0zad3alFljFuL1mT2h3yBqTkE4FrFdGNUfg0WkDXBVRRnwPGhQR2_dGFaaxKQ2rrPN53JasutRevtptpN4AMdjw0bGCbXPhici-_Gf966jDUNJiNLohJ8X0olY-XS0lFNSfGyMSUil7TKql7WAUSyLv9xIQbr-ZHQ23TEWgoQHQtuM8eJagp0ied9S5lpNiPa3IS8o7uvNsqpwh8d8TlLzSXKJ6cVzKUDd7Je2Wmz34XJlA2KAMEwqa4l1VBk7AG4EF9ABupiw78w2Gkvi8vsV5nvS8oRkx1-jlo96CLQum22pcUomaE8iPKIYCMT5B5Ck1XXnq1HNnUIEDd9qYvxDsAfbc0O18YcvWHHswmnWygDhnGqL2p8NpRuWL9XenKBKYhozkDl5METqJdapDCHnHW4XSFNb1_7gywJvExhjW6qi8nzK05j7GYh7UEsG-itNganwVRiV4Y7F0ar63kJc-nyO0lOU6aIJSab9_bhV0TbU1iVogeGaJg_MetjHNwbjqWB7pNO__JoVbvbVYQYJ-12gORPWli2MTTyE2caTP3xLJYupvT1PiFLngPHk"
+                                         "Authorization" to "${Constants.TOKEN}"
                                      ), onSuccess = listOf (
                                      SetContext(
                                          contextId = "global",

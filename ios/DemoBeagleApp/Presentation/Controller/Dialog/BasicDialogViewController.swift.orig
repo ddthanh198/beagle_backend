@@ -9,6 +9,7 @@ import UIKit
 import Beagle
 
 class BasicDialogViewController: UIViewController {
+<<<<<<< HEAD
     
     var endpoint: String! = ""
     var width: Int! = 0
@@ -34,4 +35,33 @@ class BasicDialogViewController: UIViewController {
         dialogBeagleViewController.didMove(toParent: self)
         
     }
+=======
+
+    let dialogBeagleViewController = BeagleScreenViewController(.remote(.init(url: "http://localhost:8080/widgetController/basicDialog")))
+     var dialogView: UIView!
+     
+     enum Constants {
+         static let alpha = 0.1
+         static let marginWidth = 150
+         static let marginHeight = 125
+         static let width = 300
+         static let height = 250
+     }
+     
+     override func viewDidLoad() {
+         super.viewDidLoad()
+         self.view.backgroundColor = UIColor.black.withAlphaComponent(CGFloat(Constants.alpha))
+         addChild(dialogBeagleViewController)
+         guard let dialogView = dialogBeagleViewController.view else { return }
+         self.dialogView = dialogView
+         self.view.addSubview(self.dialogView)
+         self.dialogView.anchor(top: self.view.topAnchor, left: self.view.leftAnchor, topConstant: self.view.frame.height/2 - CGFloat(Constants.marginHeight), leftConstant: self.view.frame.width/2 - CGFloat(Constants.marginWidth), widthConstant: CGFloat(Constants.width), heightConstant: CGFloat(Constants.height))
+         
+         self.dialogView.layer.masksToBounds = true
+         self.dialogView.layer.cornerRadius = 16
+         dialogBeagleViewController.didMove(toParent: self)
+             
+     }
+
+>>>>>>> master
 }
