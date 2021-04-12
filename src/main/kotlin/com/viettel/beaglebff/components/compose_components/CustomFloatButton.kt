@@ -1,6 +1,5 @@
 package com.viettel.beaglebff.components.compose_components
 
-import br.com.zup.beagle.core.CornerRadius
 import br.com.zup.beagle.core.PositionType
 import br.com.zup.beagle.core.ServerDrivenComponent
 import br.com.zup.beagle.core.Style
@@ -11,9 +10,6 @@ import br.com.zup.beagle.widget.core.*
 import br.com.zup.beagle.widget.layout.ComposeComponent
 import br.com.zup.beagle.widget.layout.Container
 import br.com.zup.beagle.widget.navigation.Touchable
-import br.com.zup.beagle.widget.ui.Text
-import com.viettel.beaglebff.common.Constants
-import com.viettel.beaglebff.components.actions.OpenDateRangePicker
 import com.viettel.beaglebff.components.widgets.MyFloatingButton
 
 class CustomFloatButton(
@@ -21,6 +17,7 @@ class CustomFloatButton(
     val backgroundColor: String,
     val onPress: List<Action>
 ) : ComposeComponent {
+
     private val style = Style(
         backgroundColor = null,
         positionType = PositionType.ABSOLUTE,

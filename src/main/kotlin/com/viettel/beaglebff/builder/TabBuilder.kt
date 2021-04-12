@@ -1,4 +1,4 @@
-package com.viettel.bealglebff.builder
+package com.viettel.beaglebff.builder
 
 import br.com.zup.beagle.core.Style
 import br.com.zup.beagle.ext.*
@@ -10,15 +10,14 @@ import br.com.zup.beagle.widget.core.*
 import br.com.zup.beagle.widget.layout.Container
 import br.com.zup.beagle.widget.layout.Screen
 import br.com.zup.beagle.widget.ui.*
-import com.viettel.beaglebff.builder.BaseBuilder
-import com.viettel.beaglebff.builder.WidgetBuilder
 import com.viettel.beaglebff.common.Constants
 import com.viettel.beaglebff.components.compose_components.CustomFloatButton
 import com.viettel.beaglebff.components.compose_components.FloatingButton
 import com.viettel.beaglebff.model.populateData
-import com.viettel.bealglebff.components.widgets.BarChartWidget
-import com.viettel.bealglebff.model.BarChart
-import com.viettel.bealglebff.model.BarChartData
+import com.viettel.beaglebff.components.widgets.BarChart
+import com.viettel.beaglebff.model.bar_chart.BarModel
+import com.viettel.beaglebff.model.bar_chart.LeftAxisMetadata
+import com.viettel.beaglebff.model.bar_chart.RightAxisMetaData
 
 object TabBuilder: BaseBuilder(){
 
@@ -27,8 +26,8 @@ object TabBuilder: BaseBuilder(){
         child = createContainer(
             WidgetBuilder.createToolbar(),
             WidgetBuilder.createBannerView(),
-            CustomFloatButton(
-                image = "ic_stats",
+            FloatingButton(
+                remoteIconUrl = "${Constants.BASE_URL}/resourcesController/ic_stats",
                 backgroundColor = Constants.COLOR_PRIMARY,
                 onPress = listOf(
                     Navigate.PushView(route = Route.Remote("/screenController/statistics"))
@@ -88,27 +87,33 @@ object TabBuilder: BaseBuilder(){
           return createContainer(
               createTextView("Biểu đồ lượng mưa").applyStyle(
                   Style(
-                      size = Size(width = 150.unitReal(), height = 40.unitReal()),
+                      margin = EdgeValue(top = 10.unitReal()),
                       flex = Flex(
-                          alignSelf = AlignSelf.CENTER,
-                          justifyContent = JustifyContent.CENTER
+                          alignSelf = AlignSelf.CENTER
                       )
                   )
               ),
-              BarChartWidget(getDataChart(),true,false, true,"ton",width = 100, height = 200).applyStyle(
+              BarChart(
+                  dataset = getDataChart(),
+                  leftAxisMetadata = LeftAxisMetadata(textSize = 13F),
+                  rightAxisMetadata = RightAxisMetaData(isRightAxisEnabled = false),
+                  unit = "tons",
+                  barWidth = 0.45F,
+                  width = 100,
+                  height = 200
+              ).applyStyle(
                   Style(
-                      size = Size(width = 100.unitReal(), height = 200.unitReal()),
+                      size = Size(width = 400.unitReal(), height = 200.unitReal()),
+                      margin = EdgeValue(vertical = 20.unitReal()),
                       flex = Flex(
-                          alignSelf = AlignSelf.CENTER,
-
+                          alignSelf = AlignSelf.CENTER
                       )
                   )
               ),
-              createLegendBarChart(color = "#a50000", "Thành phố Hà Nội"),
+              createLegendBarChart("#a50000", "Thành phố Hà Nội"),
               createLegendBarChart("#a5dd00", "Thành phố Hồ Chí Minh"),
               createLegendBarChart("#a5ddc7", "Thành phố Cần Thơ"),
-              createLegendBarChart("#ebdd70", "Thành Phố Đà Nẵng"),
-
+              createLegendBarChart("#ebdd70", "Thành Phố Đà Nẵng")
           ).applyFlex(
               Flex(
                   grow = 1.0,
@@ -117,14 +122,15 @@ object TabBuilder: BaseBuilder(){
           )
      }
 
-     fun getDataChart(): ArrayList<BarChart> {
-          var barChartData = ArrayList<BarChart>()
+     private fun getDataChart(): List<BarModel> {
+          val colorList = listOf("#a50000", "#a5dd00", "#a5ddc7", "#ebdd70")
+          val barChartData = ArrayList<BarModel>()
           barChartData.addAll(
               listOf(
-                  BarChart(1.0, 11.0,null, "Thành phố Hà Nội", "#a50000"),
-                  BarChart(2.0, 12.0, null, "Thành phố Hồ Chí Minh",  "#a5dd00"),
-                  BarChart(3.0, 13.0,null, "Thành Phố Cần Thơ", "#a5ddc7"),
-                  BarChart(4.0, 14.0, null, "Thành Phố Đà Nẵng", "#ebdd70")
+                  BarModel(1F, floatArrayOf(11F, 0F, 0F, 0F),null, "Thành phố Hà Nội", colorList),
+                  BarModel(2F, floatArrayOf(0F, 12F, 0F, 0F), null, "Thành phố Hồ Chí Minh",  colorList),
+                  BarModel(3F, floatArrayOf(0F, 0F, 13F, 0F),null, "Thành Phố Cần Thơ", colorList),
+                  BarModel(4F, floatArrayOf(0F, 0F, 0F, 14F), null, "Thành Phố Đà Nẵng", colorList)
               )
           )
           return barChartData

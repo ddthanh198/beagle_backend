@@ -1,8 +1,8 @@
 package com.viettel.beaglebff.common
 
 object Constants {
-    const val BASE_URL = "http://localhost:8080"
-   // const val BASE_URL = "http://10.0.2.2:8080"
+    //const val BASE_URL = "http://localhost:8080"
+    const val BASE_URL = "http://10.0.2.2:8080"
     //const val BASE_URL = "http://38e983b18b0e.ngrok.io"
 
     // item size
@@ -11,6 +11,7 @@ object Constants {
     const val DIALOG_RADIUS: Double = 20.0
 
     // color
+    const val COLOR_BLACK = "#000000"
     const val COLOR_WHITE = "#FFFFFF"
     const val COLOR_PRIMARY = "#3596EC"
     const val COLOR_GRAY_DARK = "#788793"

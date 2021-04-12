@@ -13,7 +13,7 @@ import com.viettel.beaglebff.common.Constants
 import com.viettel.beaglebff.common.CustomStyle
 import com.viettel.beaglebff.components.actions.NavigateAction
 import com.viettel.beaglebff.components.actions.ToastAction
-import com.viettel.bealglebff.components.compose_components.HorizontalDivider
+import com.viettel.beaglebff.components.compose_components.HorizontalDivider
 
 class PersonalScreenBuilder : ScreenBuilder, BaseBuilder() {
 

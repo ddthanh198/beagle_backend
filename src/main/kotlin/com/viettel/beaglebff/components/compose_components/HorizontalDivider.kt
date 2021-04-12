@@ -1,4 +1,4 @@
-package com.viettel.bealglebff.components.compose_components
+package com.viettel.beaglebff.components.compose_components
 
 import br.com.zup.beagle.core.ServerDrivenComponent
 import br.com.zup.beagle.core.Style
@@ -24,10 +24,6 @@ class HorizontalDivider(
                 Style(
                     backgroundColor = COLOR_DIVIDER,
                     size = Size(height = 0.75.unitReal()),
-                    flex = Flex(
-                        flexDirection = FlexDirection.ROW,
-                        grow = 1.0
-                    ),
                     margin = EdgeValue(
                         top = marginTop.unitReal(),
                         bottom = marginBottom.unitReal(),
