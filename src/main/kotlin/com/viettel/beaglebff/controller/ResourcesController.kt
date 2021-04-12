@@ -169,6 +169,11 @@ class ResourcesController(private val resourcesService: ResourcesService) {
         return resourcesService.getImage("statistics_icons/ic_stats.png",type = "PNG")
     }
 
+    @RequestMapping("/ic_add", method = [RequestMethod.GET], produces = [MediaType.IMAGE_PNG_VALUE])
+    @Throws(IOException::class)
+    fun getAddIcon(): ResponseEntity<InputStreamResource> {
+        return resourcesService.getImage("icons/ic_add.png",type = "PNG")
+    }
 
     @RequestMapping("/radio_button", method = arrayOf(RequestMethod.GET), produces = arrayOf(MediaType.IMAGE_PNG_VALUE))
     @Throws(IOException::class)

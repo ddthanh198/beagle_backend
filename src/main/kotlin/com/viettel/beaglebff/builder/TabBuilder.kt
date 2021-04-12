@@ -13,6 +13,7 @@ import br.com.zup.beagle.widget.ui.*
 import com.viettel.beaglebff.builder.BaseBuilder
 import com.viettel.beaglebff.builder.WidgetBuilder
 import com.viettel.beaglebff.common.Constants
+import com.viettel.beaglebff.components.compose_components.CustomFloatButton
 import com.viettel.beaglebff.components.compose_components.FloatingButton
 import com.viettel.beaglebff.model.populateData
 import com.viettel.bealglebff.components.widgets.BarChartWidget
@@ -26,8 +27,8 @@ object TabBuilder: BaseBuilder(){
         child = createContainer(
             WidgetBuilder.createToolbar(),
             WidgetBuilder.createBannerView(),
-            FloatingButton(
-                remoteIconUrl = "${Constants.BASE_URL}/resourcesController/ic_stats",
+            CustomFloatButton(
+                image = "ic_stats",
                 backgroundColor = Constants.COLOR_PRIMARY,
                 onPress = listOf(
                     Navigate.PushView(route = Route.Remote("/screenController/statistics"))

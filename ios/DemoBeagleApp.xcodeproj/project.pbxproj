@@ -46,6 +46,7 @@
 		37BAC0572617069F00D78844 /* BeagleTitleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BAC0562617069F00D78844 /* BeagleTitleStyle.swift */; };
 		37D8A241261EB82100BF9BF8 /* GetTabbarIconAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D8A240261EB82100BF9BF8 /* GetTabbarIconAPI.swift */; };
 		37D8A244261EB82E00BF9BF8 /* GetTabbarIconUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D8A243261EB82E00BF9BF8 /* GetTabbarIconUseCase.swift */; };
+		37D8A24B26202F1500BF9BF8 /* MyFloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D8A24A26202F1500BF9BF8 /* MyFloatingButton.swift */; };
 		37F0769A2615B80E00A9E444 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F076992615B80E00A9E444 /* AppDelegate.swift */; };
 		37F0769C2615B80E00A9E444 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F0769B2615B80E00A9E444 /* SceneDelegate.swift */; };
 		37F0769E2615B80E00A9E444 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F0769D2615B80E00A9E444 /* ViewController.swift */; };
@@ -95,6 +96,7 @@
 		37BAC0562617069F00D78844 /* BeagleTitleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeagleTitleStyle.swift; sourceTree = "<group>"; };
 		37D8A240261EB82100BF9BF8 /* GetTabbarIconAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetTabbarIconAPI.swift; sourceTree = "<group>"; };
 		37D8A243261EB82E00BF9BF8 /* GetTabbarIconUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetTabbarIconUseCase.swift; sourceTree = "<group>"; };
+		37D8A24A26202F1500BF9BF8 /* MyFloatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFloatingButton.swift; sourceTree = "<group>"; };
 		37F076962615B80E00A9E444 /* DemoBeagleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoBeagleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37F076992615B80E00A9E444 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37F0769B2615B80E00A9E444 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -320,6 +322,7 @@
 		3737BC512615BEC200759DC3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				37D8A24926202F0300BF9BF8 /* CustomBeagleWidget */,
 				3756E338261BF3C200280EF9 /* TimeRange */,
 			);
 			path = View;
@@ -372,6 +375,14 @@
 				37BAC0562617069F00D78844 /* BeagleTitleStyle.swift */,
 			);
 			path = CustomBeagleStyle;
+			sourceTree = "<group>";
+		};
+		37D8A24926202F0300BF9BF8 /* CustomBeagleWidget */ = {
+			isa = PBXGroup;
+			children = (
+				37D8A24A26202F1500BF9BF8 /* MyFloatingButton.swift */,
+			);
+			path = CustomBeagleWidget;
 			sourceTree = "<group>";
 		};
 		37F0768D2615B80E00A9E444 = {
@@ -523,6 +534,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37D8A24B26202F1500BF9BF8 /* MyFloatingButton.swift in Sources */,
 				3737BC682615C03C00759DC3 /* GetBottomViewUseCase.swift in Sources */,
 				3737BC4B2615BE3600759DC3 /* GetBottomAPI.swift in Sources */,
 				18539B49261EB17B00546135 /* BarChartWidget.swift in Sources */,

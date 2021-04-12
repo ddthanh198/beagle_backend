@@ -26,7 +26,7 @@ class OpenSideMenuViewController: Action {
     func execute(controller: BeagleController, origin: UIView) {
         let beagleScreen = Beagle.screen(.remote(.init(url: url)))
         let sideMenuViewController = SideMenuNavigationController(rootViewController: beagleScreen)
-        sideMenuViewController.presentationStyle = .menuSlideIn
+        sideMenuViewController.presentationStyle = .viewSlideOutMenuPartialIn
         guard let gravityType = Gravity(rawValue: gravity) else { return }
         sideMenuViewController.leftSide = gravityType == .end
         controller.present(sideMenuViewController, animated: true, completion: nil)
