@@ -125,4 +125,20 @@ abstract class BaseBuilder {
                             )
             )
     )
+
+     fun createLegendBarChart(color: String, name: String) = createContainer(
+         createContainer(
+         ).applyStyle(
+             Style(
+                 backgroundColor = color,
+                 size = Size(75.unitReal(),25.unitReal()),
+                 margin = EdgeValue(right = 10.unitReal()),
+
+             )
+         ), createTextView(name).applyStyle(Style(margin = EdgeValue(top = 5.unitReal())))
+     ).applyStyle( Style(
+         flex = Flex(
+             flexDirection = FlexDirection.ROW
+         ), margin = EdgeValue(bottom = 10.unitReal(), left = 50.unitReal())
+     ))
 }

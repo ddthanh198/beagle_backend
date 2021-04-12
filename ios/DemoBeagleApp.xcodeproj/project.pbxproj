@@ -7,13 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18361916261FEE940074042A /* PieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18361915261FEE940074042A /* PieChart.swift */; };
 		183DC2C0261C15FC003601D7 /* ShowDialogAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183DC2BF261C15FC003601D7 /* ShowDialogAction.swift */; };
 		183DC2C4261C1701003601D7 /* DialogLanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183DC2C3261C1701003601D7 /* DialogLanguageViewController.swift */; };
-		18B7050B261DA7030023F1DC /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B70509261DA7030023F1DC /* ChartViewController.swift */; };
-		18B7050C261DA7030023F1DC /* ChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B7050A261DA7030023F1DC /* ChartViewController.xib */; };
+		18539B31261EA2A400546135 /* BarchartEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18539B30261EA2A400546135 /* BarchartEntity.swift */; };
+		18539B49261EB17B00546135 /* BarChartWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18539B48261EB17B00546135 /* BarChartWidget.swift */; };
+		18D68294262034ED0090429D /* BasicDialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D68293262034ED0090429D /* BasicDialogViewController.swift */; };
+		18D68297262036FE0090429D /* LoadingAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D68296262036FE0090429D /* LoadingAction.swift */; };
 		18FE2DF2261C3D1700953723 /* DismissDialogAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FE2DF1261C3D1700953723 /* DismissDialogAction.swift */; };
 		18FE2DF5261C4F9E00953723 /* ShowBottomSheetAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FE2DF4261C4F9E00953723 /* ShowBottomSheetAction.swift */; };
 		18FE2DF8261C4FF900953723 /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FE2DF7261C4FF900953723 /* BottomSheetViewController.swift */; };
+		18FEA9D72623FB1F006DE7DC /* PieChartEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FEA9D62623FB1F006DE7DC /* PieChartEntity.swift */; };
 		3737BC382615BC8700759DC3 /* SessionAppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3737BC372615BC8700759DC3 /* SessionAppManager.swift */; };
 		3737BC3B2615BC9200759DC3 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3737BC3A2615BC9200759DC3 /* AppConstants.swift */; };
 		3737BC3E2615BC9F00759DC3 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3737BC3D2615BC9F00759DC3 /* BaseViewController.swift */; };
@@ -53,13 +57,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18361915261FEE940074042A /* PieChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChart.swift; sourceTree = "<group>"; };
 		183DC2BF261C15FC003601D7 /* ShowDialogAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDialogAction.swift; sourceTree = "<group>"; };
 		183DC2C3261C1701003601D7 /* DialogLanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogLanguageViewController.swift; sourceTree = "<group>"; };
-		18B70509261DA7030023F1DC /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
-		18B7050A261DA7030023F1DC /* ChartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChartViewController.xib; sourceTree = "<group>"; };
+		18539B30261EA2A400546135 /* BarchartEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarchartEntity.swift; sourceTree = "<group>"; };
+		18539B48261EB17B00546135 /* BarChartWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartWidget.swift; sourceTree = "<group>"; };
+		18D68293262034ED0090429D /* BasicDialogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicDialogViewController.swift; sourceTree = "<group>"; };
+		18D68296262036FE0090429D /* LoadingAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingAction.swift; sourceTree = "<group>"; };
 		18FE2DF1261C3D1700953723 /* DismissDialogAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissDialogAction.swift; sourceTree = "<group>"; };
 		18FE2DF4261C4F9E00953723 /* ShowBottomSheetAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowBottomSheetAction.swift; sourceTree = "<group>"; };
 		18FE2DF7261C4FF900953723 /* BottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
+		18FEA9D62623FB1F006DE7DC /* PieChartEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartEntity.swift; sourceTree = "<group>"; };
 		3737BC372615BC8700759DC3 /* SessionAppManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionAppManager.swift; sourceTree = "<group>"; };
 		3737BC3A2615BC9200759DC3 /* AppConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		3737BC3D2615BC9F00759DC3 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -128,17 +136,18 @@
 			children = (
 				183DC2C3261C1701003601D7 /* DialogLanguageViewController.swift */,
 				18FE2DF7261C4FF900953723 /* BottomSheetViewController.swift */,
+				18D68293262034ED0090429D /* BasicDialogViewController.swift */,
 			);
 			path = Dialog;
 			sourceTree = "<group>";
 		};
-		18B704EF261DA6080023F1DC /* ChartViewController */ = {
+		18539B47261EB15C00546135 /* CustomWidget */ = {
 			isa = PBXGroup;
 			children = (
-				18B70509261DA7030023F1DC /* ChartViewController.swift */,
-				18B7050A261DA7030023F1DC /* ChartViewController.xib */,
+				18539B48261EB17B00546135 /* BarChartWidget.swift */,
+				18361915261FEE940074042A /* PieChart.swift */,
 			);
-			path = ChartViewController;
+			path = CustomWidget;
 			sourceTree = "<group>";
 		};
 		23A7282D120DA435498DBD10 /* Frameworks */ = {
@@ -190,6 +199,7 @@
 		3737BC2B2615BBE000759DC3 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				18539B47261EB15C00546135 /* CustomWidget */,
 				37ADF5C126184CA2006ACBF8 /* CustomBeagleAction */,
 				37BAC0552617068900D78844 /* CustomBeagleStyle */,
 				3737BC6F2615C0C400759DC3 /* Extension */,
@@ -219,7 +229,6 @@
 		3737BC2E2615BBFD00759DC3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				18B704EF261DA6080023F1DC /* ChartViewController */,
 				183DC2C2261C16EB003601D7 /* Dialog */,
 				3737BC3D2615BC9F00759DC3 /* BaseViewController.swift */,
 				3737BC552615BEE600759DC3 /* BaseTabBarController.swift */,
@@ -269,6 +278,8 @@
 			children = (
 				3737BC402615BCAB00759DC3 /* CommonEntity.swift */,
 				3737BC4D2615BE5B00759DC3 /* BottomViewEntity.swift */,
+				18539B30261EA2A400546135 /* BarchartEntity.swift */,
+				18FEA9D62623FB1F006DE7DC /* PieChartEntity.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -353,6 +364,7 @@
 				18FE2DF4261C4F9E00953723 /* ShowBottomSheetAction.swift */,
 				37ADF5D6261855FD006ACBF8 /* OpenTimeRangeSelector.swift */,
 				3756E335261BEE0800280EF9 /* OpenDateRangePicker.swift */,
+				18D68296262036FE0090429D /* LoadingAction.swift */,
 			);
 			path = CustomBeagleAction;
 			sourceTree = "<group>";
@@ -466,7 +478,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18B7050C261DA7030023F1DC /* ChartViewController.xib in Resources */,
 				37F076A62615B80F00A9E444 /* LaunchScreen.storyboard in Resources */,
 				37F076A32615B80F00A9E444 /* Assets.xcassets in Resources */,
 				3737BC5B2615BF4200759DC3 /* MainTabBarController.xib in Resources */,
@@ -526,12 +537,15 @@
 				37D8A24B26202F1500BF9BF8 /* MyFloatingButton.swift in Sources */,
 				3737BC682615C03C00759DC3 /* GetBottomViewUseCase.swift in Sources */,
 				3737BC4B2615BE3600759DC3 /* GetBottomAPI.swift in Sources */,
+				18539B49261EB17B00546135 /* BarChartWidget.swift in Sources */,
 				3737BC622615BFA200759DC3 /* UseCase.swift in Sources */,
 				18FE2DF5261C4F9E00953723 /* ShowBottomSheetAction.swift in Sources */,
 				3737BC5F2615BF7D00759DC3 /* WidgetRepository.swift in Sources */,
 				37BAC0572617069F00D78844 /* BeagleTitleStyle.swift in Sources */,
 				37ADF5D7261855FD006ACBF8 /* OpenTimeRangeSelector.swift in Sources */,
+				18D68294262034ED0090429D /* BasicDialogViewController.swift in Sources */,
 				3737BC482615BCD300759DC3 /* Urls.swift in Sources */,
+				18539B31261EA2A400546135 /* BarchartEntity.swift in Sources */,
 				3737BC652615C01000759DC3 /* WidgetRepositoryImplement.swift in Sources */,
 				37F0769E2615B80E00A9E444 /* ViewController.swift in Sources */,
 				3737BC712615C0D500759DC3 /* UIColorExtensions.swift in Sources */,
@@ -547,17 +561,19 @@
 				37D8A241261EB82100BF9BF8 /* GetTabbarIconAPI.swift in Sources */,
 				37F0769C2615B80E00A9E444 /* SceneDelegate.swift in Sources */,
 				183DC2C4261C1701003601D7 /* DialogLanguageViewController.swift in Sources */,
+				18D68297262036FE0090429D /* LoadingAction.swift in Sources */,
 				18FE2DF8261C4FF900953723 /* BottomSheetViewController.swift in Sources */,
 				183DC2C0261C15FC003601D7 /* ShowDialogAction.swift in Sources */,
 				37ADF5C326184CD5006ACBF8 /* OpenSideMenuViewController.swift in Sources */,
-				18B7050B261DA7030023F1DC /* ChartViewController.swift in Sources */,
 				3737BC452615BCC800759DC3 /* BaseAPI.swift in Sources */,
+				18361916261FEE940074042A /* PieChart.swift in Sources */,
 				3756E340261BF3C200280EF9 /* DayView.swift in Sources */,
 				3737BC5A2615BF4200759DC3 /* MainTabBarController.swift in Sources */,
 				3737BC562615BEE600759DC3 /* BaseTabBarController.swift in Sources */,
 				3737BC3B2615BC9200759DC3 /* AppConstants.swift in Sources */,
 				3737BC3E2615BC9F00759DC3 /* BaseViewController.swift in Sources */,
 				3756E33F261BF3C200280EF9 /* DayRangeIndicatorView.swift in Sources */,
+				18FEA9D72623FB1F006DE7DC /* PieChartEntity.swift in Sources */,
 				3756E336261BEE0800280EF9 /* OpenDateRangePicker.swift in Sources */,
 				37D8A244261EB82E00BF9BF8 /* GetTabbarIconUseCase.swift in Sources */,
 			);

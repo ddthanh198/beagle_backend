@@ -61,7 +61,7 @@ class BaseAPI<T: Decodable>: BaseAPIProtocol {
             let object = try decoder.decode(T.self, from: data)
             return object
         } catch {
-            print(error)
+            print(error.localizedDescription)
             return nil
         }
     }

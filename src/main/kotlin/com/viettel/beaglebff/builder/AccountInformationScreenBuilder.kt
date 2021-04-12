@@ -13,6 +13,16 @@ import br.com.zup.beagle.widget.ui.TextInput
 import com.viettel.beaglebff.common.Constants
 
 class AccountInformationScreenBuilder: ScreenBuilder, BaseBuilder() {
+
+        private val inputTextStyle = Style(
+                borderWidth = 1.0,
+                borderColor = Constants.COLOR_DIVIDER,
+                backgroundColor = Constants.COLOR_WHITE,
+                cornerRadius = CornerRadius(12.0),
+                margin = EdgeValue(horizontal = 20.unitReal(), top = 20.unitReal()),
+                padding = EdgeValue(horizontal = 12.unitReal())
+        )
+
         override fun build() = Screen(
                 child = createContainer(
                         WidgetBuilder.createMainToolbar("Cập nhật tài khoản"),
@@ -22,7 +32,10 @@ class AccountInformationScreenBuilder: ScreenBuilder, BaseBuilder() {
                                                 createTitle(),
                                                 createNameTextInput(),
                                                 createDateOfBirthInput(),
-                                                createGenderSelector()
+                                                createGenderSelector(),
+                                                createIdentityNumberInput(),
+                                                createPhoneNumberInput(),
+                                                createEmailInput()
                                         )
                                 )
                         ).applyStyle(
@@ -61,21 +74,8 @@ class AccountInformationScreenBuilder: ScreenBuilder, BaseBuilder() {
                         onChange = listOf(
 
                         )
-                ).applyStyle(
-                        Style(
-                                size = Size(height = 48.unitReal())
-                        )
-                )
-        ).applyStyle(
-                Style(
-                        borderWidth = 1.0,
-                        borderColor = Constants.COLOR_DIVIDER,
-                        backgroundColor = Constants.COLOR_WHITE,
-                        cornerRadius = CornerRadius(12.0),
-                        margin = EdgeValue(horizontal = 20.unitReal(), top = 20.unitReal()),
-                        padding = EdgeValue(horizontal = 12.unitReal())
-                )
-        )
+                ).applyStyle(Style(size = Size(height = 48.unitReal())))
+        ).applyStyle(style = inputTextStyle)
 
         private fun createDateOfBirthInput() = createContainer(
                 TextInput(
@@ -83,27 +83,43 @@ class AccountInformationScreenBuilder: ScreenBuilder, BaseBuilder() {
                         type = TextInputType.TEXT,
                         styleId = "HintText",
                         readOnly = true
-                ).applyStyle(
-                        Style(
-                                size = Size(height = 48.unitReal())
-                        )
-                )
-        ).applyStyle(
-                Style(
-                        borderWidth = 1.0,
-                        borderColor = Constants.COLOR_DIVIDER,
-                        backgroundColor = Constants.COLOR_WHITE,
-                        cornerRadius = CornerRadius(12.0),
-                        margin = EdgeValue(horizontal = 20.unitReal(), top = 20.unitReal()),
-                        padding = EdgeValue(horizontal = 12.unitReal())
-                )
-        )
+                ).applyStyle(Style(size = Size(height = 48.unitReal())))
+        ).applyStyle(style = inputTextStyle)
 
         private fun createGenderSelector() = createContainer(
                 createTextView("Giới tính*", styleId = "NormalBoldText")
-        ).applyStyle(
-                Style(
-                        margin = EdgeValue(horizontal = 20.unitReal(), top = 20.unitReal())
-                )
-        )
+        ).applyStyle(Style(margin = EdgeValue(horizontal = 20.unitReal(), top = 20.unitReal())))
+
+        private fun createIdentityNumberInput() = createContainer(
+                TextInput(
+                        placeholder = "Số CMND/CCCD*",
+                        type = TextInputType.TEXT,
+                        styleId = "HintText",
+                        onChange = listOf(
+
+                        )
+                ).applyStyle(Style(size = Size(height = 48.unitReal())))
+        ).applyStyle(style = inputTextStyle)
+
+        private fun createPhoneNumberInput() = createContainer(
+                TextInput(
+                        placeholder = "Số điện thoại*",
+                        type = TextInputType.TEXT,
+                        styleId = "HintText",
+                        onChange = listOf(
+
+                        )
+                ).applyStyle(Style(size = Size(height = 48.unitReal())))
+        ).applyStyle(style = inputTextStyle)
+
+        private fun createEmailInput() = createContainer(
+                TextInput(
+                        placeholder = "Email*",
+                        type = TextInputType.TEXT,
+                        styleId = "HintText",
+                        onChange = listOf(
+
+                        )
+                ).applyStyle(Style(size = Size(height = 48.unitReal())))
+        ).applyStyle(style = inputTextStyle)
 }

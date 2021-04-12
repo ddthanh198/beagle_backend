@@ -29,7 +29,11 @@ extension SceneDelegate {
         let theme = AppTheme(styles: [
             "Title.Text.Orange": Styles.titleTextStyle,
             "Description.Text.Orange": Styles.descriptionTextStyle,
-            "NormalBoldText": Styles.normalBoldTextStyle
+            "NormalBoldText": Styles.normalBoldTextStyle,
+            "Title.Text.BasicDialog": Styles.basicDialogTextStyle,
+            "Content.Text.BasicDialog": Styles.basicDialogContentStyle,
+            "Accept.Button.BasicDialog": Styles.acceptButtonDialogStyle,
+            "Cancel.Button.BasicDialog": Styles.cancelButtonDialogStyle
         ])
         
         let dependencies = BeagleDependencies()
@@ -44,6 +48,8 @@ extension SceneDelegate {
         dependencies.decoder.register(action: OpenDateRangePicker.self)
         dependencies.decoder.register(component: MyFloatingButton.self)
         
+        dependencies.decoder.register(component: BarChartWidget.self)
+        dependencies.decoder.register(component: PieChart.self)
         Beagle.dependencies = dependencies
         
         BeagleConfig.start(dependencies: dependencies)

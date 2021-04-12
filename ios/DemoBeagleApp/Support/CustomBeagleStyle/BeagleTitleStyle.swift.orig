@@ -39,6 +39,7 @@ struct Styles {
             color: .gray
         )
     }
+<<<<<<< HEAD
     
     static func acceptButtonDialogStyle() -> (UIButton?) -> Void {
         return BeagleStyle.button(withTitleColor: .white)
@@ -47,4 +48,6 @@ struct Styles {
     static func cancelButtonDialogStyle() -> (UIButton?) -> Void {
         return BeagleStyle.button(withTitleColor: .gray)
     }
+=======
+>>>>>>> master
 }

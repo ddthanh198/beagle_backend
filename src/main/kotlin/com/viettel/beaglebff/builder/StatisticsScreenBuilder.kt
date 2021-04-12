@@ -13,6 +13,7 @@ import com.viettel.beaglebff.common.Constants.COLOR_CHART_GREEN
 import com.viettel.beaglebff.common.Constants.COLOR_CHART_ORANGE
 import com.viettel.beaglebff.components.compose_components.CircularDot
 import com.viettel.beaglebff.components.widgets.PieChart
+import com.viettel.beaglebff.model.PieChartSlice
 import com.viettel.bealglebff.components.compose_components.HorizontalDivider
 
 class StatisticsScreenBuilder: ScreenBuilder, BaseBuilder() {
@@ -42,7 +43,9 @@ class StatisticsScreenBuilder: ScreenBuilder, BaseBuilder() {
                         sliceSpace = 3F,
                         isHoleNeeded = true,
                         holeRadius = 40f,
-                        holeText = "15.243\nphản ánh"
+                        holeText = "15.243\nphản ánh",
+                        width = CHART_WIDTH,
+                        height = CHART_HEIGHT
                     ).applyStyle(
                         Style(
                             size = Size(height = CHART_HEIGHT.unitReal(), width = CHART_WIDTH.unitReal()),
@@ -81,15 +84,15 @@ class StatisticsScreenBuilder: ScreenBuilder, BaseBuilder() {
         )
     )
 
-    private fun getChartData(): ArrayList<Array<String>> {
-        val dataset = ArrayList<Array<String>>()
+    private fun getChartData(): List<PieChartSlice> {
+        val dataset = ArrayList<PieChartSlice>()
 
         dataset.addAll(
             listOf(
-                arrayOf("48", COLOR_CHART_GRAY),
-                arrayOf("17", COLOR_CHART_BLUE),
-                arrayOf("25", COLOR_CHART_GREEN),
-                arrayOf("10", COLOR_CHART_ORANGE)
+                PieChartSlice(48F, COLOR_CHART_GRAY),
+                PieChartSlice(17F, COLOR_CHART_BLUE),
+                PieChartSlice(25F, COLOR_CHART_GREEN),
+                PieChartSlice(10F, COLOR_CHART_ORANGE)
             )
         )
 
