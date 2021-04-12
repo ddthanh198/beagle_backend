@@ -14,9 +14,7 @@ import com.viettel.beaglebff.builder.BaseBuilder
 import com.viettel.beaglebff.builder.WidgetBuilder
 import com.viettel.beaglebff.common.Constants
 import com.viettel.beaglebff.components.compose_components.FloatingButton
-
 import com.viettel.beaglebff.model.populateData
-
 import com.viettel.bealglebff.components.widgets.BarChartWidget
 import com.viettel.bealglebff.model.BarChart
 import com.viettel.bealglebff.model.BarChartData
@@ -96,7 +94,7 @@ object TabBuilder: BaseBuilder(){
                       )
                   )
               ),
-              BarChartWidget(getDataChart(),true,false, false,"ton",width = 100, height = 200).applyStyle(
+              BarChartWidget(getDataChart(),true,false, true,"ton",width = 100, height = 200).applyStyle(
                   Style(
                       size = Size(width = 100.unitReal(), height = 200.unitReal()),
                       flex = Flex(
@@ -108,7 +106,8 @@ object TabBuilder: BaseBuilder(){
               createLegendBarChart(color = "#a50000", "Thành phố Hà Nội"),
               createLegendBarChart("#a5dd00", "Thành phố Hồ Chí Minh"),
               createLegendBarChart("#a5ddc7", "Thành phố Cần Thơ"),
-              createLegendBarChart("#ebdd70", "Thành Phố Đà Nẵng")
+              createLegendBarChart("#ebdd70", "Thành Phố Đà Nẵng"),
+
           ).applyFlex(
               Flex(
                   grow = 1.0,

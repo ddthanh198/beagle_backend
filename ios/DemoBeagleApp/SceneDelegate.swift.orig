@@ -1,5 +1,5 @@
 //
-//  AppDelegate.swift
+//  SceneDelegate.swift
 //  DemoBeagleApp
 //
 //  Created by VTN-MINHPV21 on 01/04/2021.
@@ -9,27 +9,35 @@ import UIKit
 import Beagle
 import BeagleScaffold
 
-@main
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+
     var window: UIWindow?
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    @available(iOS 13.0, *)
+    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
+        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
+        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         configBeagle()
-        setupRootView()
-        return true
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        setupRootView(scene: windowScene)
     }
 }
 
-extension AppDelegate {
+extension SceneDelegate {
     private func configBeagle() {
         let theme = AppTheme(styles: [
             "Title.Text.Orange": Styles.titleTextStyle,
             "Description.Text.Orange": Styles.descriptionTextStyle,
             "NormalBoldText": Styles.normalBoldTextStyle,
             "Title.Text.BasicDialog": Styles.basicDialogTextStyle,
+<<<<<<< HEAD
             "Content.Text.BasicDialog": Styles.basicDialogContentStyle,
             "Accept.Button.BasicDialog": Styles.acceptButtonDialogStyle,
             "Cancel.Button.BasicDialog": Styles.cancelButtonDialogStyle
+=======
+            "Content.Text.BasicDialog": Styles.basicDialogContentStyle
+>>>>>>> master
         ])
         
         let dependencies = BeagleDependencies()
@@ -41,17 +49,22 @@ extension AppDelegate {
         dependencies.decoder.register(action: ShowDialogAction.self)
         dependencies.decoder.register(action: DismissDialogAction.self)
         dependencies.decoder.register(action: ShowBottomSheetAction.self)
-        dependencies.decoder.register(action: LoadingAction.self)
+        dependencies.decoder.register(action: OpenDateRangePicker.self)
         dependencies.decoder.register(component: BarChartWidget.self)
         dependencies.decoder.register(component: PieChart.self)
-        
+<<<<<<< HEAD
+
+=======
+>>>>>>> master
         Beagle.dependencies = dependencies
         
         BeagleConfig.start(dependencies: dependencies)
     }
     
-    private func setupRootView() {
-        window = UIWindow(frame: UIScreen.main.bounds)
+    @available(iOS 13.0, *)
+    private func setupRootView(scene: UIWindowScene) {
+        window = UIWindow(frame: scene.coordinateSpace.bounds)
+        window?.windowScene = scene
         let tabBarController = MainTabBarController(nibName: "MainTabBarController", bundle: nil)
         let navigationController = UINavigationController(rootViewController: tabBarController)
         navigationController.navigationBar.isHidden = true

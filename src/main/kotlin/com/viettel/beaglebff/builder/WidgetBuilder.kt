@@ -7,13 +7,15 @@ import br.com.zup.beagle.ext.applyFlex
 import br.com.zup.beagle.ext.applyStyle
 import br.com.zup.beagle.ext.unitPercent
 import br.com.zup.beagle.ext.unitReal
-import br.com.zup.beagle.widget.action.*
+import br.com.zup.beagle.widget.action.Action
+import br.com.zup.beagle.widget.action.Navigate
+import br.com.zup.beagle.widget.action.Route
+import br.com.zup.beagle.widget.action.SetContext
 import br.com.zup.beagle.widget.context.ContextData
 import br.com.zup.beagle.widget.context.expressionOf
 import br.com.zup.beagle.widget.core.*
 import br.com.zup.beagle.widget.layout.Container
 import br.com.zup.beagle.widget.layout.PageView
-import br.com.zup.beagle.widget.layout.ScreenBuilder
 import br.com.zup.beagle.widget.navigation.Touchable
 import br.com.zup.beagle.widget.pager.PageIndicator
 import br.com.zup.beagle.widget.ui.*
@@ -125,10 +127,7 @@ object WidgetBuilder : BaseBuilder(){
                                     Style(size = Size(width = 50.unitPercent()))
                             ),
                             onPress = listOf(
-                                    ShowBottomSheetAction(
-                                            "/widgetController/bottomSheetDialog",
-                                            generateUserInfoList().size
-                                    )
+                                ShowBottomSheetAction("/widgetController/bottomSheetDialog", generateUserInfoList().size)
                             )
                     ),
                     createContainer(
@@ -137,10 +136,7 @@ object WidgetBuilder : BaseBuilder(){
                                     width = 30,
                                     height = 30,
                                     listAction = listOf(
-                                            ShowDialogAction(
-                                                    "/widgetController/selectLanguageDialog",
-                                                    numberOfItems = populateLanguageOptions().size
-                                            )
+                                            ShowDialogAction("/widgetController/selectLanguageDialog", numberOfItems = populateLanguageOptions().size)
                                     )
                             ),
                             createCircularTextView(
@@ -276,9 +272,7 @@ object WidgetBuilder : BaseBuilder(){
                                                     )
                                             ),
                                             onPress = listOf(
-                                                    ToastAction(
-                                                            "Click read all!"
-                                                    )
+                                                    ToastAction("Click read all!")
                                             )
                                     ),
                                     Touchable(
@@ -300,9 +294,7 @@ object WidgetBuilder : BaseBuilder(){
                                                     )
                                             ),
                                             onPress = listOf(
-                                                    ToastAction(
-                                                            "Click setting!"
-                                                    )
+                                                    ToastAction("Click setting!")
                                             )
                                     )
                             )
@@ -378,9 +370,7 @@ object WidgetBuilder : BaseBuilder(){
                                                     path = "language",
                                                     value = "@{item.languageIconUrl}"
                                             ),
-                                            DismissDialogAction(
-                                                    "/widgetController/selectLanguageDialog"
-                                            )
+                                            DismissDialogAction("/widgetController/selectLanguageDialog")
                                     )
                             ),
                             createDivider(8, 8, 0, 0)
@@ -443,9 +433,7 @@ object WidgetBuilder : BaseBuilder(){
                                                     path = "welcomeContext",
                                                     value = "Xin chào @{item.username}"
                                             ),
-                                            DismissDialogAction(
-                                                    "/widgetController/bottomSheetDialog"
-                                            )
+                                            DismissDialogAction("/widgetController/bottomSheetDialog")
                                     )
                             ),
                             createDivider(8, 8, 0, 0)
@@ -479,8 +467,8 @@ object WidgetBuilder : BaseBuilder(){
                      margin = EdgeValue(left = 30.unitReal())
                  )
              )
-             ,createTouchableIcon("http://localhost:8080/resourcesController/ic_delete",18,18, listOf(
-                    DismissDialogAction("")
+             ,createTouchableIcon("${Constants.BASE_URL}/resourcesController/ic_delete",18,18, listOf(
+                    DismissDialogAction(""),
                )
           )
          ).applyFlex(
@@ -496,25 +484,21 @@ object WidgetBuilder : BaseBuilder(){
          ,
          createTextView(text = content,styleId = contentStyleID, textAlignment = TextAlignment.CENTER).applyStyle(
              Style(
-                 margin = EdgeValue(top = 12.unitReal(), left = 18.unitReal(), right = 18.unitReal())
+                 margin = EdgeValue(top = 12.unitReal(), left = 18.unitReal(), right = 18.unitReal(), bottom = 12.unitReal())
              )
          ),
-         createRadioImage("Nam",Style(margin = EdgeValue(left = 18.unitReal(), right = 18.unitReal(), top = 12.unitReal()),flex = Flex(flexDirection = FlexDirection.ROW)), indexID = "male"),
-          createRadioImage("Nữ",Style(margin = EdgeValue(left = 18.unitReal(), right = 18.unitReal(), top = 12.unitReal()),flex = Flex(flexDirection = FlexDirection.ROW)),indexID = "female"),
-          createRadioImage("Chưa xác định",Style(margin = EdgeValue(left = 18.unitReal(), right = 18.unitReal(), top = 12.unitReal()),flex = Flex(flexDirection = FlexDirection.ROW)),indexID = "undefine"),
+//         createRadioImage("Nam",Style(margin = EdgeValue(left = 18.unitReal(), right = 18.unitReal(), top = 12.unitReal()),flex = Flex(flexDirection = FlexDirection.ROW)), indexID = "male"),
+//          createRadioImage("Nữ",Style(margin = EdgeValue(left = 18.unitReal(), right = 18.unitReal(), top = 12.unitReal()),flex = Flex(flexDirection = FlexDirection.ROW)),indexID = "female"),
+//          createRadioImage("Chưa xác định",Style(margin = EdgeValue(left = 18.unitReal(), right = 18.unitReal(), top = 12.unitReal()),flex = Flex(flexDirection = FlexDirection.ROW)),indexID = "undefine"),
          createContainer(
-             createButton(buttonText = cancelButton, styleID = acceptButtonStyle, backgroundColor = "#e0e0e0", actions = cancelAction)
+             createButton(buttonText = cancelButton, styleID = cancelButtonStyle, backgroundColor = "#e0e0e0", actions = cancelAction)
              ,
-             createButton(buttonText = acceptButton, styleID = cancelButtonStyle, backgroundColor = "#039be5", actions = acceptAction)
+             createButton(buttonText = acceptButton, styleID = acceptButtonStyle, backgroundColor = "#039be5", actions = acceptAction)
          ).applyFlex(
              Flex(
                  grow = 1.0,
                  flexDirection =  FlexDirection.ROW,
                  alignContent = AlignContent.FLEX_END,
-             )
-         ).applyStyle(
-             Style(
-                 margin = EdgeValue(top = 12.unitReal()),
              )
          )
      ).applyFlex(
@@ -561,5 +545,3 @@ object WidgetBuilder : BaseBuilder(){
          ).applyStyle(style)
      )
 }
-
-

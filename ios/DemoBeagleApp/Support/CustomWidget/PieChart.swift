@@ -11,18 +11,18 @@ import UIKit
 import Charts
 
 struct PieChart: ServerDrivenComponent {
-    var dataset: [[String]]
-    var valueTextColor: String
-    var valueTextSize: Float
-    var sliceSpace: Float
-    var isHoleNeeded: Bool
-    var holeRadius: Float
-    var holeColor: String
-    var holeText: String
-    var holeTextColor: String
-    var holeTextSize: Float
-    var width: Int
-    var height: Int
+    var dataset: [PieChartSlice]
+    var valueTextColor: String?
+    var valueTextSize: Float?
+    var sliceSpace: Float?
+    var isHoleNeeded: Bool?
+    var holeRadius: Float?
+    var holeColor: String?
+    var holeText: String?
+    var holeTextColor: String?
+    var holeTextSize: Float?
+    var width: Int?
+    var height: Int?
     
     func toView(renderer: BeagleRenderer) -> UIView {
         return configPieChart()
@@ -31,8 +31,8 @@ struct PieChart: ServerDrivenComponent {
     func configPieChart() -> PieChartView {
         let pieChart = PieChartView()
         
-        pieChart.frame.size.width = CGFloat(width)
-        pieChart.frame.size.height = CGFloat(height)
+        pieChart.frame.size.width = CGFloat(width ?? 100)
+        pieChart.frame.size.height = CGFloat(height ?? 100)
 
         let legend = pieChart.legend
         legend.enabled = false
@@ -55,18 +55,18 @@ struct PieChart: ServerDrivenComponent {
         pieChart.rotationEnabled = true
         pieChart.highlightPerTapEnabled = true
         
-        let entries =  dataset.map { data -> (PieChartDataEntry) in
-            print(data[0])
-            return (PieChartDataEntry(value: Double(data[0])!))
+
+        let entries =  dataset.map { pieChartSlice -> (PieChartDataEntry) in
+            return (PieChartDataEntry(value: Double(pieChartSlice.percentage)))
         }
         
-        let colors = dataset.map{data -> (UIColor) in
-            return UIColor(hex: data[1])!
+        let colors = dataset.map{pieChartSlice -> (UIColor) in
+            return UIColor(hex: pieChartSlice.color)!
         }
         
         
         let set = PieChartDataSet(entries: entries)
-        set.sliceSpace = CGFloat(self.sliceSpace)
+        set.sliceSpace = CGFloat(self.sliceSpace!)
         set.colors = colors
             
         let data = PieChartData(dataSet: set)

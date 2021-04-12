@@ -34,11 +34,16 @@ class ShowDialogAction: Action {
             dialogController.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
             controller.present(dialogController, animated: true, completion: nil)
         }
+<<<<<<< HEAD
         else if endpoint == "/widgetController/basicDialog" {
             let dialogCtrl = BasicDialogViewController()
             dialogCtrl.endpoint = self.endpoint
             dialogCtrl.width = self.width
             dialogCtrl.height = self.height
+=======
+        else {
+            let dialogCtrl = BasicDialogViewController()
+>>>>>>> master
             dialogCtrl.providesPresentationContextTransitionStyle = true
             dialogCtrl.definesPresentationContext = true
             dialogCtrl.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext

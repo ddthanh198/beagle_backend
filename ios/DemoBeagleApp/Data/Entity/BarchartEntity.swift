@@ -57,3 +57,4 @@ class BarChartViewChildren: Decodable {
 class BarChartViewEntity: Decodable {
     var children: [BarChartViewChildren]
 }
+

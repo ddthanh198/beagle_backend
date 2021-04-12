@@ -10,7 +10,7 @@ object CustomStyle {
             right = 16.unitReal(),
             top = 8.unitReal(),
             bottom = 8.unitReal()
-    )
+          )
     )
 
     val iconStyle = Style(
