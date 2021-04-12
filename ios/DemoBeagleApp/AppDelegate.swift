@@ -37,6 +37,7 @@ extension AppDelegate {
         dependencies.decoder.register(action: ShowDialogAction.self)
         dependencies.decoder.register(action: DismissDialogAction.self)
         dependencies.decoder.register(action: ShowBottomSheetAction.self)
+        dependencies.decoder.register(component: MyFloatingButton.self)
         
         Beagle.dependencies = dependencies
         

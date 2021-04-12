@@ -12,21 +12,16 @@ import br.com.zup.beagle.widget.layout.ComposeComponent
 import br.com.zup.beagle.widget.layout.Container
 import br.com.zup.beagle.widget.navigation.Touchable
 import br.com.zup.beagle.widget.ui.Text
+import com.viettel.beaglebff.common.Constants
+import com.viettel.beaglebff.components.actions.OpenDateRangePicker
+import com.viettel.beaglebff.components.widgets.MyFloatingButton
 
 class CustomFloatButton(
-    val title: String,
-    val textColor: String? = null,
-    val backgroundColor: String? = null,
-    val alignItems: AlignItems,
+    val image: String,
+    val backgroundColor: String,
     val onPress: List<Action>
 ) : ComposeComponent {
     private val style = Style(
-        backgroundColor = null,
-        positionType = PositionType.ABSOLUTE,
-        position = EdgeValue(bottom = 0.unitReal(), right = 0.unitReal())
-    )
-
-    private val shaddowStyle = Style(
         backgroundColor = null,
         positionType = PositionType.ABSOLUTE,
         position = EdgeValue(bottom = 0.unitReal(), right = 0.unitReal())
@@ -37,39 +32,16 @@ class CustomFloatButton(
             children = listOf(
                 Container(
                     children = listOf(
-                        Container(
-                            children = listOf()
-                        ).applyStyle(
-                            Style(
-                                backgroundColor = "#d3d3d3",
-                                margin = EdgeValue(right = 17.unitReal(), bottom = 17.unitReal()),
-                                cornerRadius = CornerRadius(24.0),
-                                size = Size(width = 48.unitReal(), height = 48.unitReal()),
-                            )
+                        Touchable(
+                            child = MyFloatingButton(image, backgroundColor),
+                            onPress = onPress
                         )
                     )
-                ).applyStyle(shaddowStyle),
-                Touchable(
-                    child = Container(
-                        children = listOf(
-                            Text(
-                                text = title,
-                                textColor = textColor
-                            )
-                        )
-                    ).applyStyle(
-                        Style(
-                            backgroundColor = backgroundColor,
-                            cornerRadius = CornerRadius(22.0),
-                            size = Size(width = 44.unitReal(), height = 44.unitReal()),
-                            margin = EdgeValue(right = 20.unitReal(), bottom = 20.unitReal()),
-                            flex = Flex(
-                                alignItems = AlignItems.CENTER,
-                                justifyContent = JustifyContent.CENTER
-                            )
-                        )
-                    ),
-                    onPress = onPress
+                ).applyStyle(
+                    Style(
+                        margin = EdgeValue(right = 20.unitReal(), bottom = 20.unitReal()),
+                        size = Size(width = 44.unitReal(), height = 44.unitReal())
+                    )
                 )
             )
         ).applyStyle(style)

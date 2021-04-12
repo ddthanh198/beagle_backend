@@ -2,6 +2,7 @@ package com.viettel.beaglebff.service
 
 import br.com.zup.beagle.core.CornerRadius
 import br.com.zup.beagle.core.Display
+import br.com.zup.beagle.core.PositionType
 import br.com.zup.beagle.core.Style
 import br.com.zup.beagle.ext.applyStyle
 import br.com.zup.beagle.ext.unitReal
@@ -13,11 +14,13 @@ import br.com.zup.beagle.widget.layout.Container
 import br.com.zup.beagle.widget.layout.Screen
 import br.com.zup.beagle.widget.layout.ScreenBuilder
 import br.com.zup.beagle.widget.ui.*
+import com.viettel.beaglebff.common.Constants
 import com.viettel.beaglebff.common.Gravity
 import com.viettel.beaglebff.components.actions.OpenDateRangePicker
 import com.viettel.beaglebff.components.actions.OpenSideMenuViewController
 import com.viettel.beaglebff.components.compose_components.CustomButton
 import com.viettel.beaglebff.components.compose_components.CustomFloatButton
+import com.viettel.beaglebff.components.widgets.MyFloatingButton
 import com.viettel.beaglebff.model.GithubUser
 import com.viettel.beaglebff.model.SearchContext
 import com.viettel.beaglebff.model.UserCell
@@ -176,12 +179,10 @@ class MyScreen : ScreenBuilder {
                     )
                 ),
                 CustomFloatButton(
-                    title = "+",
-                    textColor = "#ffffff",
-                    backgroundColor = "#0000ff",
-                    alignItems = AlignItems.FLEX_START,
+                    image = "ic_stats",
+                    backgroundColor = "#ff0000",
                     onPress = listOf(
-                        OpenDateRangePicker(searchContext)
+                        OpenDateRangePicker()
                     )
                 )
             )

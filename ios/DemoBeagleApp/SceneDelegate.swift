@@ -42,6 +42,7 @@ extension SceneDelegate {
         dependencies.decoder.register(action: DismissDialogAction.self)
         dependencies.decoder.register(action: ShowBottomSheetAction.self)
         dependencies.decoder.register(action: OpenDateRangePicker.self)
+        dependencies.decoder.register(component: MyFloatingButton.self)
         
         Beagle.dependencies = dependencies
         
