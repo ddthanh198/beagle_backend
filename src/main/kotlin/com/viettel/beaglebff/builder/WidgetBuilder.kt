@@ -13,19 +13,19 @@ import br.com.zup.beagle.widget.action.Route
 import br.com.zup.beagle.widget.action.SetContext
 import br.com.zup.beagle.widget.context.ContextData
 import br.com.zup.beagle.widget.context.expressionOf
-import br.com.zup.beagle.widget.context.valueOf
 import br.com.zup.beagle.widget.core.*
 import br.com.zup.beagle.widget.layout.Container
 import br.com.zup.beagle.widget.layout.PageView
-import br.com.zup.beagle.widget.layout.ScrollView
 import br.com.zup.beagle.widget.navigation.Touchable
 import br.com.zup.beagle.widget.pager.PageIndicator
 import br.com.zup.beagle.widget.ui.*
 import com.viettel.beaglebff.common.Constants
+import com.viettel.beaglebff.common.Constants.CachedFile
 import com.viettel.beaglebff.components.actions.*
 import com.viettel.beaglebff.components.compose_components.HorizontalDivider
 import com.viettel.beaglebff.components.widgets.BottomNavigationView
 import com.viettel.beaglebff.components.widgets.GridView
+import com.viettel.beaglebff.model.TabInfo
 import com.viettel.beaglebff.model.generateUserInfoList
 import com.viettel.beaglebff.model.populateLanguageOptions
 
@@ -33,39 +33,49 @@ object WidgetBuilder : BaseBuilder(){
 
     // bottom navigation
     fun createBottomNavigationView() : Container {
-        val menuItems = ArrayList<Array<String>>()
+        val tabItems = ArrayList<TabInfo>()
 
-        menuItems.addAll(
-                listOf(
-                        arrayOf(
-                                "${Constants.BASE_URL}/resourcesController/ic_home",
-                                "Home",
-                                "/screenController/tabHome"
-                        ),
-                        arrayOf(
-                                "${Constants.BASE_URL}/resourcesController/ic_task",
-                                "Tasks",
-                                "/screenController/tabTask"
-                        ),
-                        arrayOf(
-                                "${Constants.BASE_URL}/resourcesController/ic_request",
-                                "Requests",
-                                "/screenController/tabRequest"
-                        ),
-                        arrayOf(
-                                "${Constants.BASE_URL}/resourcesController/ic_notification",
-                                "Notifications",
-                                "/screenController/tabNotification"
-                        ),
-                         arrayOf(
-                             "${Constants.BASE_URL}/resourcesController/ic_management",
-                             "Management",
-                             "/screenController/tabChart"
-                         )
+        tabItems.addAll(
+            listOf(
+                TabInfo(
+                    remoteIconUrl = "${Constants.BASE_URL}/resourcesController/ic_home",
+                    title = "Home",
+                    api = "/screenController/tabHome",
+                    cacheFile = CachedFile.TabHome.name
+                ),
+                TabInfo(
+                    remoteIconUrl = "${Constants.BASE_URL}/resourcesController/ic_task",
+                    title = "Tasks",
+                    api = "/screenController/tabTask",
+                    cacheFile = CachedFile.TabTask.name
+                ),
+                TabInfo(
+                    remoteIconUrl = "${Constants.BASE_URL}/resourcesController/ic_request",
+                    title = "Requests",
+                    api = "/screenController/tabRequest",
+                    cacheFile = CachedFile.TabRequest.name
+                ),
+                TabInfo(
+                    remoteIconUrl = "${Constants.BASE_URL}/resourcesController/ic_notification",
+                    title = "Notifications",
+                    api = "/screenController/tabNotification",
+                    cacheFile = CachedFile.TabNotification.name
+                ),
+                TabInfo(
+                    remoteIconUrl = "${Constants.BASE_URL}/resourcesController/ic_management",
+                    title = "Management",
+                    api = "/screenController/tabChart",
+                    cacheFile = CachedFile.TabChart.name
                 )
+            )
         )
 
-        return createContainer(BottomNavigationView(menuItems = menuItems, selectedColor = "#3596EC", unselectedColor = "#788793"))
+        return createContainer(
+            BottomNavigationView(
+                tabItems = tabItems,
+                selectedColor = Constants.COLOR_PRIMARY,
+                unselectedColor = "#788793")
+        )
     }
 
     // banner
@@ -93,14 +103,10 @@ object WidgetBuilder : BaseBuilder(){
                             )
                     ).applyStyle(
                             Style(
-                                    size = Size(height = 200.unitReal()),
+                                    size = Size(height = 360.unitReal()),
                                     margin = EdgeValue(horizontal = 12.unitReal(), top = 12.unitReal())
                             )
                     )
-            )
-    ).applyStyle(
-            Style(
-                    size = Size(height = 250.unitReal())
             )
     )
 
@@ -174,7 +180,7 @@ object WidgetBuilder : BaseBuilder(){
             createSearchBar()
     ).applyStyle(
             style = Style(
-                    backgroundColor = backgroundColor,
+                    backgroundColor = backgroundColor
             )
     )
 
