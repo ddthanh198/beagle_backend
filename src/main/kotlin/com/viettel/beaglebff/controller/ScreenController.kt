@@ -16,9 +16,6 @@ class ScreenController(
         private val screenService: ScreenService,
         private val taskService: TaskService
 ) {
-    @GetMapping("/home")
-    fun getHomeScreen() = screenService.createHomeScreen()
-
     @GetMapping("/search")
     fun getSearchScreen() = myService.getMyScreen()
 
