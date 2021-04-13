@@ -8,8 +8,6 @@ import com.viettel.beaglebff.common.Constants
 import com.viettel.beaglebff.components.actions.DismissDialogAction
 import com.viettel.beaglebff.components.actions.LoadingAction
 import com.viettel.beaglebff.model.TaskResponse
-
-import javafx.scene.control.Alert
 import org.springframework.stereotype.Service
 
 @Service

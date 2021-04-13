@@ -13,9 +13,11 @@ import br.com.zup.beagle.widget.action.Route
 import br.com.zup.beagle.widget.action.SetContext
 import br.com.zup.beagle.widget.context.ContextData
 import br.com.zup.beagle.widget.context.expressionOf
+import br.com.zup.beagle.widget.context.valueOf
 import br.com.zup.beagle.widget.core.*
 import br.com.zup.beagle.widget.layout.Container
 import br.com.zup.beagle.widget.layout.PageView
+import br.com.zup.beagle.widget.layout.ScrollView
 import br.com.zup.beagle.widget.navigation.Touchable
 import br.com.zup.beagle.widget.pager.PageIndicator
 import br.com.zup.beagle.widget.ui.*
@@ -23,6 +25,7 @@ import com.viettel.beaglebff.common.Constants
 import com.viettel.beaglebff.components.actions.*
 import com.viettel.beaglebff.components.compose_components.HorizontalDivider
 import com.viettel.beaglebff.components.widgets.BottomNavigationView
+import com.viettel.beaglebff.components.widgets.GridView
 import com.viettel.beaglebff.model.generateUserInfoList
 import com.viettel.beaglebff.model.populateLanguageOptions
 
@@ -95,6 +98,65 @@ object WidgetBuilder : BaseBuilder(){
                             )
                     )
             )
+    ).applyStyle(
+            Style(
+                    size = Size(height = 250.unitReal())
+            )
+    )
+
+    fun createGridView() = Container(
+            children = listOf(
+                    GridView(
+                            spanCount = 3,
+                            context = ContextData(
+                                    id = "images",
+                                    value = mutableListOf<String>().apply {
+                                            repeat(100) {
+//                                                                    add(
+//                                                                            listOf(
+//                                                                                    "https://www.wallpapertip.com/wmimgs/9-91552_hnh-nn-in-thoi-mo-cute.jpg",
+//                                                                                    "https://i.ytimg.com/vi/OmxdLl6jSFk/maxresdefault.jpg",
+//                                                                                    "https://langnhincuocsong.tv/cdn/2018/08/hinh-anh-meo-con.jpg",
+//                                                                                    "https://i.pinimg.com/originals/3f/55/ee/3f55ee77f25327543aaa1e2a7a5effef.jpg",
+//                                                                                    "https://www.xahara.vn/wp-content/uploads/ch%C3%B3-husky-d%E1%BB%85-th%C6%B0%C6%A1ng.jpeg",
+//                                                                                    "https://www.xahara.vn/wp-content/uploads/h%C3%ACnh-%E1%BA%A3nh-ch%C3%B3-husky-m%E1%BA%B7t-d%E1%BB%85-th%C6%B0%C6%A1ng.jpg",
+//                                                                                    "https://salt.tikicdn.com/ts/product/f3/f1/ee/036a1529fbbb1dba6fff235d91378ef6.jpg"
+//                                                                            ).random()
+//                                                                    )
+                                                    add("$it hihi")
+                                            }
+
+                                    }),
+                            dataSource = expressionOf("@{images}"),
+                            template = Container(
+                                    children = listOf(
+                                            Text(
+                                                    text = "@{item}",
+                                                    alignment = TextAlignment.CENTER
+                                            ).applyFlex(
+                                                    Flex(
+                                                            justifyContent = JustifyContent.CENTER
+                                                    )
+                                            ).applyStyle(
+                                                    Style(
+                                                            size = Size(width = 100.unitReal(), height = 50.unitReal()),
+                                                            margin = EdgeValue(all = 10.unitReal())
+                                                    )
+                                            )
+                                    )
+                            ).applyStyle(
+                                    Style(
+                                            margin = EdgeValue(bottom = 20.unitReal())
+                                    )
+                            )
+                    )
+            )
+    ).applyStyle(
+            Style(
+                    margin = EdgeValue(
+                            top = 12.unitReal()
+                    )
+            )
     )
 
     private fun createBannerImage(remoteUrl: String) = createImageViewFromRemote(
@@ -112,7 +174,7 @@ object WidgetBuilder : BaseBuilder(){
             createSearchBar()
     ).applyStyle(
             style = Style(
-                    backgroundColor = backgroundColor
+                    backgroundColor = backgroundColor,
             )
     )
 
@@ -163,7 +225,8 @@ object WidgetBuilder : BaseBuilder(){
                             top = 20.unitReal(),
                             left = 20.unitReal(),
                             right = 20.unitReal()
-                    )
+                    ),
+                    size = Size(height = 120.unitReal())
             )
     ).applyFlex(
             flex = Flex(
@@ -194,7 +257,7 @@ object WidgetBuilder : BaseBuilder(){
                     margin = EdgeValue(horizontal = 20.unitReal(), vertical = 20.unitReal()),
                     backgroundColor = Constants.COLOR_WHITE,
                     padding = EdgeValue(horizontal = 11.unitReal()),
-                    size = Size(height = 44.unitReal()),
+                    size = Size(height = 100.unitReal()),
                     cornerRadius = CornerRadius(22.0),
                     flex = Flex(
                             FlexDirection.ROW,

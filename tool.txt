@@ -1,2 +1,2 @@
-server ngrock: http://38e983b18b0e.ngrok.io
+server ngrock: http://d5fdf5c622eb.ngrok.io
 start ngrok: ./ngrok http 8085

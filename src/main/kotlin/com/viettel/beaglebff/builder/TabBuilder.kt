@@ -26,6 +26,7 @@ object TabBuilder: BaseBuilder(){
         child = createContainer(
             WidgetBuilder.createToolbar(),
             WidgetBuilder.createBannerView(),
+            WidgetBuilder.createGridView(),
             FloatingButton(
                 remoteIconUrl = "${Constants.BASE_URL}/resourcesController/ic_stats",
                 backgroundColor = Constants.COLOR_PRIMARY,
