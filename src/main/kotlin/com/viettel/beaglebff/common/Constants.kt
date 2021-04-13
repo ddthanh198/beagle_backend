@@ -2,8 +2,8 @@ package com.viettel.beaglebff.common
 
 object Constants {
     //const val BASE_URL = "http://localhost:8080"
-    const val BASE_URL = "http://10.0.2.2:8080"
-    //const val BASE_URL = "http://38e983b18b0e.ngrok.io"
+//    const val BASE_URL = "http://10.0.2.2:8080"
+    const val BASE_URL = "http://d5fdf5c622eb.ngrok.io"
 
     // item size
     const val SMALL_ICON_SIZE = 16
