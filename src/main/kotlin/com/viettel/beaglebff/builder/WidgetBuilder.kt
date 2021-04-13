@@ -21,6 +21,7 @@ import br.com.zup.beagle.widget.pager.PageIndicator
 import br.com.zup.beagle.widget.ui.*
 import com.viettel.beaglebff.common.Constants
 import com.viettel.beaglebff.components.actions.*
+import com.viettel.beaglebff.components.compose_components.HorizontalDivider
 import com.viettel.beaglebff.components.widgets.BottomNavigationView
 import com.viettel.beaglebff.model.generateUserInfoList
 import com.viettel.beaglebff.model.populateLanguageOptions
@@ -373,7 +374,7 @@ object WidgetBuilder : BaseBuilder(){
                                             DismissDialogAction("/widgetController/selectLanguageDialog")
                                     )
                             ),
-                            createDivider(8, 8, 0, 0)
+                            HorizontalDivider(8, 8, 0, 0)
                     ).applyStyle(
                             Style(
                                     margin = EdgeValue(
@@ -436,7 +437,7 @@ object WidgetBuilder : BaseBuilder(){
                                             DismissDialogAction("/widgetController/bottomSheetDialog")
                                     )
                             ),
-                            createDivider(8, 8, 0, 0)
+                            HorizontalDivider(8, 8, 0, 0)
                     ).applyStyle(
                             Style(
                                     margin = EdgeValue(

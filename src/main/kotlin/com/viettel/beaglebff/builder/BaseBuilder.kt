@@ -5,6 +5,7 @@ import br.com.zup.beagle.core.ServerDrivenComponent
 import br.com.zup.beagle.core.Style
 import br.com.zup.beagle.ext.applyStyle
 import br.com.zup.beagle.ext.unitReal
+import br.com.zup.beagle.platform.forPlatform
 import br.com.zup.beagle.widget.action.Action
 import br.com.zup.beagle.widget.context.ContextData
 import br.com.zup.beagle.widget.core.*
@@ -105,40 +106,22 @@ abstract class BaseBuilder {
         )
     }
 
-    protected fun createDivider(
-            marginTop: Int,
-            marginBottom: Int,
-            marginLeft: Int,
-            marginRight: Int
-    ) = Container(
-            children = listOf())
-            .applyStyle(
-                    Style(
-                            backgroundColor = Constants.COLOR_DIVIDER,
-                            size = Size(height = 0.75.unitReal()),
-
-                            margin = EdgeValue(
-                                    top = marginTop.unitReal(),
-                                    bottom = marginBottom.unitReal(),
-                                    left = marginLeft.unitReal(),
-                                    right = marginRight.unitReal()
-                            )
-            )
-    )
-
      fun createLegendBarChart(color: String, name: String) = createContainer(
-         createContainer(
-         ).applyStyle(
+         createContainer().applyStyle(
              Style(
                  backgroundColor = color,
                  size = Size(75.unitReal(),25.unitReal()),
-                 margin = EdgeValue(right = 10.unitReal()),
-
+                 margin = EdgeValue(right = 10.unitReal())
              )
-         ), createTextView(name).applyStyle(Style(margin = EdgeValue(top = 5.unitReal())))
-     ).applyStyle( Style(
-         flex = Flex(
-             flexDirection = FlexDirection.ROW
-         ), margin = EdgeValue(bottom = 10.unitReal(), left = 50.unitReal())
-     ))
+         ),
+         createTextView(name)
+     ).applyStyle(
+         Style(
+             flex = Flex(
+                 flexDirection = FlexDirection.ROW,
+                 alignItems = AlignItems.CENTER
+             ),
+             margin = EdgeValue(vertical = 10.unitReal(), left = 50.unitReal())
+        )
+     )
 }

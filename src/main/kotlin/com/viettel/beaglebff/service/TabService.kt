@@ -1,7 +1,7 @@
 package com.viettel.beaglebff.service
 
 
-import com.viettel.bealglebff.builder.TabBuilder
+import com.viettel.beaglebff.builder.TabBuilder
 import org.springframework.stereotype.Service
 
 @Service

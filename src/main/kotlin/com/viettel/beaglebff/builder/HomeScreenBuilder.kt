@@ -12,7 +12,7 @@ import br.com.zup.beagle.widget.core.JustifyContent
 import com.viettel.beaglebff.common.Constants
 import com.viettel.beaglebff.components.actions.ToastAction
 import com.viettel.beaglebff.components.widgets.BottomNavigationView
-import com.viettel.bealglebff.components.compose_components.HorizontalDivider
+import com.viettel.beaglebff.components.compose_components.HorizontalDivider
 
 class HomeScreenBuilder : ScreenBuilder, BaseBuilder() {
 
