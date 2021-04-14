@@ -2,7 +2,7 @@ package com.viettel.beaglebff.components.widgets
 
 import br.com.zup.beagle.annotation.RegisterWidget
 import br.com.zup.beagle.widget.Widget
-import com.viettel.beaglebff.model.PieChartSlice
+import com.viettel.beaglebff.model.pie_chart.PieChartSlice
 
 @RegisterWidget
 class PieChart(

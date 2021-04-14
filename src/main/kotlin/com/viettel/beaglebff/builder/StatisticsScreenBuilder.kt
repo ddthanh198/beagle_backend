@@ -7,20 +7,18 @@ import br.com.zup.beagle.ext.unitReal
 import br.com.zup.beagle.widget.core.*
 import br.com.zup.beagle.widget.layout.Screen
 import br.com.zup.beagle.widget.layout.ScreenBuilder
-import com.viettel.beaglebff.common.Constants
 import com.viettel.beaglebff.common.Constants.COLOR_CHART_BLUE
 import com.viettel.beaglebff.common.Constants.COLOR_CHART_GRAY
 import com.viettel.beaglebff.common.Constants.COLOR_CHART_GREEN
 import com.viettel.beaglebff.common.Constants.COLOR_CHART_ORANGE
 import com.viettel.beaglebff.components.compose_components.CircularDot
 import com.viettel.beaglebff.components.widgets.PieChart
-import com.viettel.beaglebff.model.PieChartSlice
+import com.viettel.beaglebff.model.pie_chart.PieChartSlice
 import com.viettel.beaglebff.components.compose_components.HorizontalDivider
 import com.viettel.beaglebff.components.widgets.BarChart
 import com.viettel.beaglebff.model.bar_chart.BarModel
 import com.viettel.beaglebff.model.bar_chart.HorizontalAxisMetaData
 import com.viettel.beaglebff.model.bar_chart.LeftAxisMetadata
-import com.viettel.beaglebff.model.bar_chart.RightAxisMetaData
 
 class StatisticsScreenBuilder: ScreenBuilder, BaseBuilder() {
 

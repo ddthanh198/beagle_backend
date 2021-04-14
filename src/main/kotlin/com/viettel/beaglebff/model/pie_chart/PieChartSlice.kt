@@ -1,4 +1,4 @@
-package com.viettel.beaglebff.model
+package com.viettel.beaglebff.model.pie_chart
 
 data class PieChartSlice(
     val percentage: Float,
