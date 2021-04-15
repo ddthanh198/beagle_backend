@@ -1,17 +1,14 @@
 package com.viettel.beaglebff.controller
 
-import com.viettel.beaglebff.model.VersionModel
+import com.viettel.beaglebff.model.version.ComponentData
+import com.viettel.beaglebff.model.version.VersionModel
 import com.viettel.beaglebff.service.ResourcesService
 import com.viettel.beaglebff.service.VersionService
-import javafx.application.Application
 import org.springframework.core.io.InputStreamResource
 import org.springframework.http.ResponseEntity
 import org.springframework.http.MediaType
+import org.springframework.web.bind.annotation.*
 import java.io.IOException
-import org.springframework.web.bind.annotation.RequestMethod
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.ResponseBody
-import org.springframework.web.bind.annotation.RestController
 
 @RestController
 @RequestMapping("/resourcesController")
@@ -19,10 +16,10 @@ class ResourcesController(
     private val resourcesService: ResourcesService,
     private val versionService: VersionService
 ) {
-    @RequestMapping(value = ["/beagleCacheVersion"], method = [RequestMethod.GET], produces = ["application/json"])
+    @RequestMapping(value = ["/beagleCacheVersion"], method = [RequestMethod.POST], produces = ["application/json"])
     @ResponseBody
-    fun getLatestBeagleScreenVersion(): List<VersionModel> {
-        return versionService.getLatestBeagleScreenVersion()
+    fun getLatestBeagleScreenVersion(@RequestBody(required = false) versionCollection: List<VersionModel>?): List<ComponentData> {
+        return versionService.getLatestBeagleScreenVersion(versionCollection)
     }
 
     @RequestMapping("/ic_account_info", method = [RequestMethod.GET], produces = [MediaType.IMAGE_PNG_VALUE])
