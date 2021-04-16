@@ -54,6 +54,10 @@
 		37E3CA0026294038001BC524 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E3C9FF26294038001BC524 /* SplashViewModel.swift */; };
 		37E3CA05262942D6001BC524 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E3CA03262942D6001BC524 /* SplashViewController.swift */; };
 		37E3CA06262942D6001BC524 /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37E3CA04262942D6001BC524 /* SplashViewController.xib */; };
+		37E3CA2526296D3C001BC524 /* SaveComponentsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E3CA2426296D3C001BC524 /* SaveComponentsUseCase.swift */; };
+		37E3CA2926296E50001BC524 /* WriteCacheFilesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E3CA2826296E50001BC524 /* WriteCacheFilesUseCase.swift */; };
+		37E3CA2C2629700E001BC524 /* ReadCacheFileUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E3CA2B2629700E001BC524 /* ReadCacheFileUseCase.swift */; };
+		37E3CA2F262970B9001BC524 /* GetComponentsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E3CA2E262970B9001BC524 /* GetComponentsUseCase.swift */; };
 		37F0769A2615B80E00A9E444 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F076992615B80E00A9E444 /* AppDelegate.swift */; };
 		37F0769C2615B80E00A9E444 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F0769B2615B80E00A9E444 /* SceneDelegate.swift */; };
 		37F0769E2615B80E00A9E444 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F0769D2615B80E00A9E444 /* ViewController.swift */; };
@@ -111,6 +115,10 @@
 		37E3C9FF26294038001BC524 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		37E3CA03262942D6001BC524 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		37E3CA04262942D6001BC524 /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
+		37E3CA2426296D3C001BC524 /* SaveComponentsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveComponentsUseCase.swift; sourceTree = "<group>"; };
+		37E3CA2826296E50001BC524 /* WriteCacheFilesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteCacheFilesUseCase.swift; sourceTree = "<group>"; };
+		37E3CA2B2629700E001BC524 /* ReadCacheFileUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadCacheFileUseCase.swift; sourceTree = "<group>"; };
+		37E3CA2E262970B9001BC524 /* GetComponentsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetComponentsUseCase.swift; sourceTree = "<group>"; };
 		37F076962615B80E00A9E444 /* DemoBeagleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoBeagleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37F076992615B80E00A9E444 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37F0769B2615B80E00A9E444 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -321,10 +329,10 @@
 		3737BC362615BC5C00759DC3 /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
+				37E3CA2326296D15001BC524 /* Cache */,
 				37D8A243261EB82E00BF9BF8 /* GetTabbarIconUseCase.swift */,
 				3737BC612615BFA200759DC3 /* UseCase.swift */,
 				3737BC672615C03C00759DC3 /* GetBottomViewUseCase.swift */,
-				37E3C9FB26293E86001BC524 /* CheckCacheVersionUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -420,6 +428,18 @@
 				37E3CA04262942D6001BC524 /* SplashViewController.xib */,
 			);
 			path = Splash;
+			sourceTree = "<group>";
+		};
+		37E3CA2326296D15001BC524 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				37E3C9FB26293E86001BC524 /* CheckCacheVersionUseCase.swift */,
+				37E3CA2426296D3C001BC524 /* SaveComponentsUseCase.swift */,
+				37E3CA2826296E50001BC524 /* WriteCacheFilesUseCase.swift */,
+				37E3CA2B2629700E001BC524 /* ReadCacheFileUseCase.swift */,
+				37E3CA2E262970B9001BC524 /* GetComponentsUseCase.swift */,
+			);
+			path = Cache;
 			sourceTree = "<group>";
 		};
 		37F0768D2615B80E00A9E444 = {
@@ -587,20 +607,24 @@
 				18539B31261EA2A400546135 /* BarchartEntity.swift in Sources */,
 				3737BC652615C01000759DC3 /* WidgetRepositoryImplement.swift in Sources */,
 				37F0769E2615B80E00A9E444 /* ViewController.swift in Sources */,
+				37E3CA2526296D3C001BC524 /* SaveComponentsUseCase.swift in Sources */,
 				37E3CA05262942D6001BC524 /* SplashViewController.swift in Sources */,
 				37E3CA0026294038001BC524 /* SplashViewModel.swift in Sources */,
 				3737BC712615C0D500759DC3 /* UIColorExtensions.swift in Sources */,
 				37F0769A2615B80E00A9E444 /* AppDelegate.swift in Sources */,
+				37E3CA2F262970B9001BC524 /* GetComponentsUseCase.swift in Sources */,
 				3737BC6C2615C08600759DC3 /* MainTabBarViewModel.swift in Sources */,
 				3737BC412615BCAB00759DC3 /* CommonEntity.swift in Sources */,
 				3737BC532615BECC00759DC3 /* BaseViewModel.swift in Sources */,
 				18FE2DF2261C3D1700953723 /* DismissDialogAction.swift in Sources */,
 				3737BC382615BC8700759DC3 /* SessionAppManager.swift in Sources */,
 				3737BC4E2615BE5B00759DC3 /* BottomViewEntity.swift in Sources */,
+				37E3CA2C2629700E001BC524 /* ReadCacheFileUseCase.swift in Sources */,
 				3756E33D261BF3C200280EF9 /* TimeRangeViewController.swift in Sources */,
 				3756E33E261BF3C200280EF9 /* DayLabel.swift in Sources */,
 				37D8A241261EB82100BF9BF8 /* GetTabbarIconAPI.swift in Sources */,
 				37F0769C2615B80E00A9E444 /* SceneDelegate.swift in Sources */,
+				37E3CA2926296E50001BC524 /* WriteCacheFilesUseCase.swift in Sources */,
 				183DC2C4261C1701003601D7 /* DialogLanguageViewController.swift in Sources */,
 				37E3C9F5262937A9001BC524 /* CacheRepository.swift in Sources */,
 				18D68297262036FE0090429D /* LoadingAction.swift in Sources */,

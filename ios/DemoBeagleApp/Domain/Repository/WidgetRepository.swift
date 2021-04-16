@@ -10,7 +10,7 @@ import RxSwift
 import RxCocoa
 
 protocol WidgetRepository {
-    func getBottomView() -> Observable<BottomViewEntity>
+    func getBottomView() -> BottomViewEntity?
     
     func getTabbarIcon(url: String) -> Observable<UIImage>
 }

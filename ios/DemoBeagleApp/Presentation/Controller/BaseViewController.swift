@@ -134,4 +134,23 @@ class BaseViewController: UIViewController {
         alert.addAction(okAction)
         self.present(alert, animated: true, completion: nil)
     }
+    
+    func setMainTabBarControllerToRoot() {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        if #available(iOS 13.0, *) {
+            guard let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
+            let window = UIWindow(frame: scene.coordinateSpace.bounds)
+            window.windowScene = scene
+            let mainTabBarController = MainTabBarController(nibName: "MainTabBarController", bundle: nil)
+            let navigationController = UINavigationController(rootViewController: mainTabBarController)
+            window.rootViewController = navigationController
+            appDelegate.window = window
+            appDelegate.window?.makeKeyAndVisible()
+        } else {
+            let mainTabBarController = MainTabBarController(nibName: "MainTabBarController", bundle: nil)
+            let navigationController = UINavigationController(rootViewController: mainTabBarController)
+            appDelegate.window?.rootViewController = navigationController
+            appDelegate.window?.makeKeyAndVisible()
+        }
+    }
 }

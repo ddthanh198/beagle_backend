@@ -9,10 +9,8 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-class CheckCacheVersionUseCase: UseCase {
+class CheckCacheVersionUseCase: UseCaseWithoutParam {
     typealias EM = Observable<[BeagleComponent]>
-    
-    typealias DM = [BeagleComponent]?
     
     private var repository: CacheRepository
     private let disposeBag = DisposeBag()
@@ -21,7 +19,7 @@ class CheckCacheVersionUseCase: UseCase {
         self.repository = repository
     }
     
-    func execute(param: [BeagleComponent]?) -> Observable<[BeagleComponent]> {
-        self.repository.checkCacheVersion(components: param)
+    func execute() -> Observable<[BeagleComponent]> {
+        self.repository.checkCacheVersion()
     }
 }

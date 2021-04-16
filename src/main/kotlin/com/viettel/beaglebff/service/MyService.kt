@@ -153,10 +153,7 @@ class MyScreen : BaseBuilder(), ScreenBuilder {
                 Container(
                     children = listOf(
                         ListView(
-//                            dataSource = expressionOf("@{searchContext.users}"),
-                            dataSource = valueOf(
-                                listOf()
-                            ),
+                            dataSource = expressionOf("@{searchContext.users}"),
                             template = UserCell("@{item.avatar_url}", "@{item.login}", "@{item.node_id}"),
                         ).applyStyle(
                             Style(

@@ -13,6 +13,7 @@ class MainTabBarViewModel: BaseViewModel {
     struct Input {
         let getBottomViewUseCase = GetBottomViewUseCase()
         let getTabbarIconUseCase = GetTabbarIconUseCase()
+        let readCacheFileUseCase = ReadCacheFileUseCase(repository: CacheRepositoryImplement())
     }
     
     struct Output {
@@ -26,25 +27,22 @@ class MainTabBarViewModel: BaseViewModel {
     var tabbarIcons = [UIImage]()
     
     func getBottomView() {
-        self.input.getBottomViewUseCase
-            .execute()
-            .observe(on: MainScheduler.instance)
-            .subscribe(on: SerialDispatchQueueScheduler.init(qos: .background))
-            .subscribe(onNext: { [weak self] bottomView in
-                guard let `self` = self else { return }
-                self.bottomView = bottomView
-                self.output.isGetBottomViewSuccess.onNext(true)
-            }, onError: { [weak self] error in
-                guard let `self` = self else { return }
-                self.output.isGetBottomViewSuccess.onError(error)
-            })
-            .disposed(by: disposeBag)
+        guard let bottomView = self.input.getBottomViewUseCase.execute() else {
+            self.output.isGetBottomViewSuccess.onNext(false)
+            return
+        }
+        self.bottomView = bottomView
+        self.output.isGetBottomViewSuccess.onNext(true)
+    }
+    
+    func readCacheFile(fileName: String) -> String? {
+        return self.input.readCacheFileUseCase.execute(param: fileName)
     }
     
     func getAllTabbarIcons() {
         guard let `bottomView` = bottomView, let firstChild = bottomView.children.first else { return }
-        let tabbarIconUrls = firstChild.menuItems.map { (items) -> String in
-            return items[0]
+        let tabbarIconUrls = firstChild.tabItems.map { (items) -> String in
+            return items.remoteIconUrl
         }
         Observable.zip(tabbarIconUrls.map {
             return self.input.getTabbarIconUseCase.execute(param: $0)

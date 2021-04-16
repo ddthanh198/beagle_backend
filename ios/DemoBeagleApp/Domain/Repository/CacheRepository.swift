@@ -10,5 +10,19 @@ import RxSwift
 import RxCocoa
 
 protocol CacheRepository {
-    func checkCacheVersion(components: [BeagleComponent]?) -> Observable<[BeagleComponent]>
+    func checkCacheVersion() -> Observable<[BeagleComponent]>
+    
+    func writeCacheFile(component: BeagleComponent)
+    
+    func writeCacheFiles(components: [BeagleComponent])
+    
+    func readCacheFile(component: BeagleComponent) -> String?
+    
+    func readCacheFile(fileName: String) -> String?
+    
+    func saveComponents(components: [BeagleComponent])
+    
+    func saveComponent(component: BeagleComponent)
+    
+    func getComponents() -> [BeagleComponent]?
 }

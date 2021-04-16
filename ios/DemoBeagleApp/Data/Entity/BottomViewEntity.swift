@@ -7,8 +7,15 @@
 
 import Foundation
 
+class TabItem: Decodable {
+    var cacheFile: String
+    var remoteIconUrl: String
+    var api: String
+    var title: String
+}
+
 class Children: Decodable {
-    var menuItems: [[String]]
+    var tabItems: [TabItem]
     var selectedColor: String
     var unselectedColor: String
 }

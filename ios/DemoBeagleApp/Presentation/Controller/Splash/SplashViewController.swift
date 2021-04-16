@@ -8,10 +8,13 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import RealmSwift
 
 class SplashViewController: BaseViewController {
 
     private let viewModel = SplashViewModel()
+    let getComponentsUseCase = GetComponentsUseCase(repository: CacheRepositoryImplement())
+    let readCacheFileUseCase = ReadCacheFileUseCase(repository: CacheRepositoryImplement())
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +28,7 @@ class SplashViewController: BaseViewController {
             .subscribe(on: SerialDispatchQueueScheduler.init(qos: .background))
             .subscribe(onNext: { [weak self] _ in
                 guard let `self` = self else { return }
-                dump(self.viewModel.components)
+                self.setMainTabBarControllerToRoot()
             }, onError: { [weak self] error in
                 guard let `self` = self else { return }
                 self.showErrorAlert(error: error)
