@@ -1,5 +1,6 @@
 package com.viettel.beaglebff.controller
 
+import com.viettel.beaglebff.model.CacheRequestForm
 import com.viettel.beaglebff.model.version.ComponentData
 import com.viettel.beaglebff.model.version.VersionModel
 import com.viettel.beaglebff.service.ResourcesService
@@ -18,8 +19,8 @@ class ResourcesController(
 ) {
     @RequestMapping(value = ["/beagleCacheVersion"], method = [RequestMethod.POST], produces = ["application/json"])
     @ResponseBody
-    fun getLatestBeagleScreenVersion(@RequestBody(required = false) versionCollection: List<VersionModel>?): List<ComponentData> {
-        return versionService.getLatestBeagleScreenVersion(versionCollection)
+    fun getLatestBeagleScreenVersion(@RequestBody(required = false) cacheRequestForm: CacheRequestForm?): List<ComponentData> {
+        return versionService.getLatestBeagleScreenVersion(cacheRequestForm)
     }
 
     @RequestMapping("/ic_account_info", method = [RequestMethod.GET], produces = [MediaType.IMAGE_PNG_VALUE])
