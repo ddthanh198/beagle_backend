@@ -1,6 +1,7 @@
 package com.viettel.beaglebff.service
 
 import com.viettel.beaglebff.entity.CacheVersion
+import com.viettel.beaglebff.model.CacheRequestForm
 import com.viettel.beaglebff.model.version.ComponentData
 import com.viettel.beaglebff.model.version.VersionModel
 import com.viettel.beaglebff.repository.CacheVersionRepository
@@ -22,11 +23,13 @@ class VersionService(
     @Autowired
     private val restTemplate: RestTemplate? = null
 
-    fun getLatestBeagleScreenVersion(versionCollection: List<VersionModel>?): List<ComponentData> {
-        logger.info("# of components from client: " + versionCollection?.size)
+    fun getLatestBeagleScreenVersion(cacheRequestForm: CacheRequestForm?): List<ComponentData> {
+        val listComponent = cacheRequestForm?.components
+        logger.info("# of components from client: " + listComponent?.size)
+
         val response = ArrayList<ComponentData>()
 
-        if (versionCollection.isNullOrEmpty()) {
+        if (listComponent.isNullOrEmpty()) {
             val componentList = cacheVersionRepository.findAll() as ArrayList<CacheVersion>
             logger.info("# of records in DB: " + componentList.size)
 
@@ -35,7 +38,7 @@ class VersionService(
                 response.add(componentData)
             }
         } else {
-            for (versionModel: VersionModel in versionCollection) {
+            for (versionModel: VersionModel in listComponent) {
                 val cacheVersion = cacheVersionRepository.getCacheVersionByName(versionModel.component)
                 val clientVersion = ComparableVersion(versionModel.version)
                 val serverVersion = ComparableVersion(cacheVersion.version)
