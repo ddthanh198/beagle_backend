@@ -3,16 +3,31 @@ package com.viettel.beaglebff.service
 import br.com.zup.beagle.widget.action.RequestActionMethod
 import br.com.zup.beagle.widget.action.SendRequest
 import br.com.zup.beagle.widget.action.SetContext
+import br.com.zup.beagle.widget.layout.Container
 import com.viettel.beaglebff.builder.WidgetBuilder
 import com.viettel.beaglebff.common.Constants
 import com.viettel.beaglebff.components.actions.DismissDialogAction
 import com.viettel.beaglebff.components.actions.LoadingAction
+import com.viettel.beaglebff.entity.CacheVersion
 import com.viettel.beaglebff.model.TaskResponse
+import com.viettel.beaglebff.repository.CacheVersionRepository
 import org.springframework.stereotype.Service
 
 @Service
-class WidgetService {
-    fun createBottomNavigationView() = WidgetBuilder.createBottomNavigationView()
+class WidgetService(private val cacheVersionRepository: CacheVersionRepository) {
+
+    fun createBottomNavigationView() : Container {
+        val tabArray = ArrayList<String>()
+        tabArray.addAll(
+            listOf("TabHome", "TabTask", "TabRequest", "TabNotification", "TabChart")
+        )
+        val listCacheVersion = ArrayList<CacheVersion>()
+        for (tab: String in tabArray) {
+            val cacheVersion = cacheVersionRepository.getCacheVersionByName(tab)
+            listCacheVersion.add(cacheVersion)
+        }
+        return WidgetBuilder.createBottomNavigationView(listCacheVersion)
+    }
 
     fun createBannerView() = WidgetBuilder.createBannerView()
 
