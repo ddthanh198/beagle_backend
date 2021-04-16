@@ -53,8 +53,8 @@ extension AppDelegate {
     
     private func setupRootView() {
         window = UIWindow(frame: UIScreen.main.bounds)
-        let tabBarController = MainTabBarController(nibName: "MainTabBarController", bundle: nil)
-        let navigationController = UINavigationController(rootViewController: tabBarController)
+        let splashViewController = SplashViewController(nibName: "SplashViewController", bundle: nil)
+        let navigationController = UINavigationController(rootViewController: splashViewController)
         navigationController.navigationBar.isHidden = true
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
