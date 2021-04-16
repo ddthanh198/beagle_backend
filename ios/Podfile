@@ -19,4 +19,5 @@ target 'DemoBeagleApp' do
   pod 'FittedSheets'
   pod 'HorizonCalendar'
   pod 'Charts'
+  pod 'RealmSwift'
 end

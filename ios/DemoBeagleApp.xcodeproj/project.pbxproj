@@ -47,6 +47,17 @@
 		37D8A241261EB82100BF9BF8 /* GetTabbarIconAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D8A240261EB82100BF9BF8 /* GetTabbarIconAPI.swift */; };
 		37D8A244261EB82E00BF9BF8 /* GetTabbarIconUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D8A243261EB82E00BF9BF8 /* GetTabbarIconUseCase.swift */; };
 		37D8A24B26202F1500BF9BF8 /* MyFloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D8A24A26202F1500BF9BF8 /* MyFloatingButton.swift */; };
+		37E3C9F22629301D001BC524 /* CheckBeagleCacheVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E3C9F12629301D001BC524 /* CheckBeagleCacheVersion.swift */; };
+		37E3C9F5262937A9001BC524 /* CacheRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E3C9F4262937A9001BC524 /* CacheRepository.swift */; };
+		37E3C9F82629394F001BC524 /* CacheRepositoryImplement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E3C9F72629394F001BC524 /* CacheRepositoryImplement.swift */; };
+		37E3C9FC26293E86001BC524 /* CheckCacheVersionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E3C9FB26293E86001BC524 /* CheckCacheVersionUseCase.swift */; };
+		37E3CA0026294038001BC524 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E3C9FF26294038001BC524 /* SplashViewModel.swift */; };
+		37E3CA05262942D6001BC524 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E3CA03262942D6001BC524 /* SplashViewController.swift */; };
+		37E3CA06262942D6001BC524 /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37E3CA04262942D6001BC524 /* SplashViewController.xib */; };
+		37E3CA2526296D3C001BC524 /* SaveComponentsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E3CA2426296D3C001BC524 /* SaveComponentsUseCase.swift */; };
+		37E3CA2926296E50001BC524 /* WriteCacheFilesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E3CA2826296E50001BC524 /* WriteCacheFilesUseCase.swift */; };
+		37E3CA2C2629700E001BC524 /* ReadCacheFileUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E3CA2B2629700E001BC524 /* ReadCacheFileUseCase.swift */; };
+		37E3CA2F262970B9001BC524 /* GetComponentsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E3CA2E262970B9001BC524 /* GetComponentsUseCase.swift */; };
 		37F0769A2615B80E00A9E444 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F076992615B80E00A9E444 /* AppDelegate.swift */; };
 		37F0769C2615B80E00A9E444 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F0769B2615B80E00A9E444 /* SceneDelegate.swift */; };
 		37F0769E2615B80E00A9E444 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F0769D2615B80E00A9E444 /* ViewController.swift */; };
@@ -97,6 +108,17 @@
 		37D8A240261EB82100BF9BF8 /* GetTabbarIconAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetTabbarIconAPI.swift; sourceTree = "<group>"; };
 		37D8A243261EB82E00BF9BF8 /* GetTabbarIconUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetTabbarIconUseCase.swift; sourceTree = "<group>"; };
 		37D8A24A26202F1500BF9BF8 /* MyFloatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFloatingButton.swift; sourceTree = "<group>"; };
+		37E3C9F12629301D001BC524 /* CheckBeagleCacheVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBeagleCacheVersion.swift; sourceTree = "<group>"; };
+		37E3C9F4262937A9001BC524 /* CacheRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheRepository.swift; sourceTree = "<group>"; };
+		37E3C9F72629394F001BC524 /* CacheRepositoryImplement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheRepositoryImplement.swift; sourceTree = "<group>"; };
+		37E3C9FB26293E86001BC524 /* CheckCacheVersionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckCacheVersionUseCase.swift; sourceTree = "<group>"; };
+		37E3C9FF26294038001BC524 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
+		37E3CA03262942D6001BC524 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		37E3CA04262942D6001BC524 /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
+		37E3CA2426296D3C001BC524 /* SaveComponentsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveComponentsUseCase.swift; sourceTree = "<group>"; };
+		37E3CA2826296E50001BC524 /* WriteCacheFilesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteCacheFilesUseCase.swift; sourceTree = "<group>"; };
+		37E3CA2B2629700E001BC524 /* ReadCacheFileUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadCacheFileUseCase.swift; sourceTree = "<group>"; };
+		37E3CA2E262970B9001BC524 /* GetComponentsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetComponentsUseCase.swift; sourceTree = "<group>"; };
 		37F076962615B80E00A9E444 /* DemoBeagleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoBeagleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37F076992615B80E00A9E444 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37F0769B2615B80E00A9E444 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -229,6 +251,7 @@
 		3737BC2E2615BBFD00759DC3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				37E3CA02262942C4001BC524 /* Splash */,
 				183DC2C2261C16EB003601D7 /* Dialog */,
 				3737BC3D2615BC9F00759DC3 /* BaseViewController.swift */,
 				3737BC552615BEE600759DC3 /* BaseTabBarController.swift */,
@@ -269,6 +292,7 @@
 				37D8A240261EB82100BF9BF8 /* GetTabbarIconAPI.swift */,
 				3737BC442615BCC800759DC3 /* BaseAPI.swift */,
 				3737BC4A2615BE3600759DC3 /* GetBottomAPI.swift */,
+				37E3C9F12629301D001BC524 /* CheckBeagleCacheVersion.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -288,6 +312,7 @@
 			isa = PBXGroup;
 			children = (
 				3737BC642615C01000759DC3 /* WidgetRepositoryImplement.swift */,
+				37E3C9F72629394F001BC524 /* CacheRepositoryImplement.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -296,6 +321,7 @@
 			isa = PBXGroup;
 			children = (
 				3737BC5E2615BF7D00759DC3 /* WidgetRepository.swift */,
+				37E3C9F4262937A9001BC524 /* CacheRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -303,6 +329,7 @@
 		3737BC362615BC5C00759DC3 /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
+				37E3CA2326296D15001BC524 /* Cache */,
 				37D8A243261EB82E00BF9BF8 /* GetTabbarIconUseCase.swift */,
 				3737BC612615BFA200759DC3 /* UseCase.swift */,
 				3737BC672615C03C00759DC3 /* GetBottomViewUseCase.swift */,
@@ -313,6 +340,7 @@
 		3737BC502615BEBC00759DC3 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				37E3C9FE26293FF5001BC524 /* SplashViewModel */,
 				3737BC6A2615C07200759DC3 /* TabBar */,
 				3737BC522615BECC00759DC3 /* BaseViewModel.swift */,
 			);
@@ -383,6 +411,35 @@
 				37D8A24A26202F1500BF9BF8 /* MyFloatingButton.swift */,
 			);
 			path = CustomBeagleWidget;
+			sourceTree = "<group>";
+		};
+		37E3C9FE26293FF5001BC524 /* SplashViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				37E3C9FF26294038001BC524 /* SplashViewModel.swift */,
+			);
+			path = SplashViewModel;
+			sourceTree = "<group>";
+		};
+		37E3CA02262942C4001BC524 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				37E3CA03262942D6001BC524 /* SplashViewController.swift */,
+				37E3CA04262942D6001BC524 /* SplashViewController.xib */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		37E3CA2326296D15001BC524 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				37E3C9FB26293E86001BC524 /* CheckCacheVersionUseCase.swift */,
+				37E3CA2426296D3C001BC524 /* SaveComponentsUseCase.swift */,
+				37E3CA2826296E50001BC524 /* WriteCacheFilesUseCase.swift */,
+				37E3CA2B2629700E001BC524 /* ReadCacheFileUseCase.swift */,
+				37E3CA2E262970B9001BC524 /* GetComponentsUseCase.swift */,
+			);
+			path = Cache;
 			sourceTree = "<group>";
 		};
 		37F0768D2615B80E00A9E444 = {
@@ -481,6 +538,7 @@
 				37F076A62615B80F00A9E444 /* LaunchScreen.storyboard in Resources */,
 				37F076A32615B80F00A9E444 /* Assets.xcassets in Resources */,
 				3737BC5B2615BF4200759DC3 /* MainTabBarController.xib in Resources */,
+				37E3CA06262942D6001BC524 /* SplashViewController.xib in Resources */,
 				37F076A12615B80E00A9E444 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -536,6 +594,7 @@
 			files = (
 				37D8A24B26202F1500BF9BF8 /* MyFloatingButton.swift in Sources */,
 				3737BC682615C03C00759DC3 /* GetBottomViewUseCase.swift in Sources */,
+				37E3C9F22629301D001BC524 /* CheckBeagleCacheVersion.swift in Sources */,
 				3737BC4B2615BE3600759DC3 /* GetBottomAPI.swift in Sources */,
 				18539B49261EB17B00546135 /* BarChartWidget.swift in Sources */,
 				3737BC622615BFA200759DC3 /* UseCase.swift in Sources */,
@@ -548,25 +607,34 @@
 				18539B31261EA2A400546135 /* BarchartEntity.swift in Sources */,
 				3737BC652615C01000759DC3 /* WidgetRepositoryImplement.swift in Sources */,
 				37F0769E2615B80E00A9E444 /* ViewController.swift in Sources */,
+				37E3CA2526296D3C001BC524 /* SaveComponentsUseCase.swift in Sources */,
+				37E3CA05262942D6001BC524 /* SplashViewController.swift in Sources */,
+				37E3CA0026294038001BC524 /* SplashViewModel.swift in Sources */,
 				3737BC712615C0D500759DC3 /* UIColorExtensions.swift in Sources */,
 				37F0769A2615B80E00A9E444 /* AppDelegate.swift in Sources */,
+				37E3CA2F262970B9001BC524 /* GetComponentsUseCase.swift in Sources */,
 				3737BC6C2615C08600759DC3 /* MainTabBarViewModel.swift in Sources */,
 				3737BC412615BCAB00759DC3 /* CommonEntity.swift in Sources */,
 				3737BC532615BECC00759DC3 /* BaseViewModel.swift in Sources */,
 				18FE2DF2261C3D1700953723 /* DismissDialogAction.swift in Sources */,
 				3737BC382615BC8700759DC3 /* SessionAppManager.swift in Sources */,
 				3737BC4E2615BE5B00759DC3 /* BottomViewEntity.swift in Sources */,
+				37E3CA2C2629700E001BC524 /* ReadCacheFileUseCase.swift in Sources */,
 				3756E33D261BF3C200280EF9 /* TimeRangeViewController.swift in Sources */,
 				3756E33E261BF3C200280EF9 /* DayLabel.swift in Sources */,
 				37D8A241261EB82100BF9BF8 /* GetTabbarIconAPI.swift in Sources */,
 				37F0769C2615B80E00A9E444 /* SceneDelegate.swift in Sources */,
+				37E3CA2926296E50001BC524 /* WriteCacheFilesUseCase.swift in Sources */,
 				183DC2C4261C1701003601D7 /* DialogLanguageViewController.swift in Sources */,
+				37E3C9F5262937A9001BC524 /* CacheRepository.swift in Sources */,
 				18D68297262036FE0090429D /* LoadingAction.swift in Sources */,
 				18FE2DF8261C4FF900953723 /* BottomSheetViewController.swift in Sources */,
 				183DC2C0261C15FC003601D7 /* ShowDialogAction.swift in Sources */,
 				37ADF5C326184CD5006ACBF8 /* OpenSideMenuViewController.swift in Sources */,
 				3737BC452615BCC800759DC3 /* BaseAPI.swift in Sources */,
+				37E3C9F82629394F001BC524 /* CacheRepositoryImplement.swift in Sources */,
 				18361916261FEE940074042A /* PieChart.swift in Sources */,
+				37E3C9FC26293E86001BC524 /* CheckCacheVersionUseCase.swift in Sources */,
 				3756E340261BF3C200280EF9 /* DayView.swift in Sources */,
 				3737BC5A2615BF4200759DC3 /* MainTabBarController.swift in Sources */,
 				3737BC562615BEE600759DC3 /* BaseTabBarController.swift in Sources */,

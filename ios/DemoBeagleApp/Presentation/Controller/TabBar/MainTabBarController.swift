@@ -51,22 +51,22 @@ class MainTabBarController: BaseTabBarController {
             })
             .disposed(by: disposeBag)
         
-        SVProgressHUD.setDefaultMaskType(.clear)
-        SVProgressHUD.show()
         viewModel.getBottomView()
     }
     
     private func configLayout() {
-        guard let bottomView = self.viewModel.bottomView, let firstChild = bottomView.children.first else { return }
+        guard let bottomView = self.viewModel.bottomView, let firstChild = bottomView.children.first, !firstChild.tabItems.isEmpty else { return }
         tabBar.tintColor = UIColor(firstChild.selectedColor)
         tabBar.unselectedItemTintColor = UIColor(firstChild.unselectedColor)
         
         var listOfVC = [UIViewController]()
         
-        for item in firstChild.menuItems {
-            let tag = firstChild.menuItems.firstIndex(of: item) ?? 0
-            let viewController = Beagle.screen(.remote(.init(url: item[2])))
-            viewController.tabBarItem = UITabBarItem(title: item[1], image: self.viewModel.tabbarIcons[tag], tag: tag)
+        for index in 0...firstChild.tabItems.count-1 {
+            let item = firstChild.tabItems[index]
+            let icon = self.viewModel.tabbarIcons[index]
+            guard let content = self.viewModel.readCacheFile(fileName: item.cacheFile) else { return }
+            let viewController = Beagle.screen(.declarativeText(content))
+            viewController.tabBarItem = UITabBarItem(title: firstChild.tabItems[index].title, image: icon, tag: index)
             listOfVC.append(viewController)
         }
         

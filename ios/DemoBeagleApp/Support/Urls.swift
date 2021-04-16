@@ -12,4 +12,5 @@ enum Urls {
     static let HOST = "http://localhost:8080"
     static let CHART_URL = "/screenController/tabChart"
     static let GET_BOTTOM_NAVIGATION_CONFIG_URL = "widgetController/bottomNavigationView"
+    static let BEAGLE_CACHE_VERSION_URL = "resourcesController/beagleCacheVersion"
 }

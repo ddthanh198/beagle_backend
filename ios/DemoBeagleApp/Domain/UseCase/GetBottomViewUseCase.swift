@@ -10,11 +10,11 @@ import RxCocoa
 import RxSwift
 
 class GetBottomViewUseCase: UseCaseWithoutParam {
-    typealias EM = Observable<BottomViewEntity>
+    typealias EM = BottomViewEntity?
     
     private let repository = WidgetRepositoryImplement()
     
-    func execute() -> Observable<BottomViewEntity> {
+    func execute() -> BottomViewEntity? {
         return repository.getBottomView()
     }
 }
