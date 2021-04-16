@@ -25,50 +25,55 @@ import com.viettel.beaglebff.components.actions.*
 import com.viettel.beaglebff.components.compose_components.HorizontalDivider
 import com.viettel.beaglebff.components.widgets.BottomNavigationView
 import com.viettel.beaglebff.components.widgets.GridView
+import com.viettel.beaglebff.entity.CacheVersion
 import com.viettel.beaglebff.model.TabInfo
 import com.viettel.beaglebff.model.generateUserInfoList
 import com.viettel.beaglebff.model.populateLanguageOptions
+import com.viettel.beaglebff.repository.CacheVersionRepository
+import org.springframework.beans.factory.annotation.Autowired
 
 object WidgetBuilder : BaseBuilder(){
 
     // bottom navigation
-    fun createBottomNavigationView() : Container {
+    fun createBottomNavigationView(listCacheVersion: List<CacheVersion>) : Container {
         val tabItems = ArrayList<TabInfo>()
 
-        tabItems.addAll(
-            listOf(
-                TabInfo(
-                    remoteIconUrl = "${Constants.BASE_URL}/resourcesController/ic_home",
-                    title = "Home",
-                    api = "/screenController/tabHome",
-                    cacheFile = CachedFile.TabHome.name
-                ),
-                TabInfo(
-                    remoteIconUrl = "${Constants.BASE_URL}/resourcesController/ic_task",
-                    title = "Tasks",
-                    api = "/screenController/tabTask",
-                    cacheFile = CachedFile.TabTask.name
-                ),
-                TabInfo(
-                    remoteIconUrl = "${Constants.BASE_URL}/resourcesController/ic_request",
-                    title = "Requests",
-                    api = "/screenController/tabRequest",
-                    cacheFile = CachedFile.TabRequest.name
-                ),
-                TabInfo(
-                    remoteIconUrl = "${Constants.BASE_URL}/resourcesController/ic_notification",
-                    title = "Notifications",
-                    api = "/screenController/tabNotification",
-                    cacheFile = CachedFile.TabNotification.name
-                ),
-                TabInfo(
-                    remoteIconUrl = "${Constants.BASE_URL}/resourcesController/ic_management",
-                    title = "Management",
-                    api = "/screenController/tabChart",
-                    cacheFile = CachedFile.TabChart.name
+        if (listCacheVersion.size == 5) {
+            tabItems.addAll(
+                listOf(
+                    TabInfo(
+                        remoteIconUrl = "${Constants.BASE_URL}/resourcesController/ic_home",
+                        title = "Home",
+                        api = "/screenController/tabHome",
+                        cacheFile = listCacheVersion[0].name + "-" + listCacheVersion[0].version
+                    ),
+                    TabInfo(
+                        remoteIconUrl = "${Constants.BASE_URL}/resourcesController/ic_task",
+                        title = "Tasks",
+                        api = "/screenController/tabTask",
+                        cacheFile = listCacheVersion[1].name + "-" + listCacheVersion[1].version
+                    ),
+                    TabInfo(
+                        remoteIconUrl = "${Constants.BASE_URL}/resourcesController/ic_request",
+                        title = "Requests",
+                        api = "/screenController/tabRequest",
+                        cacheFile = listCacheVersion[2].name + "-" + listCacheVersion[2].version
+                    ),
+                    TabInfo(
+                        remoteIconUrl = "${Constants.BASE_URL}/resourcesController/ic_notification",
+                        title = "Notifications",
+                        api = "/screenController/tabNotification",
+                        cacheFile = listCacheVersion[3].name + "-" + listCacheVersion[3].version
+                    ),
+                    TabInfo(
+                        remoteIconUrl = "${Constants.BASE_URL}/resourcesController/ic_management",
+                        title = "Management",
+                        api = "/screenController/tabChart",
+                        cacheFile = listCacheVersion[4].name + "-" + listCacheVersion[4].version
+                    )
                 )
             )
-        )
+        }
 
         return createContainer(
             BottomNavigationView(
