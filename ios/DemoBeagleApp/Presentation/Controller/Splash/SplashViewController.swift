@@ -9,9 +9,11 @@ import UIKit
 import RxSwift
 import RxCocoa
 import RealmSwift
+import Alamofire
 
 class SplashViewController: BaseViewController {
-
+    @IBOutlet weak var logoImageView: UIImageView!
+    
     private let viewModel = SplashViewModel()
     let getComponentsUseCase = GetComponentsUseCase(repository: CacheRepositoryImplement())
     let readCacheFileUseCase = ReadCacheFileUseCase(repository: CacheRepositoryImplement())
@@ -20,6 +22,11 @@ class SplashViewController: BaseViewController {
         super.viewDidLoad()
         configRx()
         removeStatusBar()
+        configLayout()
+    }
+    
+    private func configLayout() {
+        logoImageView.layer.cornerRadius = 100
     }
     
     private func configRx() {
@@ -29,6 +36,19 @@ class SplashViewController: BaseViewController {
             .subscribe(onNext: { [weak self] _ in
                 guard let `self` = self else { return }
                 self.setMainTabBarControllerToRoot()
+            }, onError: { [weak self] error in
+                guard let `self` = self else { return }
+                self.showErrorAlert(error: error)
+            })
+            .disposed(by: disposeBag)
+        
+        BaseViewController.reachabilityStatus
+            .observe(on: MainScheduler.instance)
+            .subscribe(on: SerialDispatchQueueScheduler.init(qos: .background))
+            .subscribe(onNext: { status in
+                if NetworkManager.shared.isConnectInternet() {
+                    self.viewModel.checkCacheVersion()
+                }
             }, onError: { [weak self] error in
                 guard let `self` = self else { return }
                 self.showErrorAlert(error: error)

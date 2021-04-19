@@ -9,6 +9,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import SVProgressHUD
+import Alamofire
 
 protocol RefreshDataDelegate: class {
     func reloadData()
@@ -19,6 +20,7 @@ class BaseViewController: UIViewController {
     let disposeBag = DisposeBag()
     static var isNeedAuthenAgain = false
     static let isNeedReloadUnreadNotification = PublishSubject<Bool>()
+    static let reachabilityStatus = PublishSubject<NetworkReachabilityManager.NetworkReachabilityStatus>()
     
     enum Constants {
         static let ERROR_AUTHEN_MESSAGE_FROM_SERVER = "Unauthenticated"
@@ -42,6 +44,20 @@ class BaseViewController: UIViewController {
                 self.showErrorAlert(message: errorMessage.isEmpty ? Constants.COMMON_ERROR_MESSAGE : errorMessage)
             }
         }).disposed(by: disposeBag)
+        
+        BaseViewController.reachabilityStatus
+            .observe(on: MainScheduler.instance)
+            .subscribe(on: SerialDispatchQueueScheduler.init(qos: .background))
+            .subscribe(onNext: { [weak self] status in
+                guard let `self` = self else { return }
+                if status != .reachable(.ethernetOrWiFi), status != .reachable(.wwan) {
+                    self.showAlert(message: "Kiểm tra lại kết nối")
+                }
+            }, onError: { [weak self] error in
+                guard let `self` = self else { return }
+                self.showErrorAlert(error: error)
+            })
+            .disposed(by: disposeBag)
     }
     
     func onBackViewController() {
