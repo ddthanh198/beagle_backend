@@ -58,6 +58,7 @@
 		37E3CA2926296E50001BC524 /* WriteCacheFilesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E3CA2826296E50001BC524 /* WriteCacheFilesUseCase.swift */; };
 		37E3CA2C2629700E001BC524 /* ReadCacheFileUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E3CA2B2629700E001BC524 /* ReadCacheFileUseCase.swift */; };
 		37E3CA2F262970B9001BC524 /* GetComponentsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E3CA2E262970B9001BC524 /* GetComponentsUseCase.swift */; };
+		37E3CA3C262D1FE0001BC524 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E3CA3B262D1FE0001BC524 /* NetworkManager.swift */; };
 		37F0769A2615B80E00A9E444 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F076992615B80E00A9E444 /* AppDelegate.swift */; };
 		37F0769C2615B80E00A9E444 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F0769B2615B80E00A9E444 /* SceneDelegate.swift */; };
 		37F0769E2615B80E00A9E444 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F0769D2615B80E00A9E444 /* ViewController.swift */; };
@@ -119,6 +120,7 @@
 		37E3CA2826296E50001BC524 /* WriteCacheFilesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteCacheFilesUseCase.swift; sourceTree = "<group>"; };
 		37E3CA2B2629700E001BC524 /* ReadCacheFileUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadCacheFileUseCase.swift; sourceTree = "<group>"; };
 		37E3CA2E262970B9001BC524 /* GetComponentsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetComponentsUseCase.swift; sourceTree = "<group>"; };
+		37E3CA3B262D1FE0001BC524 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		37F076962615B80E00A9E444 /* DemoBeagleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoBeagleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37F076992615B80E00A9E444 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37F0769B2615B80E00A9E444 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -282,6 +284,7 @@
 			isa = PBXGroup;
 			children = (
 				3737BC372615BC8700759DC3 /* SessionAppManager.swift */,
+				37E3CA3B262D1FE0001BC524 /* NetworkManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -626,6 +629,7 @@
 				37F0769C2615B80E00A9E444 /* SceneDelegate.swift in Sources */,
 				37E3CA2926296E50001BC524 /* WriteCacheFilesUseCase.swift in Sources */,
 				183DC2C4261C1701003601D7 /* DialogLanguageViewController.swift in Sources */,
+				37E3CA3C262D1FE0001BC524 /* NetworkManager.swift in Sources */,
 				37E3C9F5262937A9001BC524 /* CacheRepository.swift in Sources */,
 				18D68297262036FE0090429D /* LoadingAction.swift in Sources */,
 				18FE2DF8261C4FF900953723 /* BottomSheetViewController.swift in Sources */,
@@ -792,6 +796,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 32NN88DS8J;
 				INFOPLIST_FILE = DemoBeagleApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -812,6 +817,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 32NN88DS8J;
 				INFOPLIST_FILE = DemoBeagleApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (

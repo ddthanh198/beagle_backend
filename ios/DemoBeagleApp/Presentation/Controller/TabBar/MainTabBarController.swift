@@ -40,8 +40,6 @@ class MainTabBarController: BaseTabBarController {
             .disposed(by: disposeBag)
         
         viewModel.output.isGetBottomViewSuccess
-            .observe(on: MainScheduler.instance)
-            .subscribe(on: SerialDispatchQueueScheduler.init(qos: .background))
             .subscribe(onNext: { [weak self] _ in
                 guard let `self` = self else { return }
                 self.viewModel.getAllTabbarIcons()

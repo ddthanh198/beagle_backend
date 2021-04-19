@@ -115,6 +115,16 @@ class BaseAPI<T: Decodable>: BaseAPIProtocol {
             print("REQUEST HEADERS: \(headers)")
         }
         
+        if !NetworkManager.shared.isConnectInternet() {
+            BaseViewController.reachabilityStatus.onNext(.unknown)
+            return Observable.empty()
+        }
+        self.timer?.invalidate()
+        self.timer = nil
+        self.timer = Timer.scheduledTimer(withTimeInterval: AppConstants.TIME_OUT, repeats: false, block: { _ in
+            BaseViewController.reachabilityStatus.onNext(.unknown)
+        })
+        
         return Observable.create { observable -> Disposable in
             if isShowLoading {
                 DispatchQueue.main.async {
