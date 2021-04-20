@@ -69,5 +69,5 @@ enum AppConstants {
     // Status message
     static let SUCCESS_MESSAGE = "success"
     
-    static let TIME_OUT = 10.0
+    static let TIME_OUT = 30.0
 }

@@ -8,7 +8,9 @@ data class HorizontalAxisMetaData(
     val axisPosition: XAxisPosition = XAxisPosition.BOTTOM,
     val textSize: Float = 12F,
     val textColor: String = Constants.COLOR_BLACK,
-    val displayTitleAsLabel: Boolean = false
+    val displayTitleAsLabel: Boolean = false,
+    val drawGridLinesEnabled: Boolean = false,
+    val drawAxisLineEnabled: Boolean = false
 )
 
 /*
@@ -16,4 +18,6 @@ data class HorizontalAxisMetaData(
     textSize -> size of text displayed under the X axis
     textColor -> color of text
     displayTitleAsLabel -> display title for each bar instead of the x value as default
+    drawGridLinesEnabled -> draw gridline in chart
+    drawAxisLineEnabled -> draw axis line in chart
 */

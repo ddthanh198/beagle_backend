@@ -11,9 +11,14 @@
 		183DC2C0261C15FC003601D7 /* ShowDialogAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183DC2BF261C15FC003601D7 /* ShowDialogAction.swift */; };
 		183DC2C4261C1701003601D7 /* DialogLanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183DC2C3261C1701003601D7 /* DialogLanguageViewController.swift */; };
 		18539B31261EA2A400546135 /* BarchartEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18539B30261EA2A400546135 /* BarchartEntity.swift */; };
-		18539B49261EB17B00546135 /* BarChartWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18539B48261EB17B00546135 /* BarChartWidget.swift */; };
+		18539B49261EB17B00546135 /* BarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18539B48261EB17B00546135 /* BarChart.swift */; };
 		18D68294262034ED0090429D /* BasicDialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D68293262034ED0090429D /* BasicDialogViewController.swift */; };
 		18D68297262036FE0090429D /* LoadingAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D68296262036FE0090429D /* LoadingAction.swift */; };
+		18E3EA07262D6B9800F382E2 /* PermissionAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E3EA06262D6B9800F382E2 /* PermissionAction.swift */; };
+		18E3EA0A262D6BC700F382E2 /* TextFieldWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E3EA09262D6BC700F382E2 /* TextFieldWidget.swift */; };
+		18E3EA0F262D6C4700F382E2 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E3EA0D262D6C4700F382E2 /* CustomTextField.swift */; };
+		18E3EA10262D6C4700F382E2 /* CustomTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18E3EA0E262D6C4700F382E2 /* CustomTextField.xib */; };
+		18E3EA15262D6DA300F382E2 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E3EA14262D6DA300F382E2 /* ImagePicker.swift */; };
 		18FE2DF2261C3D1700953723 /* DismissDialogAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FE2DF1261C3D1700953723 /* DismissDialogAction.swift */; };
 		18FE2DF5261C4F9E00953723 /* ShowBottomSheetAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FE2DF4261C4F9E00953723 /* ShowBottomSheetAction.swift */; };
 		18FE2DF8261C4FF900953723 /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FE2DF7261C4FF900953723 /* BottomSheetViewController.swift */; };
@@ -73,9 +78,14 @@
 		183DC2BF261C15FC003601D7 /* ShowDialogAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDialogAction.swift; sourceTree = "<group>"; };
 		183DC2C3261C1701003601D7 /* DialogLanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogLanguageViewController.swift; sourceTree = "<group>"; };
 		18539B30261EA2A400546135 /* BarchartEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarchartEntity.swift; sourceTree = "<group>"; };
-		18539B48261EB17B00546135 /* BarChartWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartWidget.swift; sourceTree = "<group>"; };
+		18539B48261EB17B00546135 /* BarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChart.swift; sourceTree = "<group>"; };
 		18D68293262034ED0090429D /* BasicDialogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicDialogViewController.swift; sourceTree = "<group>"; };
 		18D68296262036FE0090429D /* LoadingAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingAction.swift; sourceTree = "<group>"; };
+		18E3EA06262D6B9800F382E2 /* PermissionAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionAction.swift; sourceTree = "<group>"; };
+		18E3EA09262D6BC700F382E2 /* TextFieldWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldWidget.swift; sourceTree = "<group>"; };
+		18E3EA0D262D6C4700F382E2 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		18E3EA0E262D6C4700F382E2 /* CustomTextField.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTextField.xib; sourceTree = "<group>"; };
+		18E3EA14262D6DA300F382E2 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		18FE2DF1261C3D1700953723 /* DismissDialogAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissDialogAction.swift; sourceTree = "<group>"; };
 		18FE2DF4261C4F9E00953723 /* ShowBottomSheetAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowBottomSheetAction.swift; sourceTree = "<group>"; };
 		18FE2DF7261C4FF900953723 /* BottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
@@ -168,10 +178,21 @@
 		18539B47261EB15C00546135 /* CustomWidget */ = {
 			isa = PBXGroup;
 			children = (
-				18539B48261EB17B00546135 /* BarChartWidget.swift */,
+				18539B48261EB17B00546135 /* BarChart.swift */,
 				18361915261FEE940074042A /* PieChart.swift */,
+				18E3EA09262D6BC700F382E2 /* TextFieldWidget.swift */,
+				18E3EA14262D6DA300F382E2 /* ImagePicker.swift */,
 			);
 			path = CustomWidget;
+			sourceTree = "<group>";
+		};
+		18E3EA0C262D6BF000F382E2 /* CustomTextField */ = {
+			isa = PBXGroup;
+			children = (
+				18E3EA0D262D6C4700F382E2 /* CustomTextField.swift */,
+				18E3EA0E262D6C4700F382E2 /* CustomTextField.xib */,
+			);
+			path = CustomTextField;
 			sourceTree = "<group>";
 		};
 		23A7282D120DA435498DBD10 /* Frameworks */ = {
@@ -353,6 +374,7 @@
 		3737BC512615BEC200759DC3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				18E3EA0C262D6BF000F382E2 /* CustomTextField */,
 				37D8A24926202F0300BF9BF8 /* CustomBeagleWidget */,
 				3756E338261BF3C200280EF9 /* TimeRange */,
 			);
@@ -396,6 +418,7 @@
 				37ADF5D6261855FD006ACBF8 /* OpenTimeRangeSelector.swift */,
 				3756E335261BEE0800280EF9 /* OpenDateRangePicker.swift */,
 				18D68296262036FE0090429D /* LoadingAction.swift */,
+				18E3EA06262D6B9800F382E2 /* PermissionAction.swift */,
 			);
 			path = CustomBeagleAction;
 			sourceTree = "<group>";
@@ -540,6 +563,7 @@
 			files = (
 				37F076A62615B80F00A9E444 /* LaunchScreen.storyboard in Resources */,
 				37F076A32615B80F00A9E444 /* Assets.xcassets in Resources */,
+				18E3EA10262D6C4700F382E2 /* CustomTextField.xib in Resources */,
 				3737BC5B2615BF4200759DC3 /* MainTabBarController.xib in Resources */,
 				37E3CA06262942D6001BC524 /* SplashViewController.xib in Resources */,
 				37F076A12615B80E00A9E444 /* Main.storyboard in Resources */,
@@ -599,12 +623,13 @@
 				3737BC682615C03C00759DC3 /* GetBottomViewUseCase.swift in Sources */,
 				37E3C9F22629301D001BC524 /* CheckBeagleCacheVersion.swift in Sources */,
 				3737BC4B2615BE3600759DC3 /* GetBottomAPI.swift in Sources */,
-				18539B49261EB17B00546135 /* BarChartWidget.swift in Sources */,
+				18539B49261EB17B00546135 /* BarChart.swift in Sources */,
 				3737BC622615BFA200759DC3 /* UseCase.swift in Sources */,
 				18FE2DF5261C4F9E00953723 /* ShowBottomSheetAction.swift in Sources */,
 				3737BC5F2615BF7D00759DC3 /* WidgetRepository.swift in Sources */,
 				37BAC0572617069F00D78844 /* BeagleTitleStyle.swift in Sources */,
 				37ADF5D7261855FD006ACBF8 /* OpenTimeRangeSelector.swift in Sources */,
+				18E3EA07262D6B9800F382E2 /* PermissionAction.swift in Sources */,
 				18D68294262034ED0090429D /* BasicDialogViewController.swift in Sources */,
 				3737BC482615BCD300759DC3 /* Urls.swift in Sources */,
 				18539B31261EA2A400546135 /* BarchartEntity.swift in Sources */,
@@ -628,7 +653,9 @@
 				37D8A241261EB82100BF9BF8 /* GetTabbarIconAPI.swift in Sources */,
 				37F0769C2615B80E00A9E444 /* SceneDelegate.swift in Sources */,
 				37E3CA2926296E50001BC524 /* WriteCacheFilesUseCase.swift in Sources */,
+				18E3EA0F262D6C4700F382E2 /* CustomTextField.swift in Sources */,
 				183DC2C4261C1701003601D7 /* DialogLanguageViewController.swift in Sources */,
+				18E3EA0A262D6BC700F382E2 /* TextFieldWidget.swift in Sources */,
 				37E3CA3C262D1FE0001BC524 /* NetworkManager.swift in Sources */,
 				37E3C9F5262937A9001BC524 /* CacheRepository.swift in Sources */,
 				18D68297262036FE0090429D /* LoadingAction.swift in Sources */,
@@ -638,6 +665,7 @@
 				3737BC452615BCC800759DC3 /* BaseAPI.swift in Sources */,
 				37E3C9F82629394F001BC524 /* CacheRepositoryImplement.swift in Sources */,
 				18361916261FEE940074042A /* PieChart.swift in Sources */,
+				18E3EA15262D6DA300F382E2 /* ImagePicker.swift in Sources */,
 				37E3C9FC26293E86001BC524 /* CheckCacheVersionUseCase.swift in Sources */,
 				3756E340261BF3C200280EF9 /* DayView.swift in Sources */,
 				3737BC5A2615BF4200759DC3 /* MainTabBarController.swift in Sources */,
