@@ -189,66 +189,93 @@ object WidgetBuilder : BaseBuilder(){
             )
     )
 
-    // header
-    fun createHeader() = Container(
-            children = listOf(
-                    Touchable(
-                            child = Text(
-                                        text = "@{condition(isEmpty(global.welcomeContext), 'Xin chào', global.welcomeContext)}",
-                                        styleId = "NormalBoldText",
-                                        textColor = Constants.COLOR_WHITE
-                            ).applyStyle(
-                                    Style(size = Size(width = 50.unitPercent()))
-                            ),
-                            onPress = listOf(
-                                ShowBottomSheetAction("/widgetController/bottomSheetDialog", generateUserInfoList().size)
-                            )
-                    ),
-                    createContainer(
-                            createTouchableIcon(
-                                    remoteUrl = "@{condition(isEmpty(global.language), '${Constants.BASE_URL}/resourcesController/flag_vn', global.language)}",
-                                    width = 30,
-                                    height = 30,
-                                    listAction = listOf(
-                                            ShowDialogAction("/widgetController/selectLanguageDialog", numberOfItems = populateLanguageOptions().size)
-                                    )
-                            ),
-                            createCircularTextView(
-                                    text = "HN",
-                                    width = 44,
-                                    height = 44,
-                                    listAction = listOf(
-                                            //ShowBottomSheetAction("/widgetController/bottomSheetDialog")
-                                            //ShowDialogAction("/widgetController/selectionDialog")
-                                            Navigate.PushView(route = Route.Remote("/screenController/accountInformation"))
-                                    )
-                            )
-                    ).applyFlex(
-                            flex = Flex(
-                                    flexDirection = FlexDirection.ROW,
-                                    alignItems = AlignItems.CENTER
-                            )
-                    )
-            )
-    ).applyStyle(
-            style = Style(
-                    margin = EdgeValue(
-                            top = 20.unitReal(),
-                            left = 20.unitReal(),
-                            right = 20.unitReal()
-                    ),
-                    size = Size(height = 120.unitReal())
-            )
-    ).applyFlex(
-            flex = Flex(
-                    flexDirection = FlexDirection.ROW,
-                    alignItems = AlignItems.CENTER,
-                    justifyContent = JustifyContent.SPACE_BETWEEN,
-                    grow = 1.0
-            )
-    )
+     // create Header
+     fun createHeader() = Container(
+         children = listOf(
+             Touchable(
+                 child = createContainer(
+                     Text(
+                         text = "Xin chào",
+                         styleId = "NormalBoldText",
+                         textColor = Constants.COLOR_WHITE
+                     ).applyStyle(
+                         Style(size = Size(width = 28.unitPercent()))
+                     ),
+                     Text(
+                         text = "@{condition(isNull(global.welcomeContext), '', global.welcomeContext)}",
+                         styleId = "NormalBoldText",
+                         textColor = Constants.COLOR_WHITE
+                     ).applyStyle(
+                         Style(size = Size(width = 50.unitPercent()))
+                     )
+                 ).applyStyle(
+                     Style(
+                         flex = Flex(flexDirection = FlexDirection.ROW)
+                     )
+                 ),
+                 onPress = listOf(
+                     ShowBottomSheetAction("/widgetController/bottomSheetDialog", generateUserInfoList().size)
+                 )
+             ),
+             createContainer(
+                 Touchable(
+                     child = createContainer(
+                         Image(
+                             ImagePath.Remote("${Constants.BASE_URL}/resourcesController/flag_vn")
+                         ).applyStyle(
+                             Style(size = Size(width = 30.unitReal(), height = 30.unitReal()))
+                         ),
+                         Image(
+                             ImagePath.Remote("@{condition(isEmpty(global.language), '', global.language)}")
+                         ).applyStyle(
+                             Style(size = Size(width = 30.unitReal(), height = 30.unitReal()),
+                                 positionType = PositionType.ABSOLUTE)
+                         ),
+                     ).applyStyle(
+                         Style(
+                             flex = Flex(flexDirection = FlexDirection.ROW),
+                         )
+                     )
+                     , onPress = listOf(
+                     ShowDialogAction("/widgetController/selectLanguageDialog", numberOfItems = populateLanguageOptions().size)
+                 )
 
-    // search bar
+                 ),
+                 createCircularTextView(
+                     text = "HN",
+                     width = 44,
+                     height = 44,
+                     listAction = listOf(
+                         //ShowBottomSheetAction("/widgetController/bottomSheetDialog")
+                         //ShowDialogAction("/widgetController/selectionDialog")
+                         Navigate.PushView(route = Route.Remote("/screenController/accountInformation"))
+                     )
+                 )
+             ).applyFlex(
+                 flex = Flex(
+                     flexDirection = FlexDirection.ROW,
+                     alignItems = AlignItems.CENTER
+                 )
+             )
+         )
+     ).applyStyle(
+         style = Style(
+             margin = EdgeValue(
+                 top = 20.unitReal(),
+                 left = 20.unitReal(),
+                 right = 20.unitReal()
+             )
+         )
+     ).applyFlex(
+         flex = Flex(
+             flexDirection = FlexDirection.ROW,
+             alignItems = AlignItems.CENTER,
+             justifyContent = JustifyContent.SPACE_BETWEEN,
+             grow = 1.0
+         )
+     )
+
+     // search bar
     fun createSearchBar() = createContainer(
             createImageViewFromLocal("ic_search")
                     .applyStyle(
@@ -506,7 +533,7 @@ object WidgetBuilder : BaseBuilder(){
                                             SetContext(
                                                     contextId = "global",
                                                     path = "welcomeContext",
-                                                    value = "Xin chào @{item.username}"
+                                                    value = "@{item.username}"
                                             ),
                                             DismissDialogAction("/widgetController/bottomSheetDialog")
                                     )
@@ -600,7 +627,7 @@ object WidgetBuilder : BaseBuilder(){
          )
      ).applyFlex(Flex(flex =  1.0, alignSelf = AlignSelf.FLEX_END))
 
-     private fun createRadioImage(text: String,style: Style, indexID: String) = Touchable(
+     fun createRadioImage(text: String,style: Style, indexID: String) = Touchable(
          onPress = listOf(
              SetContext(
                  contextId = "global",

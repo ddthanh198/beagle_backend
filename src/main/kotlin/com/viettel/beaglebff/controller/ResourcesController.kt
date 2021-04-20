@@ -196,4 +196,11 @@ class ResourcesController(
     fun getRadioButtonClicked(): ResponseEntity<InputStreamResource> {
         return resourcesService.getImage("images/radio_button_clicked.png", "PNG")
     }
+
+    @RequestMapping("/ic_edit_avatar", method = arrayOf(RequestMethod.GET), produces = arrayOf(MediaType.IMAGE_PNG_VALUE))
+    @Throws(IOException::class)
+    fun getEditAvatarIcon(): ResponseEntity<InputStreamResource> {
+        return resourcesService.getImage("images/ic_edit_bg.png", "PNG")
+    }
+
 }

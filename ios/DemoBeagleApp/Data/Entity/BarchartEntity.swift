@@ -8,35 +8,11 @@
 import Foundation
 
 class BarchartEntity: Decodable {
-    var x: Double
-    var y: Double
+    var x: Float
+    var y: [Float]
     var icon: String?
     var title: String
-    var color: String
-}
-
-class StyleModel: Decodable {
-    var size: Size
-}
-
-class Size: Decodable {
-    var width: Width
-    var height: Height
-}
-
-class Width: Decodable {
-    var value: Double
-}
-
-class Height: Decodable {
-    var value: Double
-}
-
-class RBGColorModel: Decodable {
-    var red: Int
-    var green: Int
-    var blue: Int
-    var alpha: Int
+    var color: [String]
 }
 
 class BarChartDataItem: Decodable {
@@ -46,15 +22,42 @@ class BarChartDataItem: Decodable {
     var isEnableXAxis: Bool
     var prefix: String
     var title: String
-    
 }
 
-class BarChartViewChildren: Decodable {
-    var barChartData: BarChartDataItem
-    var style: StyleModel
+class HorizontalAxisMetaData: Decodable {
+    var isXAxisEnabled: Bool?
+    var axisPosition: String
+    var textSize: Float
+    var textColor: String
+    var displayTitleAsLabel: Bool
+    var drawGridLinesEnabled: Bool
+    var drawAxisLineEnabled: Bool
 }
 
-class BarChartViewEntity: Decodable {
-    var children: [BarChartViewChildren]
+class RightAxisMetaData: Decodable {
+    var isRightAxisEnabled: Bool?
+    var textSize: Float?
+    var textColor: String?
+    var disPlayUnit: Bool?
+    var drawGridLinesEnabled: Bool
+    var drawAxisLineEnabled: Bool
 }
+
+class LeftAxisMetaData: Decodable {
+    var isLeftAxisEnabled: Bool?
+    var textSize: Float?
+    var textColor: String?
+    var displayUnit: Bool?
+    var drawGridLinesEnabled: Bool
+    var drawAxisLineEnabled: Bool
+}
+
+enum XAxisPosition: String {
+    case TOP = "TOP"
+    case BOTTOM = "BOTTOM"
+    case BOTH_SIDED = "BOT_SIDED"
+    case TOP_INSIDE = "TOP_INSIDE"
+    case BOTTOM_INSIDE = "BOTTOM_INSIDE"
+}
+
 
